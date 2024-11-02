@@ -1,0 +1,16 @@
+~ altarcheck
+Lisa: Ang altar na ito ay tila mahiwaga. Ngunit ito ay nasa mga guho na, kaya wala na itong silbi.
+=> END
+
+~ altarget
+Lisa: Siguro itong bilog sa altar na ito ang tanging solusyon? Tignan na'tin.
+do Notifier.newitemAnnounce("Isperika")
+=> END
+
+~ altar_sphere_already
+Lisa: Nakuha ko na eh, pero saan ko ito dadalhin?
+=> END
+
+~ doorlocked
+Lisa: Naka-kandado pinto! Mas mabuting huwag pumasok!
+=> END

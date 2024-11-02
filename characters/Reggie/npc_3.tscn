@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cio0iuaqrvcs7"]
+
+[ext_resource type="Script" path="res://characters/Reggie/npc_3.gd" id="1_cfq1g"]
+[ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="2_nr4an"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyhvb"]
+size = Vector2(85.5, 75)
+
+[node name="npc3" type="Node2D"]
+script = ExtResource("1_cfq1g")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_nr4an")]
+action_name = "Kausapin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_oyhvb")

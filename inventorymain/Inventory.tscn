@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfrpxjouc78yk"]
+
+[ext_resource type="Script" path="res://inventorymain/inventory.gd" id="1_fnt83"]
+[ext_resource type="Script" path="res://inventorymain/InvContainer.gd" id="2_dk1hu"]
+[ext_resource type="Texture2D" uid="uid://dlndrprqaw2dq" path="res://inventorymain/inventory/invui.png" id="2_icpg0"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="3_a4xy3"]
+[ext_resource type="PackedScene" uid="uid://dnfw3hgqa5hk3" path="res://inventorymain/ItemInfo.tscn" id="3_gsxoa"]
+[ext_resource type="Texture2D" uid="uid://d4d31shkii0k" path="res://inventorymain/inventory/invframeslot.png" id="4_1kmno"]
+[ext_resource type="PackedScene" uid="uid://kf4ddwp2r1xm" path="res://ui/misc/quests/quest_board.tscn" id="7_k6ygp"]
+
+[sub_resource type="GDScript" id="GDScript_qpyew"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"PERA: \" + str(Global.gold)
+"
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fnt83")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 69.0
+offset_right = 1111.0
+offset_bottom = 572.0
+texture = ExtResource("2_icpg0")
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 102.0
+offset_right = 541.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a4xy3")
+theme_override_font_sizes/font_size = 20
+text = "PERA:"
+script = SubResource("GDScript_qpyew")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 137.0
+offset_right = 1060.0
+offset_bottom = 424.0
+texture = ExtResource("4_1kmno")
+
+[node name="InvContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 147.0
+offset_right = 1049.0
+offset_bottom = 413.0
+theme_override_constants/h_separation = -2
+theme_override_constants/v_separation = -2
+columns = 5
+script = ExtResource("2_dk1hu")
+
+[node name="ItemInfo" parent="." instance=ExtResource("3_gsxoa")]
+
+[node name="QuestBoard" parent="." instance=ExtResource("7_k6ygp")]
+offset_left = 6.0
+offset_top = 498.0
+offset_right = 6.0
+offset_bottom = 498.0

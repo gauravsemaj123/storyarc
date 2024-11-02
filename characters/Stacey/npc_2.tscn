@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpw11rqy7wrmn"]
+
+[ext_resource type="Script" path="res://characters/Stacey/npc_2.gd" id="1_g5y1j"]
+[ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="2_d61uw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acpcj"]
+size = Vector2(105, 99)
+
+[node name="npc2" type="Node2D"]
+script = ExtResource("1_g5y1j")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_d61uw")]
+action_name = "Kausapin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_acpcj")

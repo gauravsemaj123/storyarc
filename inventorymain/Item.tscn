@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://i2kkk83xthnh"]
+
+[node name="Item" type="Sprite2D"]
+scale = Vector2(3, 3)

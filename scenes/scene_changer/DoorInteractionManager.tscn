@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://ca1rn8ajinxrj"]
+
+[ext_resource type="Script" path="res://scenes/scene_changer/door_interaction_manager.gd" id="1_0gmym"]
+[ext_resource type="Texture2D" uid="uid://colfn3wbvytl0" path="res://ui/misc/interaction/interact_sheet.png" id="2_cwenk"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="3_tpvtr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raxia"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghhgp"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyxge"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i21k6"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn0t3"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iay3"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beqwp"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qblb2"]
+atlas = ExtResource("2_cwenk")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yu0ey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raxia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghhgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyxge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i21k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn0t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iay3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beqwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qblb2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DoorInteractionManager" type="Node2D"]
+z_index = 5
+script = ExtResource("1_0gmym")
+
+[node name="Control" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="AnimatedSprite2D" parent="Control"]
+z_index = 20
+texture_filter = 1
+position = Vector2(20, 20)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_yu0ey")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -21.0
+offset_right = 36.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_tpvtr")
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1

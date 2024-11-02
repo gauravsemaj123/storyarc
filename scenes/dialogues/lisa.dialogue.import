@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b0t680p5sgyav"
+path="res://.godot/imported/lisa.dialogue-7939ead3385544718a3c910278d8dbdf.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/lisa.dialogue"
+dest_files=["res://.godot/imported/lisa.dialogue-7939ead3385544718a3c910278d8dbdf.tres"]
+
+[params]
+
+defaults=true

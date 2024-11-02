@@ -1,0 +1,27 @@
+~ start
+
+Lola Nita: Kumusta, aking apo! Mabuti na lamang at ligtas tayong nakapunta sa isang libro!
+Lola Nita: Saka, ako rin ang iyong magiging gabay dito sa kagubatang ito. Handa ka na ba?
+- Lisa: Opo
+	Lola Nita: Magandang sagot, apo!
+	=> tutorial
+- Lisa: Hindi pa po
+	Lola Nita: Sige, kausapin mo ulit ako kapag handa ka na!
+	=> END
+~ tutorial
+
+Lola Nita: Gamitin ang arrow keys upang gumalaw. Kaliwa at Kanang arrow keys para sa pagkilos bahagya,
+Lola Nita: Spacebar para sa pagtalon sa mga matataas na baitang o to para umakyat,
+Lola Nita: Kung ikaw ay bababa, pindutin ang S Key o Arrow Down Key para sa pagbaba sa mga plataporma!
+Lola Nita: Pinudtin ang E para makipagusap, o tignan ang bawat bagay! Ang komunikasyon ay tanging susi para makakuha ng kaalaman, at parating tignan kung ano ang sa tingin mo ay importante, Lisa!
+Lola Nita: Nakuha mo ba lahat?
+- Opo
+	Lola Nita: Ayos! Ngayon alamin na'tin kung bakit nawawala ang panulat ni Binibining Stacey!
+	do Questlines.updateQuest()
+	do Notifier.questnext("Stacey")
+	=> END
+- Hindi ko po naintindihan
+	Lola Nita: Sige, ulitin na'tin ulit, apo!
+	=> tutorial
+~ let_them
+Lola Nita: Tignan na na'tin kung bakit nawawala ang panulat ni Binibining Stacey!

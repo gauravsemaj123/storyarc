@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dyb0igj0vocns"
+path="res://.godot/imported/lolanita.dialogue-fa97255ba388dd9211f53177b129b4e5.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/lolanita.dialogue"
+dest_files=["res://.godot/imported/lolanita.dialogue-fa97255ba388dd9211f53177b129b4e5.tres"]
+
+[params]
+
+defaults=true

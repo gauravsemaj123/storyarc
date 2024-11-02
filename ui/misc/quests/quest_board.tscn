@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://kf4ddwp2r1xm"]
+
+[ext_resource type="Script" path="res://ui/misc/quests/quest_board.gd" id="1_ba8nc"]
+[ext_resource type="Texture2D" uid="uid://d4d31shkii0k" path="res://inventorymain/inventory/invframeslot.png" id="1_noov5"]
+[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="2_q86pp"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="3_wae47"]
+[ext_resource type="Texture2D" uid="uid://dtuwp7psu4qsr" path="res://textures/characterports/Lisa.png" id="5_yf4vm"]
+
+[node name="QuestBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ba8nc")
+
+[node name="bg" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 265.0
+offset_bottom = 72.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_noov5")
+patch_margin_left = 3
+patch_margin_right = 3
+
+[node name="questProvider" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.211765)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 143.0
+offset_bottom = 138.0
+texture = ExtResource("5_yf4vm")
+
+[node name="questTitle" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 511.0
+offset_bottom = 38.0
+theme_override_fonts/normal_font = ExtResource("2_q86pp")
+theme_override_font_sizes/normal_font_size = 16
+text = "QuestTitle"
+scroll_active = false
+
+[node name="questDesc" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 43.0
+offset_right = 511.0
+offset_bottom = 126.0
+theme_override_fonts/normal_font = ExtResource("3_wae47")
+theme_override_font_sizes/normal_font_size = 13
+text = "Description"
+scroll_active = false

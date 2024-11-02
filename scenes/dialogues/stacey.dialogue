@@ -1,0 +1,45 @@
+~ frustrated
+Stacey: Naku, naku naku naku nakuuu nasaan siya?
+=> END
+~ start
+
+Stacey: [[Kumusta|Magandang araw|Mustaaaa]], Kaibigan! Ano ang maitutulong ko sa'yo?
+- Lisa: Kumusta ka po
+	Stacey: Ako'y nagmamadali at medyo nababahala, kaibigan. Pasensya na!
+	=> END
+- Lisa: Ano po ang ginagawa niyo rito
+	Stacey: Uhhh, [[Sa totoo lang...|Tingin ko ay|Nababahala akong]] hanapin ang aking panulat. Binigay pa ng aking lolo ang panulat na 'yun mula pa sa mga ninuno.
+	Stacey: Hindi ko alam kung saan napunta. Nasa bulsa ko lamang 'yun kanina at hindi ko namalayang nawala na! Hindi ko alam aking gagawin dahil ayun na lang ang aking natatanginging panulat.
+	- Lisa: Tutulungan po kitang hanapin ang panulat
+		Stacey: [[ TALAGAA?? | WAAAAAAAAAHHH!!! | HALAA!!! ]]MARAMING SALAMAT AKING KAIBIGAN! Salamat talaga nang marami!
+		Stacey: Eto yung pagkakalarawan sa panulat ko;
+		=> description
+	- Lisa: Ganun po ba Marami pong salamat
+	Stacey: Ahhh.. Sige! Pasensya na at marami yata akong nasabi. Mag-ingat ka, kaibigan!
+- Lisa: Wala naman po ingat ka po
+=> END
+~ description
+
+Stacey: Isa siyang mahiwagang kulay asul na panulat. Meron itong tingga sa dulo at mayroong kulay asul at sabitan na takip.
+Stacey: Sana makuha mo siya... Sana.
+- Lisa: Paumanhin ano ulit
+	=> description
+	- Lisa: Kuha po na po
+		Stacey: YAAAYYYY!!!! H'wag ka mag alala, hahanapin ko rin siya, kaibigan! [[Sana'y maging maayos ang iyong paglalakbay|Nawa'y mag ingat|Mag-ingat ka]], kaibigan!
+		Stacey: Oo nga pala, hindi ko pa alam ang iyong pangalan.
+		- Lisa: Ang pangalan ko ay Lisa
+			Stacey: Ikinagagalak kong makilala ka, Lisa!
+			do Questlines.updateQuest()
+			do Notifier.questnext("")
+			=> END
+- Lisa: Kuha po
+		Stacey: H'wag ka mag alala, hahanapin ko rin siya, kaibigan! [[Sana'y maging maayos ang iyong paglalakbay|Nawa'y mag ingat|Mag-ingat ka]], kaibigan!
+		Stacey: Oo nga pala, hindi ko pa alam ang iyong pangalan.
+		- Lisa: Ang pangalan ko ay Lisa
+			Stacey: Ikinagagalak kong makilala ka, Lisa!
+			do Questlines.updateQuest()
+			do Notifier.questnext("")
+			=> END
+			
+~ get_going
+Stacey: Magandang araw, Lisa! Nawa'y maging ligtas at masaya ang iyong paglalakbay!

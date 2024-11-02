@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr734q8y2tmmy"]
+
+[ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="1_nl102"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o222l"]
+size = Vector2(121.5, 146)
+
+[node name="npc_4" type="Node2D"]
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_nl102")]
+action_name = "Bumili"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_o222l")

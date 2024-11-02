@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnfw3hgqa5hk3"]
+
+[ext_resource type="Script" path="res://inventorymain/ItemInfo.gd" id="1_dcfiv"]
+[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="2_7u3cv"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="3_sq7pr"]
+
+[node name="ItemInfo" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dcfiv")
+
+[node name="Title" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 552.0
+offset_top = 222.0
+offset_right = 752.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7u3cv")
+theme_override_font_sizes/font_size = 26
+text = "ItemName"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Des" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 568.0
+offset_top = 256.0
+offset_right = 732.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sq7pr")
+theme_override_font_sizes/font_size = 13
+text = "ItemName"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(651, 178)
+scale = Vector2(4, 4)

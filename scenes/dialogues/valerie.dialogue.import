@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cj6uqgpi3wl5"
+path="res://.godot/imported/valerie.dialogue-2dff9eb20761b89322c43275d34a6b24.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/valerie.dialogue"
+dest_files=["res://.godot/imported/valerie.dialogue-2dff9eb20761b89322c43275d34a6b24.tres"]
+
+[params]
+
+defaults=true

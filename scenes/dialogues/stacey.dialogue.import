@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://d64wtshitop3"
+path="res://.godot/imported/stacey.dialogue-f703b6b76b0fc2e2a5135496aebff9e1.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/stacey.dialogue"
+dest_files=["res://.godot/imported/stacey.dialogue-f703b6b76b0fc2e2a5135496aebff9e1.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,29 @@
+~ shopstart
+Valerie: Kumusta, anak! Ako si Valerie, ang tindera rito. May bibilihin ka ba, anak?
+=> END
+~ asktoharold
+Valerie: Kumusta, anak! Ako si Valerie, ang tindera rito. Ano ang aking maitutulong?
+- Tanungin kung sino ang arkeologo ng nayon
+	Lisa: P'wede ko po ba malaman kung sino po yung arkeologo ng nayon na ito?
+	Valerie: Ah! Siya ay ang aking asawa na si Harold! Ano ang sadiya mo sa kaniya, anak?
+	- Tanungin sa misteryosong bagay
+		Lisa: Nais ko lamang po siya tanungin kung may alam po siya sa mga misteryosong nangyayari.
+		Valerie: Ganu'n ba, anak? Sige! Ang bahay na'min ay katabi lamang nitong mumunting palengke!
+		- Magpasalamat
+			Lisa: Maraming salamat po, Ate Valerie!
+			Valerie: Walang anuman!
+			do Questlines.updateQuest()
+			do Notifier.questnext("Harold")
+			=> END
+	- Kausapin
+		Lisa: Nais ko lamang po siya kausapin, Ate Valerie!
+		Valerie: Ganu'n ba, anak? Sige! Ang bahay na'min ay katabi lamang nitong mumunting palengke!
+		- Magpasalamat
+			Lisa: Maraming salamat po, Ate Valerie!
+			Valerie: Walang anuman!
+			do Questlines.updateQuest()
+			do Notifier.questnext("Harold")
+			=> END
+~ thanks
+Valerie: Maraming salamat, anak!
+=> END

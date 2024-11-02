@@ -1,0 +1,27 @@
+~ unrecognized
+Reggie: Kokak! Kokak!
+Lisa: ...
+Reggie: Kokak! Kokak!
+=> END
+
+~ start
+Reggie: Kokak! Kokak! Ano ang maitutulong ko, aking kaibigan?
+- Dumaan na lamang
+	Reggie: ...
+	=> END
+- Tanungin kung may nakitang panulat
+	Lisa: Maaari mo po bang itanong sa akin kung may nakita ka po na panulat na kulay asul?
+	do wait(0.5)
+	Reggie: Sa tingin ko............
+	Lisa: ........
+	Reggie: Meron! Ngunit nakita ko na naglaho na lamang ito sa kaniya sa kaniyang bulsa!
+	Lisa: Ganu'n po ba?
+	Reggie: Oo, kaibigan! Kung may misteryosong nangyayari, tingin ko ang nakakaalam ay yung asawa nu'ng nagtitinda sa nayon!
+	- Lisa: Marami pong salamat!
+		do Questlines.updateQuest()
+		do Notifier.questnext("")
+	- Lisa: ...
+		do Questlines.updateQuest()
+		do Notifier.questnext("")
+
+=> END

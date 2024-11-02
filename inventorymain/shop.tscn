@@ -1,0 +1,224 @@
+[gd_scene load_steps=33 format=3 uid="uid://bk8xk5nmsb7sg"]
+
+[ext_resource type="Script" path="res://inventorymain/shop.gd" id="1_iuj5f"]
+[ext_resource type="PackedScene" uid="uid://i2kkk83xthnh" path="res://inventorymain/Item.tscn" id="2_5bt3u"]
+[ext_resource type="Texture2D" uid="uid://bjgid5lyfir44" path="res://inventorymain/inventory/shopui.png" id="2_gg7i8"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="3_h0gwg"]
+[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="4_bthma"]
+[ext_resource type="Texture2D" uid="uid://1gfocirbkfu4" path="res://inventorymain/inventory/chevron.png" id="5_yn84h"]
+[ext_resource type="Texture2D" uid="uid://cc621cvu16621" path="res://inventorymain/inventory/chevron_reverse.png" id="6_aq324"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2l7qe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpqeq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7orq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ris51"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsh0d"]
+
+[sub_resource type="Theme" id="Theme_sddqv"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_2l7qe")
+Button/styles/focus = SubResource("StyleBoxEmpty_jpqeq")
+Button/styles/hover = SubResource("StyleBoxEmpty_m7orq")
+Button/styles/normal = SubResource("StyleBoxEmpty_ris51")
+Button/styles/pressed = SubResource("StyleBoxEmpty_tsh0d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah5wm"]
+texture = ExtResource("5_yn84h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4a6ym"]
+texture = ExtResource("5_yn84h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nugox"]
+texture = ExtResource("5_yn84h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tsrim"]
+texture = ExtResource("5_yn84h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81fus"]
+texture = ExtResource("5_yn84h")
+
+[sub_resource type="Theme" id="Theme_hcmri"]
+Button/styles/disabled = SubResource("StyleBoxTexture_ah5wm")
+Button/styles/focus = SubResource("StyleBoxTexture_4a6ym")
+Button/styles/hover = SubResource("StyleBoxTexture_nugox")
+Button/styles/normal = SubResource("StyleBoxTexture_tsrim")
+Button/styles/pressed = SubResource("StyleBoxTexture_81fus")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wj87i"]
+texture = ExtResource("6_aq324")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfius"]
+texture = ExtResource("6_aq324")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dp4i"]
+texture = ExtResource("6_aq324")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raf5c"]
+texture = ExtResource("6_aq324")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2tic"]
+texture = ExtResource("6_aq324")
+
+[sub_resource type="Theme" id="Theme_w1k3u"]
+Button/styles/disabled = SubResource("StyleBoxTexture_wj87i")
+Button/styles/focus = SubResource("StyleBoxTexture_pfius")
+Button/styles/hover = SubResource("StyleBoxTexture_0dp4i")
+Button/styles/normal = SubResource("StyleBoxTexture_raf5c")
+Button/styles/pressed = SubResource("StyleBoxTexture_v2tic")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7q36v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87mmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akuyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_noo5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0na4u"]
+
+[sub_resource type="Theme" id="Theme_v6dnx"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_7q36v")
+Button/styles/focus = SubResource("StyleBoxEmpty_87mmc")
+Button/styles/hover = SubResource("StyleBoxEmpty_akuyw")
+Button/styles/normal = SubResource("StyleBoxEmpty_noo5g")
+Button/styles/pressed = SubResource("StyleBoxEmpty_0na4u")
+
+[sub_resource type="GDScript" id="GDScript_qpyew"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"PERA: \" + str(Global.gold)
+"
+
+[node name="Shop" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iuj5f")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 75.0
+offset_right = 495.0
+offset_bottom = 218.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_gg7i8")
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1062.0
+offset_top = 104.0
+offset_right = 1112.0
+offset_bottom = 137.0
+theme = SubResource("Theme_sddqv")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h0gwg")
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 147.0
+offset_right = 1048.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("4_bthma")
+theme_override_font_sizes/font_size = 42
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Des" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 337.0
+offset_right = 1051.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.0352941)
+theme_override_fonts/font = ExtResource("3_h0gwg")
+text = "Desc"
+autowrap_mode = 3
+
+[node name="Next" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 211.0
+offset_right = 977.0
+offset_bottom = 242.0
+theme = SubResource("Theme_hcmri")
+
+[node name="Prev" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 211.0
+offset_right = 653.0
+offset_bottom = 242.0
+theme = SubResource("Theme_w1k3u")
+
+[node name="Buy" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 278.0
+offset_right = 1045.0
+offset_bottom = 309.0
+theme = SubResource("Theme_v6dnx")
+theme_override_fonts/font = ExtResource("3_h0gwg")
+text = "Bilhin"
+
+[node name="Item" parent="Control" instance=ExtResource("2_5bt3u")]
+position = Vector2(800, 244)
+
+[node name="Cost" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 288.0
+offset_right = 652.0
+offset_bottom = 311.0
+theme_override_fonts/font = ExtResource("3_h0gwg")
+
+[node name="Say" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 372.0
+offset_right = 736.0
+offset_bottom = 442.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h0gwg")
+text = "Ayan ba gusto mo anak?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 112.0
+offset_right = 582.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h0gwg")
+text = "PERA:"
+script = SubResource("GDScript_qpyew")
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/Buy" to="." method="_on_buy_pressed"]

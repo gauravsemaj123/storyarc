@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkfu2ltc7lgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgyus"]
+size = Vector2(1004, 20)
+
+[node name="water" type="Area2D"]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 32
+visibility_layer = 32
+position = Vector2(492, 0)
+shape = SubResource("RectangleShape2D_tgyus")

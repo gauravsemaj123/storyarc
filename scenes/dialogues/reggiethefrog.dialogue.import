@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://6g5uqpl2tv5j"
+path="res://.godot/imported/reggiethefrog.dialogue-a0bfba73978f422d2c399374383961b4.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/reggiethefrog.dialogue"
+dest_files=["res://.godot/imported/reggiethefrog.dialogue-a0bfba73978f422d2c399374383961b4.tres"]
+
+[params]
+
+defaults=true
