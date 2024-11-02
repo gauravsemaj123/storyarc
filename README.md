@@ -18,7 +18,7 @@ APPLICATIONS I USED:
 
 SOUND EFFECTS I USED:
 
-<a href="https://www.aseprite.org/">Isaiah Banda</a>
+<a href="https://github.com/IssiahB">Issiah Banda</a>
 
 TESTING BGM I USED:
 
