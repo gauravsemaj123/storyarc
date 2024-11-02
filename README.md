@@ -1,4 +1,4 @@
-Get ready to explore the happiness, wisdom, and adventure!
+# Get ready to explore the happiness, wisdom, and adventure!
 
 <p align="center">
     <img src=".\banner.png">
@@ -11,15 +11,15 @@ Note! This game is intended to be a capstone project game, so if this is release
 
 # CREDITS
 
-# APPLICATIONS I USED:
+APPLICATIONS I USED:
 
 <a href="https://godotengine.org/">Godot Engine</a>
 <a href="https://www.aseprite.org/">Aseprite</a>
 
-# SOUND EFFECTS I USED:
+SOUND EFFECTS I USED:
 
 <a href="https://www.aseprite.org/">Isaiah Banda</a>
 
-# TESTING BGM I USED:
+TESTING BGM I USED:
 
 <a href="https://www.youtube.com/watch?v=OMX6lriaHhQ">KONAMI | Yu-Gi-Oh! Master Duel BGM (Ghostrick Battle theme)</a>
