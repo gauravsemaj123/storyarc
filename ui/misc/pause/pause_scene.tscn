@@ -237,7 +237,7 @@ _data = {
 
 [node name="PauseScene" type="Control"]
 process_mode = 3
-z_index = 10
+z_index = 4096
 z_as_relative = false
 y_sort_enabled = true
 layout_mode = 3

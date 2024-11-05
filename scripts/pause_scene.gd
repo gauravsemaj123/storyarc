@@ -1,5 +1,6 @@
 extends Control
 @onready var pause_scene = $"."
+var is_paused: bool = false
 
 var mainmenu = load("res://ui/mainmenu/mainmenu.tscn")
 
@@ -8,6 +9,7 @@ func _ready():
 	$AnimationPlayer.play("RESET")
 
 func paused():
+	is_paused = true
 	get_tree().paused = true
 	pause_scene.visible = true
 	$AnimationPlayer.play("pause")
@@ -19,6 +21,7 @@ func resume():
 
 func _on_resume_pressed():
 	print("resume pressed!")
+	is_paused = false
 	resume()
 
 func _on_save_pressed() -> void:

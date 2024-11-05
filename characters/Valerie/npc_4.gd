@@ -15,9 +15,16 @@ func _ready():
 	shop.closeDialog.connect(closeDialogInit)
 
 func _process(delta: float) -> void:
-	if dialog_inprocess == true:
+	if (dialog_inprocess == true):
 		inventory.close()
-		player.dialogactive = true
+		
+	else:
+		pass
+	if (shop_inprocess == true):
+		inventory.close()
+
+	else:
+		pass
 		
 func closeDialogInit():
 	DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "thanks")
@@ -25,53 +32,57 @@ func closeDialogInit():
 	shop_inprocess = false
 	InteractionManager.visible = true
 	dialog_inprocess = false
+	player.inventoryactive = false
+	player.dialogactive = false
+	player.uiactive = false
 	
 func _on_interact():
-	if shop.visible != true:
-		if Questlines.questline_number == 4:
+	if shop.visible != true || inventory.visible != true:
+		if Questlines.questline_number == 3:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
 			player.uiactive = true
 			player.dialogactive = true
 			dialog_inprocess = true
 			await DialogueManager.dialogue_ended
 			player.uiactive = false
-			dialog_inprocess = false
 			player.dialogactive = false
+			dialog_inprocess = false
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
+			player.uiactive = true
 			player.dialogactive = true
 			dialog_inprocess = true
 			await DialogueManager.dialogue_ended
 			shop.open()
+			player.dialogactive = false
+			player.inventoryactive = true
 			shop_inprocess = true
 			InteractionManager.visible = false
-			player.dialogactive = false
 
 	else:
 		pass
-	return
 	
-	if inventory.visible != true:
-		if Questlines.questline_number == 4:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
-			player.uiactive = true
-			player.dialogactive = true
-			dialog_inprocess = true
-			await DialogueManager.dialogue_ended
-			player.uiactive = false
-			dialog_inprocess = false
-			player.dialogactive = false
-		else:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
-			player.dialogactive = true
-			dialog_inprocess = true
-			await DialogueManager.dialogue_ended
-			shop.open()
-			shop_inprocess = true
-			InteractionManager.visible = false
-			player.dialogactive = false
-	else:
-		pass
+	#if inventory.visible != true:
+		#if Questlines.questline_number == 3:
+			#DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
+			#player.uiactive = true
+			#player.dialogactive = true
+			#dialog_inprocess = true
+			#await DialogueManager.dialogue_ended
+			#player.uiactive = false
+			#dialog_inprocess = false
+			#player.dialogactive = false
+		#else:
+			#DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
+			#player.dialogactive = true
+			#dialog_inprocess = true
+			#await DialogueManager.dialogue_ended
+			#shop.open()
+			#shop_inprocess = true
+			#InteractionManager.visible = false
+			#player.dialogactive = false
+	#else:
+		#pass
 	return
 
 		

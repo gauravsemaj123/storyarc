@@ -54,14 +54,14 @@ var quest_database = {
 		"QuestImage": preload("res://textures/characterports/Harold.png")
 	},
 	10:{
-		"QuestName": "ESPERA PARA SA ESPIRITU",
-		"QuestDesc": "Dalhin ang espera sa istatwa ng Espiritu ng Kaalaman!",
+		"QuestName": "ESPERA PARA SA BATHALA NG KAALAMAN",
+		"QuestDesc": "Dalhin ang espera sa istatwa ng Bathala ng Kaalaman!",
 		"QuestImage": preload("res://textures/characterports/Lisa.png")
 	},
 	11:{
 		"QuestName": "ANG ABAKADA NG BAGAY",
-		"QuestDesc": "Hanapin LAHAT ng mga bawat bagay na maaaring dalhin sa Espiritu ng Kaalaman!",
-		"QuestImage": preload("res://textures/characterports/Lisa.png")
+		"QuestDesc": "Hanapin LAHAT ng mga bawat bagay na maaaring dalhin sa Bathala ng Kaalaman!",
+		"QuestImage": preload("res://textures/characterports/Bathalang Eyre.png")
 	},
 	12:{
 		"QuestName": "ANG PANULAT",

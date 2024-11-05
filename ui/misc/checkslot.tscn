@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6dwiwuillvh6"]
+
+[ext_resource type="Texture2D" uid="uid://bc6cteft2fklh" path="res://inventorymain/inventory/invslot.png" id="1_hhfo1"]
+[ext_resource type="Texture2D" uid="uid://0lyx23yf6tsk" path="res://ui/misc/cross.png" id="2_2bh7y"]
+[ext_resource type="Script" path="res://scripts/checks/checkslot.gd" id="2_w3oyq"]
+[ext_resource type="Texture2D" uid="uid://ds18e5o2qiq4j" path="res://ui/misc/check.png" id="3_vpn74"]
+
+[sub_resource type="Animation" id="Animation_j8ff5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("correct:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wrong:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wrong:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wrong:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qqqav"]
+resource_name = "ekis"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wrong:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wrong:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wrong:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_jxxm0"]
+resource_name = "tsek"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("correct:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.2, 0.3, 0.4, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_278ii"]
+_data = {
+"RESET": SubResource("Animation_j8ff5"),
+"ekis": SubResource("Animation_qqqav"),
+"tsek": SubResource("Animation_jxxm0")
+}
+
+[node name="checkslot" type="TextureRect"]
+texture = ExtResource("1_hhfo1")
+script = ExtResource("2_w3oyq")
+
+[node name="wrong" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2bh7y")
+
+[node name="correct" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7.5, 8)
+scale = Vector2(0.8125, 0.875)
+texture = ExtResource("3_vpn74")
+hframes = 5
+frame = 2
+
+[node name="checkplay" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_278ii")
+}

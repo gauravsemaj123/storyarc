@@ -9,9 +9,9 @@ var dialog_inprocess: bool = false
 func _process(delta: float) -> void:
 	if dialog_inprocess == true:
 		inventory.close()
-		player.dialogactive = true
+		
 	else:
-		player.dialogactive = false
+		pass
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -22,16 +22,20 @@ func _on_interact():
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/reggiethefrog.dialogue"), "start")
 			dialog_inprocess = true
 			player.uiactive = true
+			player.dialogactive = true
 			await DialogueManager.dialogue_ended
-			dialog_inprocess = false
 			player.uiactive = false
+			dialog_inprocess = false
+			player.dialogactive = false
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/reggiethefrog.dialogue"), "unrecognized")
 			dialog_inprocess = true
 			player.uiactive = true
+			player.dialogactive = true
 			await DialogueManager.dialogue_ended
-			dialog_inprocess = false
 			player.uiactive = false
+			dialog_inprocess = false
+			player.dialogactive = false
 	else:
 		pass
 	return

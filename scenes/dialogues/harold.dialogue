@@ -1,0 +1,18 @@
+~ hi
+Harold: 1
+=> END
+~ howcanihelp
+Harold: 321
+- Lisa: 121
+- Lisa: 323
+=> END
+~ beginfinding
+Harold: 321
+- Lisa: 121
+- Lisa: 323
+=> END
+~ begingiving
+Harold: 321
+- Lisa: 121
+- Lisa: 323
+=> END

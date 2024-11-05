@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bhl8wli6rswbv"
+path="res://.godot/imported/eyre.dialogue-130606f84e6b2f154d4451beb92c2735.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/eyre.dialogue"
+dest_files=["res://.godot/imported/eyre.dialogue-130606f84e6b2f154d4451beb92c2735.tres"]
+
+[params]
+
+defaults=true

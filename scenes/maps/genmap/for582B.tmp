@@ -406,7 +406,7 @@ sources/1 = SubResource("TileSetAtlasSource_i6cff")
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_piscg"]
 gradient = SubResource("Gradient_ienck")
-fill_from = Vector2(0.5, 0.95)
+fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_heaye"]
@@ -1275,8 +1275,8 @@ position = Vector2(8428, 556)
 [node name="fronttexture" type="Node" parent="scene_elements"]
 
 [node name="rays" type="PointLight2D" parent="scene_elements/fronttexture"]
-position = Vector2(7183.75, 602.5)
-scale = Vector2(224.57, 32.3906)
+position = Vector2(7183.75, 232.5)
+scale = Vector2(224.57, 20.8281)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.317647)
 texture = SubResource("GradientTexture2D_piscg")

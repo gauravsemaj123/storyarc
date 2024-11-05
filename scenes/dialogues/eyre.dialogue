@@ -1,0 +1,30 @@
+~ calling
+Bathalang Eyre: Maligayang pagdating, anak ko. Nawa'y pagpalain ka ng kapayapaan at liwanag sa iyong paglalakbay.
+Bathalang Eyre: Ano ang iyong nais na ipabatid?
+Lisa: 3
+Bathalang Eyre: 4
+Bathalang Eyre: 5
+Lisa: 4
+Bathalang Eyre: 2231
+=> END!
+
+~ noanswer
+ : Bathalang Eyre: Anak, wala ka pang nasasagutang bugtong!
+ : Lisa: Ay- Pasens'ya na po, Kaibigang Bathala!
+=> END
+~ on_next
+ : Bathalang Eyre: Oh sige anak ko. Nawa'y masagutan mo ito!
+ : Lisa: Opo, gagawin ko po ang aking makakaya, Kaibigang Bathala!
+=> END
+~ correct
+ : Bathalang Eyre: Tama!
+ : Lisa: Ang galing ko!
+=> on_next
+~ wrong
+ : Bathalang Eyre: Mali!
+ : Lisa: Sayang! Bawi po ako!
+=> on_next
+~ outoftime
+ : Bathalang Eyre: Hindi mo nakuha ang sagot, anak!
+ : Lisa: Sayang!
+=> on_next

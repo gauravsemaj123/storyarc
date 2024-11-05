@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://mx0vwltq3tj"]
+
+[ext_resource type="Script" path="res://characters/Harold/npc_5.gd" id="1_50cuy"]
+[ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="1_wquq6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aus8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46a3o"]
+size = Vector2(111, 102.5)
+
+[node name="npc_5" type="Node2D"]
+script = ExtResource("1_50cuy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aus8p")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_wquq6")]
+action_name = "Kausapin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_46a3o")

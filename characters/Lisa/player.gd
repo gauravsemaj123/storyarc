@@ -43,10 +43,10 @@ func _input(event: InputEvent):
 func _process(_delta: float) -> void:
 
 	if uiactive == true:
-		if (dialogactive == true):
+		if dialogactive == true:
 			camera_2d.position.y = spriteanims.position.y
 
-		elif (inventoryactive == true):
+		if inventoryactive == true:
 			camera_2d.position.x =  400
 			camera_2d.position.y = spriteanims.position.y
 			spriteanims.flip_h = false
@@ -82,7 +82,6 @@ func _unhandled_input(event: InputEvent):
 		print(DialogueManager.is_processing())
 		if DialogueManager.is_processing():
 			print("ui inactive")
-			print(inventoryactive)
 			uiactive = true
 			inventoryactive = true
 		else:

@@ -14,3 +14,8 @@ Lisa: Nakuha ko na eh, pero saan ko ito dadalhin?
 ~ doorlocked
 Lisa: Naka-kandado pinto! Mas mabuting huwag pumasok!
 => END
+
+~ atisget
+Bathalang Eyre: *Boses mula sa malayo* Anak ko! Ayan ang aking tinutukoy! Hayaan mo ako na ang maglaglag ng bunga mula sa'yo!
+do Notifier.newitemAnnounce("Atis")
+=> END

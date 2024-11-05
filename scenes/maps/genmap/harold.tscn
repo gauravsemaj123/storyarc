@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dwcshkpdbdu24"]
+[gd_scene load_steps=27 format=4 uid="uid://dwcshkpdbdu24"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ru68q"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_narqj"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cklnyr4yobq6n" path="res://textures/gentextures/housetilesets.png" id="11_kkwye"]
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="11_pgbvc"]
 [ext_resource type="PackedScene" uid="uid://cw57v0sm37vhi" path="res://scenes/scene_changer/door.tscn" id="12_5w8n2"]
+[ext_resource type="PackedScene" uid="uid://mx0vwltq3tj" path="res://characters/Harold/npc_5.tscn" id="13_f0i0k"]
 [ext_resource type="Script" path="res://scripts/elements/houseelements/house1Boundary.gd" id="13_fyn54"]
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="14_agoqh"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="15_5gsdq"]
@@ -1086,6 +1087,9 @@ tile_set = SubResource("TileSet_v7s6e")
 position = Vector2(340, 444)
 collision_layer = 77
 collision_mask = 77
+
+[node name="npc_5" parent="scene_elements/sprites" instance=ExtResource("13_f0i0k")]
+position = Vector2(1065, 561)
 
 [node name="fronttexture" type="Node" parent="scene_elements"]
 

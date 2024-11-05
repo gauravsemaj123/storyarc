@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://jeafri72aw7v"
+path="res://.godot/imported/harold.dialogue-302ab9b54aa1dea62918dc17447439ea.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/harold.dialogue"
+dest_files=["res://.godot/imported/harold.dialogue-302ab9b54aa1dea62918dc17447439ea.tres"]
+
+[params]
+
+defaults=true
