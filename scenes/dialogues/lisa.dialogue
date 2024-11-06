@@ -7,8 +7,20 @@ Lisa: Siguro itong bilog sa altar na ito ang tanging solusyon? Tignan na'tin.
 do Notifier.newitemAnnounce("Isperika")
 => END
 
+~ nosphere
+Lisa: Wala pa akong espera, ayun yung kailangan ng istatwa na ito.
+=> END
+
+~ ithink
+Lisa: Siguro mayroon akong mabibili sa nagkakahalagang 300.
+=> END
+
+~ fortestingpurposes
+Lisa: For testing purposes
+=> END
+
 ~ altar_sphere_already
-Lisa: Nakuha ko na eh, pero saan ko ito dadalhin?
+Lisa: Nakuha ko na eh, dadalhin ko na ito kay Kuya Harold!
 => END
 
 ~ doorlocked

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://d1qfa756aqya1"]
+[gd_scene load_steps=39 format=4 uid="uid://d1qfa756aqya1"]
 
 [ext_resource type="Texture2D" uid="uid://b8rtt8lpy1cuv" path="res://textures/backgrounds/maps/ruins/backr.png" id="1_6vdsl"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_htcl3"]
@@ -12,12 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="8_6b08u"]
 [ext_resource type="Texture2D" uid="uid://d0jugotrn8alp" path="res://textures/gentextures/ruinlantern.png" id="8_o2j1b"]
 [ext_resource type="PackedScene" uid="uid://cw57v0sm37vhi" path="res://scenes/scene_changer/door.tscn" id="9_t72wd"]
+[ext_resource type="PackedScene" uid="uid://mx0vwltq3tj" path="res://characters/Harold/npc_5.tscn" id="11_6wuj1"]
 [ext_resource type="Script" path="res://scripts/elements/ruinboundarycam.gd" id="11_h5iuw"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="11_wej4b"]
 [ext_resource type="PackedScene" uid="uid://bfrpxjouc78yk" path="res://inventorymain/Inventory.tscn" id="12_dxfxw"]
 [ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="12_gjn0k"]
+[ext_resource type="Script" path="res://scripts/elements/updateonruin.gd" id="12_h5yi6"]
 [ext_resource type="Script" path="res://scripts/elements/ruinaltar.gd" id="12_hgj5r"]
 [ext_resource type="Texture2D" uid="uid://d07n7jrc2qpkg" path="res://ui/misc/spheresprite.png" id="13_rj5f4"]
+[ext_resource type="Script" path="res://scenes/scene_changer/for_cutscene.gd" id="18_b43v5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4cum"]
 texture = ExtResource("7_35e3i")
@@ -548,6 +551,12 @@ size = Vector2(159.5, 96)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdgo2"]
 size = Vector2(469, 527)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_filqv"]
+size = Vector2(488, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1cih"]
+size = Vector2(190, 66)
+
 [sub_resource type="Gradient" id="Gradient_acx3m"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -558,66 +567,40 @@ fill = 1
 fill_from = Vector2(0.487179, 0.512821)
 fill_to = Vector2(0.867521, 0.153846)
 
-[sub_resource type="Gradient" id="Gradient_7iadj"]
+[sub_resource type="Gradient" id="Gradient_ngf7s"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_48j8f"]
-gradient = SubResource("Gradient_7iadj")
+gradient = SubResource("Gradient_ngf7s")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.111111, 0.145299)
 
-[sub_resource type="Animation" id="Animation_hmq0v"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_pyvv2"]
+resource_name = "emit"
+length = 2.75
+step = 0.25
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene_elements/moviebarup:position:x")
+tracks/0/path = NodePath("../scene_elements/lighteff/miraclelight:texture_scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.01, -0.25, 0, 0.25, 0, 30.38, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene_elements/moviebarup:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-150, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_coxwh"]
-resource_name = "emit"
-length = 3.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../scene_elements/lighteff/miraclelight:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../scene_elements/lighteff/miraclelight:texture_scale")
+tracks/1/path = NodePath("../scene_elements/lighteff/miraclelight:energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.01, -0.25, 0, 0.25, 0, 24.02, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.02, 1)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -628,7 +611,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.18, 1.15, 1.92, 2.5)
+"times": PackedFloat32Array(1.25, 2, 2.75, 3.5)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -639,7 +622,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.18, 1.15, 1.92, 2.5)
+"times": PackedFloat32Array(1.25, 2, 2.75, 3.5)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -650,7 +633,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.18, 1.15, 1.92, 2.5)
+"times": PackedFloat32Array(1.25, 2, 2.75, 3.5)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
@@ -659,65 +642,172 @@ tracks/5/path = NodePath("cutscene_elements/shinelight:modulate:a")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.18, 1.15, 2.86, 3.5)
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.25, 2, 2.75)
 }
-tracks/6/type = "value"
+tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("cutscene_elements/shinelight:visible")
+tracks/6/path = NodePath("cutscene_elements/shinelight:self_modulate:r")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.02),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.75)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("cutscene_elements/shinelight:self_modulate:g")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.75)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("cutscene_elements/shinelight:self_modulate:b")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.75)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("cutscene_elements/shinelight:self_modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.75)
 }
 
-[sub_resource type="Animation" id="Animation_nti63"]
+[sub_resource type="Animation" id="Animation_aj8ul"]
 resource_name = "lightloop"
-length = 0.01
-loop_mode = 2
-step = 0.001
+length = 2.0
+step = 0.25
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../scene_elements/lighteff/miraclelight:energy")
+tracks/0/path = NodePath("../scene_elements/lighteff/miraclelight:texture_scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.025, 0, 0.025, 0, 0.75, -0.15, 0, 0.15, 0, 1, -0.025, 0, 0.025, 0, 1, -0.025, 0, 0.025, 0, 1, -0.025, 0, 0.025, 0, 1, -0.025, 0, 0.025, 0),
-"times": PackedFloat32Array(0, 0.002, 0.004, 0.006, 0.008, 0.01)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(30.38, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
-
-[sub_resource type="Animation" id="Animation_tms4f"]
-resource_name = "remove"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene_elements/moviebarup:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene_elements/moviebardn:visible")
+tracks/1/path = NodePath("../scene_elements/lighteff/miraclelight:energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cutscene_elements/shinelight:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cutscene_elements/shinelight:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cutscene_elements/shinelight:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("cutscene_elements/shinelight:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_mqw1s"]
+resource_name = "remove"
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cutscene_elements/moviebardn:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cutscene_elements/moviebardn:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(648, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cutscene_elements/moviebarup:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cutscene_elements/moviebarup:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-150, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_6p7sj"]
@@ -770,10 +860,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g0iwy"]
 _data = {
-"RESET": SubResource("Animation_hmq0v"),
-"emit": SubResource("Animation_coxwh"),
-"lightloop": SubResource("Animation_nti63"),
-"remove": SubResource("Animation_tms4f"),
+"emit": SubResource("Animation_pyvv2"),
+"lightloop": SubResource("Animation_aj8ul"),
+"remove": SubResource("Animation_mqw1s"),
 "scenebegin": SubResource("Animation_6p7sj")
 }
 
@@ -863,7 +952,10 @@ tile_set = SubResource("TileSet_nc5m0")
 [node name="sprites" type="Node" parent="scene_elements"]
 
 [node name="Player" parent="scene_elements/sprites" instance=ExtResource("7_bxscj")]
-position = Vector2(498, 446)
+position = Vector2(2369, 460)
+
+[node name="npc_5" parent="scene_elements/sprites" instance=ExtResource("11_6wuj1")]
+position = Vector2(2510, -541)
 
 [node name="fronttexture" type="Node" parent="scene_elements"]
 
@@ -924,6 +1016,7 @@ visible = false
 polygon = PackedVector2Array(2748, -259, 2752, 724, 2520, 1106, 2057, 942, 1355, 892, 361, 821, 40, 796, 1, 610, -3, 304, -4, -60, -214, -39, -183, 1131, 2206, 1423, 3174, 1127, 3218, 335, 3050, -89)
 
 [node name="Area2D" type="Area2D" parent="scene_elements/AOEs"]
+visible = false
 position = Vector2(2290, 335)
 script = ExtResource("11_h5iuw")
 
@@ -933,6 +1026,22 @@ shape = SubResource("RectangleShape2D_mdgo2")
 
 [node name="Marker2D" type="Marker2D" parent="scene_elements/AOEs"]
 position = Vector2(3052, -3)
+
+[node name="updatequest" type="Area2D" parent="scene_elements/AOEs"]
+position = Vector2(123, 406)
+script = ExtResource("12_h5yi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/updatequest"]
+position = Vector2(234, 58)
+shape = SubResource("RectangleShape2D_filqv")
+
+[node name="FOR_CUTSCENE" type="Area2D" parent="scene_elements/AOEs"]
+position = Vector2(2358, 558)
+script = ExtResource("18_b43v5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/FOR_CUTSCENE"]
+position = Vector2(85, 23)
+shape = SubResource("RectangleShape2D_n1cih")
 
 [node name="lighteff" type="Node" parent="scene_elements"]
 
@@ -982,26 +1091,16 @@ texture = SubResource("GradientTexture2D_ge456")
 texture_scale = 1.32
 
 [node name="miraclelight" type="PointLight2D" parent="scene_elements/lighteff"]
-visible = false
-position = Vector2(2884, 424)
+position = Vector2(2912, 476)
+energy = 0.0
 texture = SubResource("GradientTexture2D_48j8f")
 texture_scale = 0.01
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="PauseScene" parent="UI" instance=ExtResource("8_6b08u")]
-
-[node name="Notifier" parent="UI" instance=ExtResource("11_wej4b")]
-
-[node name="Inventory" parent="UI" instance=ExtResource("12_dxfxw")]
-visible = false
 
 [node name="Cutscene" type="CanvasLayer" parent="."]
 
 [node name="cutscene_elements" type="Node" parent="Cutscene"]
 
 [node name="shinelight" type="ColorRect" parent="Cutscene/cutscene_elements"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_right = 1164.0
 offset_bottom = 740.0
@@ -1022,6 +1121,16 @@ libraries = {
 "": SubResource("AnimationLibrary_g0iwy")
 }
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PauseScene" parent="UI" instance=ExtResource("8_6b08u")]
+
+[node name="Notifier" parent="UI" instance=ExtResource("11_wej4b")]
+
+[node name="Inventory" parent="UI" instance=ExtResource("12_dxfxw")]
+
 [connection signal="body_entered" from="scene_elements/AOEs/Area2D" to="scene_elements/AOEs/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="scene_elements/AOEs/updatequest" to="scene_elements/AOEs/updatequest" method="_on_body_entered"]
+[connection signal="body_entered" from="scene_elements/AOEs/FOR_CUTSCENE" to="scene_elements/AOEs/FOR_CUTSCENE" method="_on_body_entered"]
 
 [editable path="scene_elements/Doors/Door_ruins_ex"]

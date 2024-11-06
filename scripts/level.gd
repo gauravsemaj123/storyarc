@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-	Questlines.questline_number = 5
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
 		

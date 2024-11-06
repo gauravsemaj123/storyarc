@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	#GET QUEST NUMBER
 	questTrack = Questlines.questline_number
 	#SHOW QUEST
-	quest_title.text = Questlines.quest_database[questTrack]["QuestName"]
-	quest_desc.text = Questlines.quest_database[questTrack]["QuestDesc"]
-	quest_provider.texture = Questlines.quest_database[questTrack]["QuestImage"]
+	if Questlines.questline_number < 14:
+		quest_title.text = Questlines.quest_database[questTrack]["QuestName"]
+		quest_desc.text = Questlines.quest_database[questTrack]["QuestDesc"]
+		quest_provider.texture = Questlines.quest_database[questTrack]["QuestImage"]

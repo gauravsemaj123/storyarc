@@ -842,11 +842,11 @@ fill = 1
 fill_from = Vector2(0.487179, 0.512821)
 fill_to = Vector2(0.867521, 0.153846)
 
-[sub_resource type="Gradient" id="Gradient_c70o8"]
+[sub_resource type="Gradient" id="Gradient_7iadj"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_spkx5"]
-gradient = SubResource("Gradient_c70o8")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pjfc3"]
+gradient = SubResource("Gradient_7iadj")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.111111, 0.145299)
@@ -1124,10 +1124,9 @@ texture = SubResource("GradientTexture2D_6hglv")
 texture_scale = 1.32
 
 [node name="miraclelight" type="PointLight2D" parent="scene_elements/lighteff"]
-position = Vector2(520.16, 370.04)
-energy = 0.69
-texture = SubResource("GradientTexture2D_spkx5")
-texture_scale = 22.72
+position = Vector2(549, 419)
+texture = SubResource("GradientTexture2D_pjfc3")
+texture_scale = 30.38
 
 [node name="MINIGAMEUI" type="CanvasLayer" parent="."]
 

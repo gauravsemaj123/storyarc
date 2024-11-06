@@ -1,5 +1,6 @@
 extends Control
 var is_open = false
+@onready var button: Button = $Button
 
 func _ready():
 	close()
@@ -23,7 +24,7 @@ func open():
 func close():
 	visible = false
 	is_open = false
-	
+
 func add(currItem):
 	var hasItem = false
 	for i in Global.inventory:
@@ -49,3 +50,8 @@ func remove(Item):
 						tempDic[x] = Global.inventory[x]
 				Global.inventory.clear()
 				Global.inventory = tempDic
+
+
+func _on_button_pressed() -> void:
+	Questlines.updateQuest()
+	button.text = "questnumber: " + str(Questlines.questline_number)

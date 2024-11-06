@@ -20,7 +20,6 @@ var is_in_water: bool = false
 
 @export var currscene = NavigationManager.currentscene
 
-
 func _ready():
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 

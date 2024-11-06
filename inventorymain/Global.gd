@@ -1,6 +1,6 @@
 extends Node
 
-var gold = 31231
+var gold = 0
 
 var valerie_shopDialog = {
 	0:{
@@ -18,7 +18,7 @@ var shop = {
 	0:{
 		"Name": "Isaw",
 		"Des": "Isang sikat na pagkaing kalye sa Pilipinas na binubuo ng inihaw na bituka ng manok o baboy.",
-		"Cost": 100,
+		"Cost": 50,
 		"Icon": preload("res://inventorymain/inventory/itemlists/isaw.png"),
 		"Count": 1
 	},
@@ -32,9 +32,21 @@ var shop = {
 	2:{
 		"Name": "Pastil",
 		"Des": "Isang tradisyonal na pagkaing Pilipino na binubuo ng kanin at hinimay na karne o isda, balot sa dahon ng saging.",
-		"Cost": 100,
+		"Cost": 50,
 		"Icon": preload("res://inventorymain/inventory/itemlists/pastil.png"),
 		"Count": 1
+	},
+	3: {
+		"Name": "Empanada",
+		"Des": "Isang uri ng pinalamanang pastelerya na karaniwang hinuhurno o piniprito.",
+		"Cost": 75,
+		"Icon": preload("res://inventorymain/inventory/itemlists/empanada.png")
+	},
+	4: {
+		"Name": "Niyog",
+		"Des":  "Isang mahalagang puno sa Pilipinas na kilala bilang puno ng buhay.",
+		"Cost": 75,
+		"Icon": null
 	},
 }
 
@@ -166,7 +178,7 @@ var items = {
 		"Icon": null
 	},
 	21: {
-		"Name": "Isperika" ,
+		"Name": "Espera" ,
 		"Des": "Isang hinding-pangkaraniwang bagay na tanging ang espiritu ng kaalaman lang ang nakakaalam. Dapat na dalhin!",
 		"Cost": 0,
 		"Icon": preload("res://inventorymain/inventory/itemlists/sphere.png")

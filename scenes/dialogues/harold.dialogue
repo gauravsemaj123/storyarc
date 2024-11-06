@@ -53,6 +53,62 @@ do Questlines.updateQuest()
 do Notifier.questnext("")
 => END
 
+~ youhave
+Lisa: Heto na po, Kuya Harold!
+Harold: Eto na nga ang espera!
+Harold: Alam mo na ang paparoon, kaya mag-iingat ka!
+Lisa: Marami pong salamat!
+Harold: Walang anuman, anak! Mag iingat talaga!
+do Questlines.updateQuest()
+do Notifier.questnext("")
+=> END
+
+~ youdonthave
+Harold: Tingin ko wala ka pa yung isperika...
+Lisa: Ay, pasensiya na po, Kuya Harold!
+Harold: Ayos lang, basta dalhin mo siya sa'kin!
+Lisa: Opo, Kuya Harold!
+Harold: Mag-ingat ka Lisa!
+=> END
+
+~ finallythengivequest
+Harold: Heto nga! Ang totoong altar ng Bathala ng Kaalaman, Bathalang Eyre!
+Lisa: Sino po siya, Kuya Harold?
+Harold: Siya ay isang Bathala na nagbibigay ng kaalaman sa bawat tao. Siya rin ang dahilan kung bakit nagkaroon ng edukasyon sa nayon!
+Harold: Dati, ang mga hari noong unang panahon ay nagpapaligsahan ng talino! Kagaya na lamang ng bugtong na kung saan
+Harold: kung sino ang mas maraming puntos, siya ang panalo at gagantimpalaan ng basbas mula sa Bathala.
+Lisa: Ang mababasbasan po ba ay mabibigyan ng kaalaman?
+Harold: Siyang tunay. Babalik ako rito sa mga susunod na araw o maaaring linggo. Sa ngayon, wala kasing magbabantay ng bahay-museo.
+Harold: Hanggang sa muli, Paalam!!
+Lisa: Ingat po, Kuya Ha-
+: Espera....
+Lisa: Huh?
+Harold: Kaninong boses iyon?
+: Esperaaa...
+Harold: Tila hindi ko alam kung ano 'yon.
+Harold: Maaaring ito ay isang boses ng espiritu! Ano ang iyong pangalan, iha?
+- Pangalan ko ay Lisa
+	Lisa: Ang pangalan ko po ay Lisa!
+	Harold: Lisa, makinig ka. Maaari mong hanapin ang isang espera! Hindi ko alam kung nasaan, pero sa pagkakaalam ko
+	Harold: sa kagubatan meron doong sirang altar na kagaya rin nitong nasa harapan na'tin. Maaari rin na isa 'yon!
+	Harold: Kunin mo siya, at dalhin mo sa akin. Tignan na'tin siya kung ano detalye niya!
+	Lisa: Opo!
+	Harold: Mag-iingat ka sa paglalakbay, ako'y mauuna na, Lisa!
+	Lisa: Ingat po!
+	Harold: Maraming Salamat!
+	=> END
+
+~ lookwhatifound
+Lisa: Kuya Harold!
+Harold: Ano 'yon, anak?
+Lisa: May nakita ako!
+Lisa: Hindi siya pangkaraniwan sa loob ng k'weba. Nakakatakot dahil madilim, pero sinubukan ko po!
+Lisa: At may nakita akong hindi pangkaraniwang lugar! May istatwa sa loob ng kuweba!!
+Harold: Tila ang napuntahan mo ay ang matagal na'ng hinahanap dito sa nayon!
+Harold: Ayun yung altar ng totoong Bathala na si Bathalang Eyre!
+Lisa: Siguro nga po!
+Harold: Pupunta ako sa'yo, tara!
+=> END
 ~ asktheguidance
 Lisa: Mayroon po ba kayong nalalaman patungkol sa mga mahiwagang nangyayari?
 Harold: Alin, yung mga nawawalang mahalagang bagay na na pag-aari ng Bathalang Eyre?
@@ -74,16 +130,6 @@ Harold: Kumusta! Ano ang maipaglilingkod ko sa'yo?
 		Lisa: Sa totoo lang po, may gusto po akong itanong eh.
 		Harold: Ano 'yon anak?
 		=> asktheguidance
-~ beginfinding
-Harold: 321
-- Lisa: 121
-- Lisa: 323
-=> END
-~ begingiving
-Harold: 321
-- Lisa: 121
-- Lisa: 323
-=> END
 
 ~ trivia1
 Harold: Oo, anak! Kung aaralin na'tin ang kasaysayan ng Bansa, malalaman mo ang kagandahan at kahalagahan ng bawat nangyari sa a'ting bansa!

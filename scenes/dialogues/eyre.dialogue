@@ -1,12 +1,49 @@
 ~ calling
-Bathalang Eyre: Maligayang pagdating, anak ko. Nawa'y pagpalain ka ng kapayapaan at liwanag sa iyong paglalakbay.
-Bathalang Eyre: Ano ang iyong nais na ipabatid?
-Lisa: 3
-Bathalang Eyre: 4
-Bathalang Eyre: 5
-Lisa: 4
-Bathalang Eyre: 2231
-=> END!
+Bathalang Eyre: Salamat sa pagbibigay mo sa akin ng bilog ng kaalaman at karunungan!
+Bathalang Eyre: Nakita ko sa iyong mga mata na hinahanap mo ang kaalaman tungkol sa panulat na hawak ng paruparo.
+Bathalang Eyre: Siya nga ay may pag-aari ng panulat na iyon.
+Bathalang Eyre: Gayunpaman, kinuha ko ito pabalik sapagkat hindi niya ito ginamit upang magtala ng nakikita niya.
+Bathalang Eyre: Ito ang aking sadiya, kung hinahanap niya ito at ikaw ang naparito, nawa'y tanggapin mo muna itong pagsubok.
+=> question
+~ question
+Bathalang Eyre: Handa ka ba, Lisa?
+- Magtaka bakit alam niya ang pangalan mo
+	Lisa: Saglit po, bakit alam niyo po ang aking pangalan?
+	Bathalang Eyre: Sapagkat ako ay isang Bathala ng Kaalaman at Karunungan!
+	Bathalang Eyre: Tanging kilala lamang ako ng mga tao bilang isang Bathala ng Karunungan, subalit
+	Bathalang Eyre: ako rin ay may dala-dalang karunungan!
+	Lisa: Ano po ang gamit ng espera para sa inyo?
+	Bathalang Eyre: Eto ay ang natatanging instrumento upang ako ay tawagin ng mga sinaunang tao.
+	Bathalang Eyre: Tila imposible na sigurong mahanap ito sa panahon ngayon, ngunit nahanap mo ito! Alam ko talaga na mayroon kang determinasyon sa isang bagay!
+	Lisa: Marami pong salamat, Bathala!
+	Bathalang Eyre: Ngayon...
+	=> question
+- Sumang ayon
+	Lisa: Opo, Bathala!
+	Bathalang Eyre: Kung gayon, narito ang aking hamon sa'yo, makinig kang mabuti!
+	=> abakada
+	
+~ repeatmission
+Bathalang Eyre: Uulitin ko ulit, nang mas maliwanagan mo:
+=> abakada
+
+~ abakada
+Bathalang Eyre: Ang hamon ko sa'yo ay hanapin ang bawat bagay, o pagkain na nagsisimula sa bawat letra ng ating alpabeto.
+Bathalang Eyre: Ang mga patinig na A E I O at U, ay nakakalat sa nayon at kagubatan.
+Bathalang Eyre: At ang katinig kagaya ng B K D G H L M N P R S T W at Y ay matatagpuan kahit saan.
+Bathalang Eyre: Sundin mo lamang ang aking mga sasabihin kung nasaan ang bawat alpabeto!
+Bathalang Eyre: Ang una na'tin ay ang sa kagubatan, May nag-iisang puno ng Atis doon.
+Bathalang Eyre: At saka,
+Bathalang Eyre: Bibigyan din kita ng pera na nagkakahalagang 300 para sa iyong paglalakbay!
+Bathalang Eyre: Nawa'y ang pera na iyan ay magsilbi sana iyong materyal para sa aking hamon.
+if Global.gold == 0:
+	do Notifier.goldadded(300)
+	Bathalang Eyre: Nawa'y maging ligtas ka sa iyong paglalakbay, Lisa!
+	=> END
+else:
+	Bathalang Eyre: Tingin ko anak, isa itong kasakiman. Ang pagiging sakim ay hindi dapat maging isa sa iyong ugali.
+	Bathalang Eyre: Maging isang masunurin na manlalakbay!
+	=> END
 
 ~ noanswer
  : Bathalang Eyre: Anak, wala ka pang nasasagutang bugtong!

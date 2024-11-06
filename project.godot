@@ -31,6 +31,10 @@ Questlines="*res://scripts/Questlines.gd"
 Notifier="*res://scripts/elements/notifier.gd"
 DoorInteractionManager="*res://scenes/scene_changer/DoorInteractionManager.tscn"
 MinigameResources="*res://scripts/minigame_resources.gd"
+TransferrerCutscene="*res://scenes/scene_changer/transferrer_cutscene.tscn"
+JustFade="*res://ui/misc/just_fade.tscn"
+Cutscene="*res://ui/misc/cutscene.tscn"
+ItemDetection="*res://scripts/itemDetection.gd"
 
 [display]
 

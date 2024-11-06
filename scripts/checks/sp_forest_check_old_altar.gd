@@ -32,6 +32,7 @@ func _on_interact():
 			player.uiactive = true
 			await DialogueManager.dialogue_ended
 			inventory.add(21)
+			Questlines.updateQuest()
 			state.frame = 1
 			dialog_inprocess = false
 			player.uiactive = false

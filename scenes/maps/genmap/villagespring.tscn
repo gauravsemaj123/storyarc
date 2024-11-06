@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://d1p6rl1eciab1"]
+[gd_scene load_steps=41 format=4 uid="uid://d1p6rl1eciab1"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_71q4v"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="1_wv2so"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://scripts/checks/sp_village_check_lock.gd" id="13_hhyux"]
 [ext_resource type="Texture2D" uid="uid://c18hq1e17a5k7" path="res://textures/gentextures/woodlanternhead.png" id="13_l3jcn"]
 [ext_resource type="PackedScene" uid="uid://bk8xk5nmsb7sg" path="res://inventorymain/shop.tscn" id="19_0edtx"]
+[ext_resource type="Script" path="res://scripts/elements/lisagotanidea.gd" id="19_fvu8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wy7kw"]
 texture = ExtResource("1_wv2so")
@@ -1292,6 +1293,9 @@ size = Vector2(728, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76qow"]
 size = Vector2(112, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqxo4"]
+size = Vector2(20, 157)
+
 [node name="villagespring" type="Node2D"]
 script = ExtResource("1_71q4v")
 
@@ -1550,6 +1554,18 @@ one_way_collision = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scene_elements/AOEs/boundary"]
 polygon = PackedVector2Array(10, 34, 11, 560, -48, 564, -61, 629, -56, 1442, 1313, 1440, 5087, 1444, 10624, 1446, 10583, 675, 10330, 671, 10317, 128, 10401, -85, 10720, -35, 11034, 298, 11204, 1219, 11052, 1790, 9801, 1885, 6828, 1870, 1305, 1861, -944, 1827, -702, 542, -917, -460, -339, -608, 65, -622, 333, -425, 238, -231, 141, -102)
 
+[node name="notice" type="Area2D" parent="scene_elements/AOEs"]
+position = Vector2(925, 407)
+script = ExtResource("19_fvu8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/notice"]
+position = Vector2(0, 68.5)
+shape = SubResource("RectangleShape2D_gqxo4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="scene_elements/AOEs/notice"]
+position = Vector2(944, 68)
+shape = SubResource("RectangleShape2D_gqxo4")
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PauseScene" parent="UI" instance=ExtResource("6_0yrhd")]
@@ -1561,6 +1577,8 @@ visible = false
 
 [node name="Inventory" parent="UI" instance=ExtResource("7_sical")]
 visible = false
+
+[connection signal="body_entered" from="scene_elements/AOEs/notice" to="scene_elements/AOEs/notice" method="_on_body_entered"]
 
 [editable path="scene_elements/Doors/Door_prev"]
 [editable path="scene_elements/Doors/Door_next"]
