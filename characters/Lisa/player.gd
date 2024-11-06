@@ -16,7 +16,6 @@ var inventoryactive = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var splash: AnimatedSprite2D = $splash
 
-
 var is_in_water: bool = false
 
 @export var currscene = NavigationManager.currentscene
@@ -93,6 +92,7 @@ func _unhandled_input(event: InputEvent):
 		uiactive = false
 		inventoryactive = false
 			
+
 func _physics_process(delta):
 	
 	# Add the gravity.

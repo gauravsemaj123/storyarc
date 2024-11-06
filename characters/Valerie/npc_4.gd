@@ -7,8 +7,9 @@ extends Node2D
 
 var dialog_inprocess: bool = false
 var shop_inprocess: bool = false
-
 var closeDialog: bool = false
+@onready var anim: AnimatedSprite2D = $anim
+@onready var direction: Marker2D = $direction
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -26,6 +27,10 @@ func _process(delta: float) -> void:
 	else:
 		pass
 		
+	if Questlines.questline_number == 3:
+		interaction_area.action_name = "Kausapin"
+	else:
+		interaction_area.action_name = "Bumili"
 func closeDialogInit():
 	DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "thanks")
 	await DialogueManager.dialogue_ended
@@ -37,8 +42,15 @@ func closeDialogInit():
 	player.uiactive = false
 	
 func _on_interact():
+	if direction.position.x < player.position.x:
+		anim.flip_h = true
+		print(anim.flip_h)
+	elif direction.position.x > player.position.x:
+		anim.flip_h = false
+		print(anim.flip_h)
 	if shop.visible != true || inventory.visible != true:
 		if Questlines.questline_number == 3:
+		
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
 			player.uiactive = true
 			player.dialogactive = true

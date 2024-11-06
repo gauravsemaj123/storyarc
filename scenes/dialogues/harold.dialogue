@@ -1,11 +1,79 @@
 ~ hi
-Harold: 1
+Harold: Kumusta Anak!
+- Kausapin
+	Lisa: Kay ganda naman po ng inyong bahay, Kuya Harold!
+	Harold: [#mood]Ahh hehe! Maayos lang at ako kasi ay hanga sa mga bagay na ginawa ng mga sinaunang tao rito sa nayon.
+	Harold: Sa katunayan, hindi na nga na'min alam kung sino ang katutubo ang lahi rito dahil sa kolonisasyon.
+	Lisa: Ganu'n po ba?
+	% => trivia1
+	% => trivia2
+	% => trivia3
+	% => trivia4
 => END
+~ hiwithguide
+Harold: Kumusta Anak!
+- Kausapin
+	Lisa: Kay ganda naman po ng inyong bahay, Kuya Harold!
+	Harold: [#mood]Ahh hehe! Maayos lang at ako kasi ay hanga sa mga bagay na ginawa ng mga sinaunang tao rito sa nayon.
+	Harold: Sa katunayan, hindi na nga na'min alam kung sino ang katutubo ang lahi rito dahil sa kolonisasyon.
+	Lisa: Ganu'n po ba?
+	% => trivia1
+	% => trivia2
+	% => trivia3
+	% => trivia4
+- Tanungin kung saan ulit
+	Harold: Hindi ko sigurado, pero sa ilalim ng tulay ng sakahan sa tabing nayon, mayroong k'weba papasok.
+	Harold: Subalit ang Kuweba ay sobrang dilim!
+	Harold: At maraming nakalilitong daan paparoon. Sana'y makuha mo kaagad ang daan!
+	Harold: Mag-ingat nang maigi, at huwag masyadong malikot doon, anak!
+	Lisa: Marami pong salamat!
+	Harold: Walang anuman, anak! Mag iingat talaga!
+=> END
+
+~ toobusybutgivesguide
+Harold: Naku, anak! Pasens'ya na. Hindi kita matutulungan diyan sapgkat walang magbabantay nitong mumunting bahay na'min!
+Lisa: Ganu'n po ba? Marami pong salamat Kuya Harold!
+=> END
+
+~ toobusybutgivesguide2
+Harold: Sandali!
+do wait(1)
+Lisa: Bakit po, Kuya Harold!
+Harold: Lapit ka muna rito, anak!
+=> END
+
+~ theguide
+Harold: Hindi ko sigurado, pero sa ilalim ng tulay ng sakahan sa tabing nayon, mayroong k'weba papasok.
+Harold: Subalit ang Kuweba ay sobrang dilim!
+Harold: At maraming nakalilitong daan paparoon. Sana'y makuha mo kaagad ang daan!
+Harold: Mag-ingat nang maigi, at huwag masyadong malikot doon, anak!
+Lisa: Marami pong salamat!
+Harold: Walang anuman, anak! Mag iingat talaga!
+do Questlines.updateQuest()
+do Notifier.questnext("")
+=> END
+
+~ asktheguidance
+Lisa: Mayroon po ba kayong nalalaman patungkol sa mga mahiwagang nangyayari?
+Harold: Alin, yung mga nawawalang mahalagang bagay na na pag-aari ng Bathalang Eyre?
+- Siguro
+	Lisa: Hindi ko po alam, pero siguro ganu'n na po, Kuya Harold!
+	=> toobusybutgivesguide
+- Opo
+	Lisa: Opo, Kuya Harold!
+	=> toobusybutgivesguide
 ~ howcanihelp
-Harold: 321
-- Lisa: 121
-- Lisa: 323
-=> END
+Harold: Kumusta! Ano ang maipaglilingkod ko sa'yo?
+- Tanungin tungkol sa misteryosong bagay
+	=> asktheguidance
+- Kausapin
+	Lisa: Kay ganda naman po ng inyong bahay, Kuya Harold!
+	Harold: [#mood]Ahh hehe! Maayos lang at ako kasi ay hanga sa mga bagay na ginawa ng mga sinaunang tao rito sa nayon.
+	Harold: Sa katunayan, hindi na nga na'min alam kung sino ang katutubo ang lahi rito dahil sa kolonisasyon.
+	- Sa totoo lang po
+		Lisa: Sa totoo lang po, may gusto po akong itanong eh.
+		Harold: Ano 'yon anak?
+		=> asktheguidance
 ~ beginfinding
 Harold: 321
 - Lisa: 121
@@ -15,4 +83,53 @@ Harold: 321
 Harold: 321
 - Lisa: 121
 - Lisa: 323
+=> END
+
+~ trivia1
+Harold: Oo, anak! Kung aaralin na'tin ang kasaysayan ng Bansa, malalaman mo ang kagandahan at kahalagahan ng bawat nangyari sa a'ting bansa!
+Harold: Katulad na lamang ng Bayani na'tin na si Jose Rizal!
+Harold: Andres Bonifacio, ang ama ng Katipunan!
+Harold: At nawa'y malaman mo rin at suriin ang patungkol sa sinaunang naglalakihang garapon kagaya ng Manunggul at Maitum!
+Harold: Na pangkaraniwang nagagamit sa mga namayapa!
+Lisa: Tila sobrang lawak at napakagandang malamang ang kasaysayan!
+Harold: Talaga, anak! Sobra!
+Lisa: Marami pong salamat, Kuya Harold!
+Harold: Kung may kailangan ka, p'wede mo itanong sa'kin!
+Lisa: Sige po!
+=> END
+~ trivia2
+Harold: Oo, anak! Kung aaralin na'tin ang kasaysayan ng Bansa, malalaman mo ang kagandahan at kahalagahan ng bawat nangyari sa a'ting bansa!
+Harold: Katulad na lamang ng Unang Bayani na'tin na si Lapu-lapu!
+Harold: Heneral Antonio Luna, na matapang na heneral, at ang kaniyang kapatid na si Juan Luna, na awtor ng Spoliarium!
+Harold: At nawa'y malaman mo rin at suriin ang patungkol sa sinaunang bangka na tinawag na Balangay!
+Harold: Na pangkaraniwang nagagamit bilang transportasyon sa ilog o karagatan!
+Lisa: Tila sobrang lawak at napakagandang malamang ang kasaysayan!
+Harold: Talaga, anak! Sobra!
+Lisa: Marami pong salamat, Kuya Harold!
+Harold: Kung may kailangan ka, p'wede mo itanong sa'kin!
+Lisa: Sige po!
+=> END
+~ trivia3
+Harold: Oo, anak! Kung aaralin na'tin ang kasaysayan ng Bansa, malalaman mo ang kagandahan at kahalagahan ng bawat nangyari sa a'ting bansa!
+Harold: Katulad na lamang ng Kauna-unahang Presidente na si Emilio Aguinaldo!
+Harold: Ang nangyari noong Martial Law!
+Harold: At nawa'y malaman mo rin at suriin ang patungkol sa isang de-kamay na palakol ng Arubo!
+Harold: Na pangkaraniwang nagagamit sa pamputol ng kahoy!
+Lisa: Tila sobrang lawak at napakagandang malamang ang kasaysayan!
+Harold: Talaga, anak! Sobra!
+Lisa: Marami pong salamat, Kuya Harold!
+Harold: Kung may kailangan ka, p'wede mo itanong sa'kin!
+Lisa: Sige po!
+=> END
+~ trivia4
+Harold: Oo, anak! Kung aaralin na'tin ang kasaysayan ng Bansa, malalaman mo ang kagandahan at kahalagahan ng bawat nangyari sa a'ting bansa!
+Harold: Katulad na lamang na si Presidente Ramon Magsaysay, ang nagpatalaga ng batas na ang Tagalog ay maging wikang pambansa!
+Harold: Ang mga aeta, at kahit na anong katutubong Pilipino!
+Harold: At nawa'y malaman mo rin at suriin ang patungkol sa makulay na kulintas, na tinatawag na...
+Harold: Lingling-o na natagpuan sa Batanes!
+Lisa: Tila sobrang lawak at napakagandang malamang ang kasaysayan!
+Harold: Talaga, anak! Sobra!
+Lisa: Marami pong salamat, Kuya Harold!
+Harold: Kung may kailangan ka, p'wede mo itanong sa'kin!
+Lisa: Sige po!
 => END
