@@ -77,7 +77,7 @@ var items = {
 	},
 	4:{
 		"Name": "Ube",
-		"Des": "Isang matamis na kamoteng kulay lila na kilala sa kanyang natatanging lasa at ginagamit sa iba't ibang uri ng mga panghimagas sa Pilipinas.",
+		"Des": "Isang matamis na kamoteng kulay lila na kilala sa kanyang natatanging lasa at ginagamit sa iba't ibang uri ng mga panghimagas.",
 		"Cost": 0,
 		"Icon": null
 	},
@@ -179,7 +179,7 @@ var items = {
 	},
 	21: {
 		"Name": "Espera" ,
-		"Des": "Isang hinding-pangkaraniwang bagay na tanging ang espiritu ng kaalaman lang ang nakakaalam. Dapat na dalhin!",
+		"Des": "Tila misteryoso...",
 		"Cost": 0,
 		"Icon": preload("res://inventorymain/inventory/itemlists/sphere.png")
 	},

@@ -5,7 +5,7 @@ extends Control
 @onready var quest_desc: RichTextLabel = $questDesc
 var questTrack = Questlines.questline_number
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#GET QUEST NUMBER
 	questTrack = Questlines.questline_number
 	#SHOW QUEST

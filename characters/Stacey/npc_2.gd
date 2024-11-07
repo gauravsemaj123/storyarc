@@ -7,7 +7,7 @@ extends Node2D
 
 var dialog_inprocess: bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
 		inventory.close()
 		

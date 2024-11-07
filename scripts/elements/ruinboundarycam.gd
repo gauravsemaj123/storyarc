@@ -4,5 +4,5 @@ extends Area2D
 
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	player.camera_2d.limit_right = 3052

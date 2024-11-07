@@ -5,14 +5,14 @@ extends Area2D
 
 var dialog_inprocess: bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (dialog_inprocess == true):
 		inventory.close()
 		
 	else:
 		pass
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	if Questlines.questline_number == 7 and TransferrerCutscene.is_in_cutscene == true:
 		npc_5.position.y = 552
 		npc_5.anim.flip_h = false

@@ -4,6 +4,7 @@ extends TextureRect
 @onready var wrong: Sprite2D = $wrong
 @onready var correct: Sprite2D = $correct
 
+
 func _ready() -> void:
 	wrong.visible = false
 	correct.visible = false

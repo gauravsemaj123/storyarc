@@ -286,7 +286,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o222l"]
-size = Vector2(84, 138)
+size = Vector2(249, 138)
 
 [node name="npc_4" type="Node2D"]
 script = ExtResource("1_k8m65")
@@ -301,7 +301,7 @@ frame_progress = 0.77935
 action_name = "Bumili"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(4, -11)
+position = Vector2(7.5, -11)
 shape = SubResource("RectangleShape2D_o222l")
 
 [node name="direction" type="Marker2D" parent="."]

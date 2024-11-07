@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://g5olwa54kcla"]
+[gd_scene load_steps=19 format=4 uid="uid://g5olwa54kcla"]
 
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_w3sj4"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_u5tbf"]
 [ext_resource type="Script" path="res://scripts/elements/backcloud.gd" id="3_yq0gj"]
 [ext_resource type="Texture2D" uid="uid://db365euxvnwq7" path="res://textures/backgrounds/maps/plains/backcloud.png" id="4_7eaxq"]
@@ -880,6 +881,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_14rel")
 
 [node name="House1" type="Node2D"]
+script = ExtResource("1_w3sj4")
 
 [node name="scene_elements" type="Node" parent="."]
 

@@ -6,7 +6,7 @@ signal water_state_changed(is_in_water:bool)
 var is_in_water: bool = false
 var overlapping_areas
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	onsplash()
 	print("nandito")
 	if (is_in_water == false):
@@ -18,7 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 			
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	print("walana")
 	overlapping_areas = get_overlapping_areas()
 	if (overlapping_areas.size() == 0):

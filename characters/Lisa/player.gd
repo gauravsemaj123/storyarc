@@ -1,8 +1,8 @@
 class_name Player extends CharacterBody2D
 @onready var spriteanims = $AnimatedSprite2D
-const SPEED = 300.0
+var SPEED = 300.0
 const SWIM_SPEED = 250.0
-const JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -400.0
 const SWIM_JUMP = -250
 @export var SWIM_FACTOR: float = 0.50
 var paused = false
@@ -23,11 +23,10 @@ var is_in_water: bool = false
 func _ready():
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 
-@warning_ignore("shadowed_variable_base_class", "unused_parameter")
-func _on_spawn(position: Vector2, direction: String):
+func _on_spawn(position: Vector2, _direction: String):
 	global_position = position
 
-func on_waterstateChange(is_in_water):
+func on_waterstateChange(_is_in_water):
 	print("ok")
 
 func _input(event: InputEvent):
@@ -43,7 +42,6 @@ func _process(_delta: float) -> void:
 	if uiactive == true:
 		if dialogactive == true:
 			camera_2d.position.y = spriteanims.position.y
-
 		if inventoryactive == true:
 			camera_2d.position.x =  400
 			camera_2d.position.y = spriteanims.position.y
@@ -108,7 +106,7 @@ func _physics_process(delta):
 			velocity.y = SWIM_JUMP
 		if inventoryactive == true:
 			velocity.y = 0
-		elif dialogactive == true:
+		if dialogactive == true:
 			velocity.y = 0
 	#Dynamic front and back shit
 	if velocity.x < 0:
@@ -121,18 +119,23 @@ func _physics_process(delta):
 	if direction:
 		if is_in_water:
 			velocity.x = direction * SWIM_SPEED
+			if inventoryactive == true:
+				velocity.x = 0
+			if dialogactive == true:
+				velocity.x = 0
 		else:
 			velocity.x = direction * SPEED
-		if inventoryactive == true:
-			velocity.x = 0
-		elif dialogactive == true:
-			velocity.x = 0
+			if inventoryactive == true:
+				velocity.x = 0
+			if dialogactive == true:
+				velocity.x = 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
 
+@warning_ignore("shadowed_variable")
 func _on_water_detect_water_state_changed(is_in_water):
 	self.is_in_water = is_in_water
 	print(is_in_water)

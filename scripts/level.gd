@@ -1,6 +1,8 @@
 extends Node2D
+@onready var inventory: Control = $UI/Inventory
 
 func _ready():
+	inventory.add(21)
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
 		

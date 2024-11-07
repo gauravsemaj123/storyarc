@@ -9,7 +9,7 @@ extends Node2D
 var dialog_inprocess: bool = false
 var sphere_given: bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
 		inventory.close()
 		player.dialogactive = true
@@ -49,7 +49,9 @@ func _on_interact():
 				player.dialogactive = false
 				player.uiactive = false
 				dialog_inprocess = false
-			elif sphere_given == true:
+				Questlines.updateQuest()
+				Notifier.questnext("")
+			elif sphere_given == true and Questlines.questline_number == 11:
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "repeatmission");
 				player.uiactive = true
 				player.dialogactive = true
@@ -67,20 +69,6 @@ func _on_interact():
 				player.uiactive = false
 				player.dialogactive = false
 				dialog_inprocess = false
-		#if Questlines.questline_number == 0:
-			#DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "start")
-			#dialog_inprocess = true
-			#player.uiactive = true
-			#await DialogueManager.dialogue_ended
-			#dialog_inprocess = false
-			#player.uiactive = false
-		#else:
-			#DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "let_them")
-			#dialog_inprocess = true
-			#player.uiactive = true
-			#await DialogueManager.dialogue_ended
-			#dialog_inprocess = false
-			#player.uiactive = false
 	else:
 		pass
 	return

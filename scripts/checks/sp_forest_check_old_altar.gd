@@ -6,7 +6,7 @@ extends Node2D
 @onready var inventory: Control = $"../../../../UI/Inventory"
 var dialog_inprocess: bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
 		inventory.close()
 		player.dialogactive = true

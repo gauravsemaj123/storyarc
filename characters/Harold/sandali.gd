@@ -10,14 +10,14 @@ func flipflip():
 	await get_tree().create_timer(1).timeout
 	player.spriteanims.flip_h = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (dialog_inprocess == true):
 		inventory.close()
 		
 	else:
 		pass
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	if npc_5.is_declining == true and npc_5.is_offering == false:
 		flipflip()
 		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/harold.dialogue"), "toobusybutgivesguide2")

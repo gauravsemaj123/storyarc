@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		
 
 func checkbox_anim():
-	var tracker = "checkslot" + str(check)
+	var tracker = "checkslot" + str(check + 1)
 	if check == 0:
 		checkboxes.find_child("checkslot").correctAnim()
 	else:
@@ -79,7 +79,7 @@ func timeout():
 		timerlang.play("RESET")
 		if totalscore > 0:
 			totalscore -= 1
-		if question_number < 10:
+		if question_number <= 10:
 			check += 1
 			ready_question()
 		else:
@@ -96,7 +96,7 @@ func evaluate_answer():
 			timerlang.pause()
 			await DialogueManager.dialogue_ended
 			timerlang.play("RESET")
-			if question_number < 10:
+			if question_number <= 10:
 				check += 1
 				ready_question()
 			else:
@@ -111,7 +111,7 @@ func evaluate_answer():
 			timerlang.play("RESET")
 			if totalscore > 0:
 				totalscore -= 1
-			if question_number < 9:
+			if question_number <= 10:
 				check += 1
 				ready_question()
 			else:

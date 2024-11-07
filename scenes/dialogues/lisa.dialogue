@@ -30,4 +30,14 @@ Lisa: Naka-kandado pinto! Mas mabuting huwag pumasok!
 ~ atisget
 Bathalang Eyre: *Boses mula sa malayo* Anak ko! Ayan ang aking tinutukoy! Hayaan mo ako na ang maglaglag ng bunga mula sa'yo!
 do Notifier.newitemAnnounce("Atis")
+Bathalang Eyre: Sa nayon ay mayroong sampu, sa bukirin ay mayroong apat, dito sa kagubatan ay apat, kasama na ang puno ng Atis, at ang huli ay nasa ilog.
+=> END
+
+~ paalammuna
+Bathalang Eyre: Nawa'y magpaalam ka muna, bago ka kumuha ng gulay! Isa 'yan sa pagnanakaw, kailangan mo muna ng permiso ni Ate Valerie!
+Lisa: Opo!
+=> END 
+
+~ gulaycrateget
+Lisa: Isang okra, ube, kamatis, talong, at wansoy. Ayos!
 => END

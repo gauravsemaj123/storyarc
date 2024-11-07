@@ -6,8 +6,8 @@ var is_detected: bool = false
 
 var selectedVariable
 
-func itemdetection(itemFind):
-	var selected = Global.inventory.find_key(itemFind)
+func itemdetection(item):
+	var selected = Global.inventory.find_key(item)
 	itemsend(selected)
 	
 func itemsend(selectedVar):

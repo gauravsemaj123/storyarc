@@ -11,8 +11,8 @@ var is_declining: bool = false
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
-	
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	if (dialog_inprocess == true):
 		inventory.close()
 		
