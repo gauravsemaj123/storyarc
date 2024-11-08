@@ -25,3 +25,37 @@ Lola Nita: Nakuha mo ba lahat?
 	=> tutorial
 ~ let_them
 Lola Nita: Tignan na na'tin kung bakit nawawala ang panulat ni Binibining Stacey!
+=> END
+
+~ itisdone
+Lola Nita: Magaling, apo! Ano ang natutunan mo sa paglalakbay?
+- Ang ABAKADA
+	Lisa: Sobrang nakakatuwa hanapin ang bawat letra!
+	Lola Nita: Ano ang bagay na ipinadala sa'yo na nagsisimula sa A?
+	- Lisa: Atis
+		Lola Nita: Magaling, apo!
+		Lola Nita: Sige, ano naman ang sunod?
+		Lola Nita: Ano naman ang bagay na ipinadala sa'yo na nagsisimula sa WA?
+		- Lisa: Wansoy
+			Lola Nita: Tama ka apo!
+			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
+			=> END 
+		- Lisa: Lanzones
+			Lola Nita: Mali, Wansoy, apo!
+			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
+			=> END
+	- Lisa: Hindi ko po alam
+		Lola Nita: Sige, ano naman ang sunod?
+		Lola Nita: Ano naman ang bagay na ipinadala sa'yo na nagsisimula sa WA?
+		- Lisa: Wansoy
+			Lola Nita: Tama ka apo!
+			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
+			=> END 
+		- Lisa: Lanzones
+			Lola Nita: Mali, Wansoy, apo!
+			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
+			=> END
+
+~ goodnightlisa
+Lola Nita: Matulog ka nang mahimbing, Lisa [next=2].
+=> END

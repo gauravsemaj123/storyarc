@@ -1257,7 +1257,7 @@ tile_set = SubResource("TileSet_e57f2")
 [node name="sprites" type="Node" parent="scene_elements"]
 
 [node name="Player" parent="scene_elements/sprites" instance=ExtResource("1_88idd")]
-position = Vector2(1137, 417)
+position = Vector2(1059, 406)
 collision_layer = 65
 collision_mask = 97
 platform_floor_layers = 4294901825

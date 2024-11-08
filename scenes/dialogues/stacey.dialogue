@@ -43,3 +43,16 @@ Stacey: Sana makuha mo siya... Sana.
 			
 ~ get_going
 Stacey: Magandang araw, Lisa! Nawa'y maging ligtas at masaya ang iyong paglalakbay!
+=> END 
+
+~ ihavepen
+Stacey: SALAMAT NANG MARAMI, LISAAAA!! Malaking pasasalamat ko sa'yo sa pagkakabalik ng aking panulat!
+Lisa: Walang anuman! Oo nga po pala, ang sabi ng Bathalang Eyre ay dapat na gamitin mo ang panulat na iyan!
+Lisa: Nawa'y ang mangyari ay kailangan mo magtala ng iyong nakikita o naaaral.
+Stacey: Bale ayun pala ang dahilan bakit nawala. Dahil sa hindi ko nagagamit.
+Stacey: Sige! Gagawin ko ang sinasabi ng Bathala!
+Stacey: Muli, maraming salamat!
+Lisa: Walang anuman!
+do Questlines.updateQuest()
+do Notifier.questnext("Lola Nita")
+=> END 

@@ -118,6 +118,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_0kwi5")
 Button/styles/pressed = SubResource("StyleBoxTexture_eq0is")
 
 [node name="ExampleBalloon" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_36de5")
 
 [node name="Balloon" type="Control" parent="."]

@@ -27,6 +27,16 @@ func _on_interact():
 			player.uiactive = false
 			dialog_inprocess = false
 			player.dialogactive = false
+		elif Questlines.questline_number == 13:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "itisdone")
+			dialog_inprocess = true
+			player.uiactive = true
+			player.dialogactive = true
+			await DialogueManager.dialogue_ended
+			player.uiactive = false
+			dialog_inprocess = false
+			player.dialogactive = false
+			TransferrerCutscene.transferCutscene("goodnight")
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "let_them")
 			dialog_inprocess = true

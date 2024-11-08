@@ -8,8 +8,10 @@ var dialog_inprocess: bool = false
 var item_sequence: int = 0
 var itemremove: bool = false
 const MINIGAME_1 = preload("res://scenes/minigames/minigame1.tscn")
+@onready var cutscene_manage: AnimationPlayer = $"../../../Cutscene/CutsceneManage"
 
 var is_on_quest11: bool = false
+var is_on_quest12: bool = false
 @onready var sphere: Sprite2D = $"../sphere"
 @onready var miraclelight: PointLight2D = $"../../lighteff/miraclelight"
 
@@ -18,6 +20,12 @@ func _process(_delta: float) -> void:
 	if is_on_quest11:
 		sphere.visible = true
 		miraclelight.texture_scale = 30.38
+		miraclelight.energy = 1
+		
+	if is_on_quest12:
+		sphere.visible = true
+		miraclelight.texture_scale = 0
+		miraclelight.energy = 0
 	
 	if item_sequence <= 18:
 		interaction_area.action_name = "Ibigay"
@@ -33,7 +41,9 @@ func _process(_delta: float) -> void:
 		inventory.remove(item_sequence)
 
 func _ready():
+	print(MinigameResources.storedscore1)
 	interaction_area.interact = Callable(self, "_on_interact")
+	
 
 func _on_interact():
 	if inventory.visible != true:

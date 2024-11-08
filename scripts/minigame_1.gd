@@ -9,11 +9,11 @@ extends Node2D
 @onready var checkboxes: HBoxContainer = $MINIGAMEUI/checkboxes
 @onready var answer: Label = $MINIGAMEUI/timerbar/answer
 
-var check: int = 0
+var randomize: int
+var check: int = 1
 var is_indialog: bool = false
 var visible_characters = 0
 var question_number: int
-var totalscore = MinigameResources.minigamescore
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -33,34 +33,54 @@ func _process(delta: float) -> void:
 		dialog.play()
 		
 
+func begin_random():
+	var randomizer = randi_range(1, 10)
+	randomize = randomizer
+
 func checkbox_anim():
-	var tracker = "checkslot" + str(check + 1)
-	if check == 0:
-		checkboxes.find_child("checkslot").correctAnim()
-	else:
-		checkboxes.find_child(tracker).correctAnim()
+	var tracker = "checkslot" + str(check)
+	#if check == 0:
+		#checkboxes.find_child("checkslot").correctAnim()
+	#else:
+	checkboxes.find_child(tracker).correctAnim()
 
 func wrongbox_anim():
-	var tracker = "checkslot" + str(check + 1)
-	if check == 0:
-		checkboxes.find_child("checkslot").wrongAnim()
-	else:
-		checkboxes.find_child(tracker).wrongAnim()
+	var tracker = "checkslot" + str(check)
+	#if check == 0:
+		#checkboxes.find_child("checkslot").wrongAnim()
+	#else:
+	checkboxes.find_child(tracker).wrongAnim()
 
 func update_timer_text():
 	indicator.text = str(ceil(timer.time_left))
 	
 func ready_question():
-	if question_number <= 10:
+	if question_number < 10:
+		begin_random()
 		is_indialog = false
 		question_number += 1
-		riddle.text = "BUGTONG, BUGTONG: " + str(MinigameResources.riddleMinigame[question_number]["question"]) + " Ano ito?"
+		riddle.text = "BUGTONG, BUGTONG: " + str(MinigameResources.riddleMinigame[randomize]["question"]) + " Ano ito?"
 		timer.paused = false
 		countdown()
+	elif MinigameResources.minigamescore > 7 and question_number == 10:
+		TransferrerCutscene.transferCutscene("ruinspring")
 	else:
-		Transition.transition()
-		await Transition.on_transition_finished
-		
+		remove_checks()
+		MinigameResources.minigamescore = 0
+		question_number = 0
+		line_edit.visible = false
+		riddle.text = "Uulitin na'tin anak."
+		timerlang.play("riddletype")
+		await timerlang.animation_finished
+		await get_tree().create_timer(.5).timeout
+		line_edit.visible = true
+		ready_question()
+
+func remove_checks():
+	for all in 10:
+		var nigar = all + 1
+		var tracker = "checkslot" + str(nigar)
+		checkboxes.find_child(tracker).onReset()
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("accept") and line_edit.text != null:
@@ -74,21 +94,22 @@ func countdown():
 	timeout()
 
 func revealanswer():
-	answer.text = "SAGOT: " + str(MinigameResources.riddleMinigame[question_number]["answer"])
+	answer.text = "SAGOT: " + str(MinigameResources.riddleMinigame[randomize]["answer"])
 	await DialogueManager.dialogue_ended
 	answer.text = ""
 
 func timeout():
-	revealanswer()
 	if !is_indialog:
 		is_indialog = true
 		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "outoftime")
+		revealanswer()
 		wrongbox_anim()
 		line_edit.clear()
 		timer.paused = true
 		timerlang.pause()
 		await DialogueManager.dialogue_ended
 		timerlang.play("RESET")
+		print(MinigameResources.minigamescore)
 		if question_number <= 10:
 			check += 1
 			ready_question()
@@ -96,10 +117,10 @@ func timeout():
 			pass
 
 func evaluate_answer():
-	revealanswer()
 	if !is_indialog:
 		is_indialog = true
-		if str(line_edit.text).to_lower() == str(MinigameResources.riddleMinigame[question_number]["answer"]).to_lower():
+		if str(line_edit.text).to_lower() == str(MinigameResources.riddleMinigame[randomize]["answer"]).to_lower():
+			revealanswer()
 			checkbox_anim()
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "correct")
 			line_edit.clear()
@@ -107,9 +128,8 @@ func evaluate_answer():
 			timerlang.pause()
 			await DialogueManager.dialogue_ended
 			timerlang.play("RESET")
-			if totalscore <= 10:
-				totalscore += 1
-				print(totalscore)
+			if MinigameResources.minigamescore <= 9:
+				MinigameResources.minigamescore += 1
 				print(MinigameResources.minigamescore)
 			if question_number <= 10:
 				check += 1
@@ -118,12 +138,14 @@ func evaluate_answer():
 				pass
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "wrong")
+			revealanswer()
 			wrongbox_anim()
 			line_edit.clear()
 			timer.paused = true
 			timerlang.pause()
 			await DialogueManager.dialogue_ended
 			timerlang.play("RESET")
+			print(MinigameResources.minigamescore)
 			if question_number <= 10:
 				check += 1
 				ready_question()

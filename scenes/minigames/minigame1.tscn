@@ -1324,7 +1324,7 @@ offset_bottom = 327.0
 scale = Vector2(2.2, 2.2)
 alignment = 1
 
-[node name="checkslot" parent="MINIGAMEUI/checkboxes" instance=ExtResource("19_eft0f")]
+[node name="checkslot1" parent="MINIGAMEUI/checkboxes" instance=ExtResource("19_eft0f")]
 layout_mode = 2
 
 [node name="checkslot2" parent="MINIGAMEUI/checkboxes" instance=ExtResource("19_eft0f")]

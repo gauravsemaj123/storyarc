@@ -14,3 +14,6 @@ func correctAnim():
 	
 func wrongAnim():
 	checkplay.play("ekis")
+
+func onReset():
+	checkplay.play("RESET")

@@ -8,6 +8,7 @@ extends Node2D
 @onready var sphere: Sprite2D = $"../../../sprites/sphere"
 @onready var inventory: Control = $"../../../../UI/Inventory"
 @onready var npc_7: Node2D = $"../../../sprites/npc_7"
+@onready var miraclelight: PointLight2D = $"../../../lighteff/miraclelight"
 
 var dialog_inprocess: bool = false
 var sphere_given: bool = false
@@ -26,7 +27,15 @@ func _process(_delta: float) -> void:
 
 func _ready():
 	if Questlines.questline_number == 11:
-		cutscene_manage.play("RESET")
+		miraclelight.texture_scale = 30.38
+		miraclelight.energy = 1
+		sphere.visible = true
+		npc_7.position.y = 529
+		queue_free()
+	if Questlines.questline_number == 12: 
+		miraclelight.texture_scale = 0
+		miraclelight.energy = 0
+		sphere.visible = true
 		npc_7.position.y = 529
 		queue_free()
 	if sphere_given == true:
