@@ -11,6 +11,10 @@ Note! This game is intended to be a capstone project game, so if this is release
 
 # CREDITS
 
+ELEMENTS/EXTENSIONS:
+
+<a href="https://github.com/nathanhoad/godot_dialogue_manager.git">Nathan Hoad's Dialogue Manager | Godot</a>
+
 APPLICATIONS I USED:
 
 <a href="https://godotengine.org/">Godot Engine</a>
