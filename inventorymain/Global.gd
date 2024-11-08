@@ -46,7 +46,7 @@ var shop = {
 		"Name": "Niyog",
 		"Des":  "Isang mahalagang puno sa Pilipinas na kilala bilang puno ng buhay.",
 		"Cost": 75,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/niyog.png"),
 	},
 }
 
@@ -73,37 +73,37 @@ var items = {
 		"Name": "Okra",
 		"Des":  "Isang mahabang, payat, at berdeng gulay na kilala sa madulas na lamán at mabutóng loob.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/okra.png")
 	},
 	4:{
 		"Name": "Ube",
 		"Des": "Isang matamis na kamoteng kulay lila na kilala sa kanyang natatanging lasa at ginagamit sa iba't ibang uri ng mga panghimagas.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/ube.png")
 	},
 	5: {
 		"Name": "Bayabas",
 		"Des":  "Isang maliit na puno na may bilugang bunga, mabuto, at nakakain.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/bayabas.png")
 	},
 	6: {
 		"Name": "Kamatis",
 		"Des": "Isang masustansyang gulay na mayaman sa potassium, vitamin C, at lycopene.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/kamatis.png")
 	},
 	7: {
 		"Name": "Duhat" ,
 		"Des": "Isang malakilaking punongkahoy na may bungang habilog."  ,
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/duhat.png")
 	},
 	8: {
 		"Name": "Guyabano",
 		"Des":  "Isang prutas na may bilugang hugis at matinik na balat.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/guyabano.png")
 	},
 	9: {
 		"Name":"Halu Halo",
@@ -115,19 +115,19 @@ var items = {
 		"Name": "Lanzones",
 		"Des":  "Isang tropikal na prutas na kilala sa kanyang matamis at maasim na lasa.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/lanzones.png")
 	},
 	11: {
 		"Name": "Mangga",
 		"Des": "Isang makatas at matamis na prutas, tanyag ito sa Pilipinas lalo na tuwing tag-init.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/mangga.png")
 	},
 	12: {
 		"Name": "Niyog",
 		"Des":  "Isang mahalagang puno sa Pilipinas na kilala bilang puno ng buhay.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/niyog.png")
 	},
 	13:{
 		"Name":" Pastil",
@@ -139,37 +139,37 @@ var items = {
 		"Name": "Rambutan" ,
 		"Des": "Isang tropikal na prutas na may makapal at mabalahibong balat.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/rambutan.png")
 	},
 	15: {
 		"Name": "Santol" ,
 		"Des":  "Isang tropikal na prutas na may makapal at mabulak na balat at malambot na laman.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/santol.png")
 	},
 	16: {
 		"Name": "Talong" ,
 		"Des": "Isang uri ng gulay na mahaba, karaniwang lila ang balat, at ginagamit sa iba't ibang lutuin.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/talong.png")
 	},
 	17: {
 		"Name":  "Wansoy"  ,
 		"Des":  "Isang yerba na maaaring kainin nang hilaw ang dahon at ginagamit bilang pampalasa sa iba't ibang putahe.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/wansoy.png")
 	},
 	18: {
 		"Name": "Yangka" ,
 		"Des": "Isang malaki at berdeng prutas na may matamis na laman.",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/yangka.png")
 	},
 	19:{
-		"Name": "Panulat ni Stacey"  ,
-		"Des": "Simpleng panulat, ngunit nagdadala ito ng malaking hiwaga!",
+		"Name": "Panulat"  ,
+		"Des": "Simpleng panulat na galing kay Binibining Stacey, ngunit nagdadala ito ng malaking hiwaga!",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/panulat.png")
 	},
 	20:{
 		"Name": "Kutsilyo" ,

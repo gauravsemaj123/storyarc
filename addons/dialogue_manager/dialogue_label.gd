@@ -4,7 +4,6 @@
 
 ## A RichTextLabel specifically for use with [b]Dialogue Manager[/b] dialogue.
 class_name DialogueLabel extends RichTextLabel
-@onready var typingsfx: AudioStreamPlayer2D = $"../../../../../typingsfx"
 
 
 
@@ -78,7 +77,6 @@ func _process(delta: float) -> void:
 				_waiting_seconds = _waiting_seconds - delta
 			# If we are no longer waiting then keep typing
 			if _waiting_seconds <= 0:
-				typingsfx.play()
 				_type_next(delta, _waiting_seconds)
 		else:
 			# Make sure any mutations at the end of the line get run

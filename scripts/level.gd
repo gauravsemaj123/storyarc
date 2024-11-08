@@ -1,8 +1,9 @@
 extends Node2D
-@onready var inventory: Control = $UI/Inventory
+
+var questnumber = Questlines.questline_number
 
 func _ready():
-	inventory.add(21)
+	print(questnumber)
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
 		

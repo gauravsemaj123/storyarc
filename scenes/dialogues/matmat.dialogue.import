@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://crtgptvce0rmb"
+path="res://.godot/imported/matmat.dialogue-910b9cea320ef993af091f4a0893321a.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/matmat.dialogue"
+dest_files=["res://.godot/imported/matmat.dialogue-910b9cea320ef993af091f4a0893321a.tres"]
+
+[params]
+
+defaults=true

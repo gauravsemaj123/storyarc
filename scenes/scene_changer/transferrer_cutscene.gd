@@ -16,6 +16,6 @@ func transferCutscene(destination):
 		var destination_path = "res://scenes/maps/genmap/" + destination + ".tscn"
 		animation_player.play("fade")
 		await animation_player.animation_finished
-		get_tree().change_scene_to_file(destination_path)
+		get_tree().call_deferred("change_scene_to_file", destination_path)
 		is_in_cutscene = true
 		animation_player.play_backwards("fade")

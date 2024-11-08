@@ -45,6 +45,47 @@ else:
 	Bathalang Eyre: Maging isang masunurin na manlalakbay!
 	=> END
 
+~ beforetest
+Bathalang Eyre: Natapos mo ang misyon, anak. Hanga ako sa iyong determinasyon.
+Bathalang Eyre: Ngayon, handa ka na ba sa huling pagsubok?
+Lisa: Opo!
+Bathalang Eyre: Ito ay ang bugtong. Kapag natapos mo ito, ibabalik ko na ang panulat!
+Bathalang Eyre: Subalit kung ikaw ay makapuntos nang kahit pitong puntos lamang
+Bathalang Eyre: Maaari ko na'ng ibigay ang panulat.
+Bathalang Eyre: Kung ikaw man ay maitama mo lahat ng bugtong, maaari kitang basbasan sa angking talino mo!
+Bathalang Eyre: Ngayon...
+Bathalang Eyre: Sisimulan na na'tin ito...
+=> END
+
+~ failed
+Bathalang Eyre: Ikaw ay nagkamali sa pagsubok. Maaari mong subukang muli ang pagsubok na ito.
+Bathalang Eyre: Handa ka bang subukang muli?
+- Subukan muli
+	Lisa: Opo, Bathala!
+	Bathalang Eyre: Ayan ang determinasyon na gusto kong makita.
+=> END
+
+~ success
+Bathalang Eyre: Magaling, anak! Natapos mo ang iyong hamon. Ako'y lilisan na, subalit ang espera ay mananatili
+Bathalang Eyre: upang maibalik muli ang kaalaman sa aking nasasakupan at sa sinumang sasamba sa akin.
+Bathalang Eyre: Ang tanging gusto ko lamang ay magkaroon ng kaalaman ang bawat isa at magkaroon din ng
+Bathalang Eyre: Disenteng kaalaman at karunungan sa lahat ng bagay.
+Bathalang Eyre: Ikaw, manlalakbay! Ikaw, Lisa! Ikaw ang nagpatunay na sumiklab nitong kaalaman muli sa sambayanan.
+Bathalang Eyre: Hanga ako sa determinasyon, at iyong angking galing sa bawat bagay.
+Bathalang Eyre: Dahil diyan, ikaw ay gagantimpalaan ko ng isang Galyetas ng Kapalaran.
+Bathalang Eyre: Tanggapin mo ito.
+=> END
+
+~ thankyou
+Bathalang Eyre: Nawa'y magsilbi rin 'yan na gamit sa iyong paglalakbay.
+Lisa: Maraming salamat, Bathala!
+Bathalang Eyre: Nawa'y pasalamatan mo rin ang iyong sarili, sabihin mo na lamang sa iyong puso na taos-puso kang nagpapasalamat.
+=> END
+
+~ magaling
+Bathalang Eyre: Napakagaling.
+=> END
+
 ~ noanswer
  : Bathalang Eyre: Anak, wala ka pang nasasagutang bugtong!
  : Lisa: Ay- Pasens'ya na po, Kaibigang Bathala!

@@ -48,6 +48,7 @@ func _on_interact():
 			dialog_inprocess = false
 			player.uiactive = false
 			player.dialogactive = false
+			is_gulay_got = true
 		else:
 			pass
 		pass

@@ -7,12 +7,13 @@ extends Node2D
 @onready var riddle: RichTextLabel = $MINIGAMEUI/riddle
 @onready var dialog: AudioStreamPlayer2D = $MINIGAMEUI/dialog
 @onready var checkboxes: HBoxContainer = $MINIGAMEUI/checkboxes
+@onready var answer: Label = $MINIGAMEUI/timerbar/answer
 
 var check: int = 0
 var is_indialog: bool = false
 var visible_characters = 0
 var question_number: int
-var totalscore: int = 10
+var totalscore = MinigameResources.minigamescore
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -50,11 +51,16 @@ func update_timer_text():
 	indicator.text = str(ceil(timer.time_left))
 	
 func ready_question():
-	is_indialog = false
-	question_number += 1
-	riddle.text = "BUGTONG, BUGTONG: " + str(MinigameResources.riddleMinigame[question_number]["question"]) + " Ano ito?"
-	timer.paused = false
-	countdown()
+	if question_number <= 10:
+		is_indialog = false
+		question_number += 1
+		riddle.text = "BUGTONG, BUGTONG: " + str(MinigameResources.riddleMinigame[question_number]["question"]) + " Ano ito?"
+		timer.paused = false
+		countdown()
+	else:
+		Transition.transition()
+		await Transition.on_transition_finished
+		
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("accept") and line_edit.text != null:
@@ -67,7 +73,13 @@ func countdown():
 	timer.stop()
 	timeout()
 
+func revealanswer():
+	answer.text = "SAGOT: " + str(MinigameResources.riddleMinigame[question_number]["answer"])
+	await DialogueManager.dialogue_ended
+	answer.text = ""
+
 func timeout():
+	revealanswer()
 	if !is_indialog:
 		is_indialog = true
 		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "outoftime")
@@ -77,8 +89,6 @@ func timeout():
 		timerlang.pause()
 		await DialogueManager.dialogue_ended
 		timerlang.play("RESET")
-		if totalscore > 0:
-			totalscore -= 1
 		if question_number <= 10:
 			check += 1
 			ready_question()
@@ -86,6 +96,7 @@ func timeout():
 			pass
 
 func evaluate_answer():
+	revealanswer()
 	if !is_indialog:
 		is_indialog = true
 		if str(line_edit.text).to_lower() == str(MinigameResources.riddleMinigame[question_number]["answer"]).to_lower():
@@ -96,6 +107,10 @@ func evaluate_answer():
 			timerlang.pause()
 			await DialogueManager.dialogue_ended
 			timerlang.play("RESET")
+			if totalscore <= 10:
+				totalscore += 1
+				print(totalscore)
+				print(MinigameResources.minigamescore)
 			if question_number <= 10:
 				check += 1
 				ready_question()
@@ -109,8 +124,6 @@ func evaluate_answer():
 			timerlang.pause()
 			await DialogueManager.dialogue_ended
 			timerlang.play("RESET")
-			if totalscore > 0:
-				totalscore -= 1
 			if question_number <= 10:
 				check += 1
 				ready_question()

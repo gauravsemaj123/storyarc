@@ -1308,6 +1308,14 @@ libraries = {
 [node name="Timer" type="Timer" parent="MINIGAMEUI/timerbar"]
 wait_time = 10.0
 
+[node name="answer" type="Label" parent="MINIGAMEUI/timerbar"]
+offset_left = 484.0
+offset_top = 355.0
+offset_right = 651.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_23f1y")
+
 [node name="checkboxes" type="HBoxContainer" parent="MINIGAMEUI"]
 offset_left = 364.0
 offset_top = 311.0

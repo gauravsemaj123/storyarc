@@ -13,7 +13,7 @@ func itemdetection(item):
 func itemsend(selectedVar):
 	selectedVariable = selectedVar
 	itemdetection(selectedVariable)
-	
+
 func itemdetect(currItem):
 	var hasItem = false
 	for i in Global.inventory:

@@ -1,13 +1,17 @@
 extends Node2D
 
+@onready var ruinaltar: Node2D = $"."
+
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../../../sprites/Player"
 @onready var cutscene_manage: AnimationPlayer = $"../../../../Cutscene/CutsceneManage"
-@onready var sphere: Sprite2D = $sphere
+@onready var sphere: Sprite2D = $"../../../sprites/sphere"
 @onready var inventory: Control = $"../../../../UI/Inventory"
+@onready var npc_7: Node2D = $"../../../sprites/npc_7"
 
 var dialog_inprocess: bool = false
 var sphere_given: bool = false
+var item_sequence: int = 0
 
 func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
@@ -21,7 +25,14 @@ func _process(_delta: float) -> void:
 		inventory.remove(21)
 
 func _ready():
-	sphere.visible = false
+	if Questlines.questline_number == 11:
+		cutscene_manage.play("RESET")
+		npc_7.position.y = 529
+		queue_free()
+	if sphere_given == true:
+		sphere.visible = true
+	else:
+		sphere.visible = false
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
@@ -51,24 +62,19 @@ func _on_interact():
 				dialog_inprocess = false
 				Questlines.updateQuest()
 				Notifier.questnext("")
-			elif sphere_given == true and Questlines.questline_number == 11:
-				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "repeatmission");
-				player.uiactive = true
-				player.dialogactive = true
-				dialog_inprocess = true
-				await DialogueManager.dialogue_ended
-				player.uiactive = false
-				player.dialogactive = false
-				dialog_inprocess = false
-			else:
-				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "nosphere");
-				player.uiactive = true
-				player.dialogactive = true
-				dialog_inprocess = true
-				await DialogueManager.dialogue_ended
-				player.uiactive = false
-				player.dialogactive = false
-				dialog_inprocess = false
+				queue_free()
+				npc_7.is_on_quest11 = true
+				npc_7.position.y = 529
+
+		else:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "nosphere");
+			player.uiactive = true
+			player.dialogactive = true
+			dialog_inprocess = true
+			await DialogueManager.dialogue_ended
+			player.uiactive = false
+			player.dialogactive = false
+			dialog_inprocess = false
 	else:
 		pass
 	return

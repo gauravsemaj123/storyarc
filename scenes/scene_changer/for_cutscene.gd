@@ -29,4 +29,6 @@ func _on_body_entered(_body: Node2D) -> void:
 		dialog_inprocess = false
 		player.dialogactive = false
 		npc_5.position.y = -552
+		Questlines.updateQuest()
+		Notifier.questnext("")
 		queue_free()

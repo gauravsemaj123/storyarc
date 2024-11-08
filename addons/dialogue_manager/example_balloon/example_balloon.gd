@@ -11,6 +11,7 @@ extends CanvasLayer
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 @onready var portrait = $Balloon/Portrait
+@onready var typingsfx: AudioStreamPlayer2D = $typingsfx
 
 
 
@@ -163,3 +164,9 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if not letter in [".", " "]:
+		typingsfx.pitch_scale = randf_range(.5, .8)
+		typingsfx.play()

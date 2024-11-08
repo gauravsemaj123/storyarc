@@ -1,5 +1,7 @@
 extends Node
 
+@export var minigamescore = 0
+
 var riddleMinigame = {
 	1:{
 	"question": "Kung kailan mo pinatay, saka humaba ang buhay.",
