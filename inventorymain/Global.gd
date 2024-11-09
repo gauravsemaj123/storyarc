@@ -209,5 +209,5 @@ var items = {
 	}
 }
 
-var inventory = {
+var inventory = { 
 }

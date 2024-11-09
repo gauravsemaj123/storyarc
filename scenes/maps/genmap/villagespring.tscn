@@ -1662,13 +1662,13 @@ position = Vector2(-18.5, -27.5)
 shape = SubResource("RectangleShape2D_8mn1i")
 
 [node name="gulaycrate" type="Node2D" parent="scene_elements/AOEs/interactables"]
-position = Vector2(3146, 290)
+position = Vector2(3192, 305)
 script = ExtResource("19_45ute")
 
 [node name="InteractionArea" parent="scene_elements/AOEs/interactables/gulaycrate" instance=ExtResource("13_5v3wo")]
+action_name = "Tignan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/interactables/gulaycrate/InteractionArea"]
-position = Vector2(46, 14)
 shape = SubResource("RectangleShape2D_q2gk0")
 
 [node name="platform" type="Node" parent="scene_elements/AOEs"]

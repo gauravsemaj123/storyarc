@@ -69,7 +69,7 @@ func _on_prev_pressed():
 func _on_buy_pressed():
 #	ADD ITEM
 	var hasItem = false
-	if Global.gold > Global.shop[currItem]["Cost"]:
+	if Global.gold >= Global.shop[currItem]["Cost"]:
 		for i in Global.inventory:
 			if Global.inventory[i]["Name"] == Global.shop[currItem]["Name"]:
 				Global.inventory[i]["Count"] += 1

@@ -75,6 +75,7 @@ offset_right = 6.0
 offset_bottom = 498.0
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 448.0
@@ -82,4 +83,14 @@ offset_right = 160.0
 offset_bottom = 479.0
 text = "questnumber: xx"
 
+[node name="instantiate" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 332.0
+offset_right = 162.0
+offset_bottom = 363.0
+text = "instant inventory"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="instantiate" to="." method="_on_instantiate_pressed"]

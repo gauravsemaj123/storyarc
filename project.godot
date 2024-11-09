@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="storyarc2"
-config/version="1.0.1a"
-run/main_scene="res://ui/mainmenu/mainmenu.tscn"
+config/name="Story Arc"
+config/version="0.0.1"
+run/main_scene="res://disclaimer.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=90
 run/frame_delay_msec=2
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://noimage.png"
 config/icon="res://game.svg"
 
 [autoload]
@@ -35,6 +36,7 @@ TransferrerCutscene="*res://scenes/scene_changer/transferrer_cutscene.tscn"
 JustFade="*res://ui/misc/just_fade.tscn"
 Cutscene="*res://ui/misc/cutscene.tscn"
 ItemDetection="*res://scripts/itemDetection.gd"
+Loader="*res://scripts/elements/Loader.gd"
 
 [display]
 

@@ -8,17 +8,11 @@ var selectedVariable
 
 func itemdetection(item):
 	var selected = Global.inventory.find_key(item)
-	itemsend(selected)
-	
-func itemsend(selectedVar):
-	selectedVariable = selectedVar
-	itemdetection(selectedVariable)
+	selectedVariable = selected
 
 func itemdetect(currItem):
-	var hasItem = false
 	for i in Global.inventory:
 		if Global.inventory[i]["Name"] == Global.items[currItem]["Name"]:
-			Global.inventory[i]["Count"] += 1
-			hasItem = true
-	is_detected = hasItem
+			is_detected = true
 	print(is_detected)
+	

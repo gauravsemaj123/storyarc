@@ -16,7 +16,10 @@ func _process(_delta: float) -> void:
 		player.dialogactive = false
 	if is_atis_got == true:
 		InteractionManager.unreg_area(self)
-
+	if Questlines.questline_number != 11:
+		position.y = -276
+	else:
+		position.y = 276
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	is_atis_got = false

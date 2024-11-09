@@ -22,25 +22,31 @@ func _on_interact():
 		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altarcheck")
 		dialog_inprocess = true
 		player.uiactive = true
+		player.dialogactive = true
 		await DialogueManager.dialogue_ended
 		dialog_inprocess = false
+		player.dialogactive = false
 		player.uiactive = false
 	elif Questlines.questline_number == 8:
 		if state.frame == 0:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altarget")
 			dialog_inprocess = true
 			player.uiactive = true
+			player.dialogactive = true
 			await DialogueManager.dialogue_ended
 			inventory.add(21)
 			Questlines.updateQuest()
 			state.frame = 1
+			player.dialogactive = false
 			dialog_inprocess = false
 			player.uiactive = false
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altar_sphere_already")
+			player.dialogactive = true
 			dialog_inprocess = true
 			player.uiactive = true
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			player.uiactive = false
+			player.dialogactive = false
 	return

@@ -1,15 +1,16 @@
 extends Node
 
-const forestspring = preload("res://scenes/maps/genmap/forestspring.tscn")
-const villagespring = preload("res://scenes/maps/genmap/villagespring.tscn")
-const farmspring = preload("res://scenes/maps/genmap/farmspring.tscn")
-const cavespring = preload("res://scenes/maps/genmap/cavespring.tscn")
-const ruinspring = preload("res://scenes/maps/genmap/ruinspring.tscn")
-const harold = preload("res://scenes/maps/genmap/harold.tscn")
-const house1 = preload("res://scenes/maps/genmap/house1.tscn")
-const river = preload("res://scenes/maps/genmap/river.tscn")
-const shack = preload("res://scenes/maps/genmap/shack.tscn")
-const hall = preload("res://scenes/maps/genmap/hall.tscn")
+const forestspring = "res://scenes/maps/genmap/forestspring.tscn"
+const villagespring = "res://scenes/maps/genmap/villagespring.tscn"
+const farmspring = "res://scenes/maps/genmap/farmspring.tscn"
+const cavespring = "res://scenes/maps/genmap/cavespring.tscn"
+const ruinspring = "res://scenes/maps/genmap/ruinspring.tscn"
+const harold = "res://scenes/maps/genmap/harold.tscn"
+const house1 = "res://scenes/maps/genmap/house1.tscn"
+const river = "res://scenes/maps/genmap/river.tscn"
+const shack = "res://scenes/maps/genmap/shack.tscn"
+const hall = "res://scenes/maps/genmap/hall.tscn"
+
 
 @export var currentscene: String
 signal on_trigger_player_spawn
@@ -59,7 +60,7 @@ func go_to_level(level_tag, destination_tag):
 		Signage.stagename_change(stage_tag)
 		currentscene = str(scene_to_load)
 		spawn_door_tag = destination_tag
-		get_tree().call_deferred("change_scene_to_packed", scene_to_load)
+		Loader.goto_level(scene_to_load)
 
 func trigger_player_spawn(position: Vector2, direction: String):
 	on_trigger_player_spawn.emit(position, direction)

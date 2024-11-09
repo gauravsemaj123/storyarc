@@ -17,7 +17,8 @@ func _process(_delta: float) -> void:
 		player.dialogactive = false
 	if is_mangga_got == true:
 		InteractionManager.unreg_area(self)
-
+	if Questlines.questline_number != 11:
+		interaction_area.visible = false
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	is_mangga_got = false

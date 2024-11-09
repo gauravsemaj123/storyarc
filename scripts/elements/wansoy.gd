@@ -17,7 +17,11 @@ func _process(_delta: float) -> void:
 		player.dialogactive = false
 	if is_wansoy_got == true:
 		InteractionManager.unreg_area(self)
-
+	if Questlines.questline_number != 11:
+		position.y = -528
+	else:
+		position.y = 528
+		
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	is_wansoy_got = false

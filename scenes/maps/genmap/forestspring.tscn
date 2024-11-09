@@ -1257,7 +1257,7 @@ tile_set = SubResource("TileSet_e57f2")
 [node name="sprites" type="Node" parent="scene_elements"]
 
 [node name="Player" parent="scene_elements/sprites" instance=ExtResource("1_88idd")]
-position = Vector2(1059, 406)
+position = Vector2(885, 401)
 collision_layer = 65
 collision_mask = 97
 platform_floor_layers = 4294901825
@@ -1572,6 +1572,13 @@ texture_scale = 9.0
 color = Color(0.568973, 0.568973, 0.568973, 1)
 blend_mode = 1
 
+[node name="anims" type="AnimationPlayer" parent="scene_elements"]
+root_node = NodePath("../../UI")
+libraries = {
+"": SubResource("AnimationLibrary_kxnlt")
+}
+autoplay = "finding"
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Notifier" parent="UI" instance=ExtResource("26_w7obl")]
@@ -1580,11 +1587,5 @@ blend_mode = 1
 
 [node name="Inventory" parent="UI" instance=ExtResource("25_iy2qw")]
 visible = false
-
-[node name="anims" type="AnimationPlayer" parent="UI"]
-libraries = {
-"": SubResource("AnimationLibrary_kxnlt")
-}
-autoplay = "finding"
 
 [editable path="scene_elements/Doors/Door_next"]

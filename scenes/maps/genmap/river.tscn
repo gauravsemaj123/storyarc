@@ -1688,7 +1688,7 @@ position = Vector2(76, 47)
 polygon = PackedVector2Array(-7, -117, -4, 655, -7, 1375, 2549, 1347, 3482, 1334, 3618, 1316, 3628, 640, 3628, -161, 4488, -301, 4965, -22, 5120, 448, 4874, 2057, 1581, 2249, -891, 2040, -1343, 1542, -1304, 88, -1004, -625, -240, -325)
 
 [node name="wansoy" type="Node2D" parent="scene_elements/AOEs"]
-position = Vector2(222, 528)
+position = Vector2(222, -528)
 script = ExtResource("17_piuaa")
 
 [node name="InteractionArea" parent="scene_elements/AOEs/wansoy" instance=ExtResource("18_v6vyj")]

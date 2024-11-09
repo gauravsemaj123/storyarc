@@ -63,7 +63,8 @@ func ready_question():
 		timer.paused = false
 		countdown()
 	elif MinigameResources.minigamescore > 7 and question_number == 10:
-		TransferrerCutscene.transferCutscene("ruinspring")
+		NavigationManager.go_to_level("ruinspring", "ruin_front")
+		
 	else:
 		remove_checks()
 		MinigameResources.minigamescore = 0

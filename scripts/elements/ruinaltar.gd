@@ -72,7 +72,6 @@ func _on_interact():
 				Questlines.updateQuest()
 				Notifier.questnext("")
 				queue_free()
-				npc_7.is_on_quest11 = true
 				npc_7.position.y = 529
 
 		else:

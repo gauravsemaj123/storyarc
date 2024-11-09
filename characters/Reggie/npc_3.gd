@@ -18,7 +18,7 @@ func _ready():
 
 func _on_interact():
 	if inventory.visible != true:
-		if Questlines.questline_number == 3:
+		if Questlines.questline_number == 2:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/reggiethefrog.dialogue"), "start")
 			dialog_inprocess = true
 			player.uiactive = true

@@ -4,7 +4,7 @@ Lisa: Ang altar na ito ay tila mahiwaga. Ngunit ito ay nasa mga guho na, kaya wa
 
 ~ altarget
 Lisa: Siguro itong bilog sa altar na ito ang tanging solusyon? Tignan na'tin.
-do Notifier.newitemAnnounce("Isperika")
+do Notifier.newitemAnnounce("Espera")
 => END
 
 ~ nosphere
@@ -15,8 +15,8 @@ Lisa: Wala pa akong espera, ayun yung kailangan ng istatwa na ito.
 Lisa: Siguro mayroon akong mabibili sa nagkakahalagang 300.
 => END
 
-~ fortestingpurposes
-Lisa: For testing purposes
+~ none
+Lisa: Wala pa ako naibibigay...
 => END
 
 ~ altar_sphere_already
@@ -30,7 +30,7 @@ Lisa: Naka-kandado pinto! Mas mabuting huwag pumasok!
 ~ atisget
 Bathalang Eyre: *Boses mula sa malayo* Anak ko! Ayan ang aking tinutukoy! Hayaan mo ako na ang maglaglag ng bunga mula sa'yo!
 do Notifier.newitemAnnounce("Atis")
-Bathalang Eyre: Sa nayon ay mayroong sampu, sa bukirin ay mayroong apat, dito sa kagubatan ay apat, kasama na ang puno ng Atis, at ang huli ay nasa ilog.
+Bathalang Eyre: Sa nayon ay mayroong sampu, sa bukirin ay mayroong pito, at ang huling dalawa ay nasa ilog.
 => END
 
 ~ paalammuna

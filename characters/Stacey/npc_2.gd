@@ -3,7 +3,7 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
-@onready var anims: AnimationPlayer = $"../../../UI/anims"
+@onready var anims: AnimationPlayer = $"../../anims"
 
 var dialog_inprocess: bool = false
 

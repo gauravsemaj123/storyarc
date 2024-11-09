@@ -2101,17 +2101,17 @@ spawn_direction = "left"
 position = Vector2(129, 0)
 
 [node name="Door_house1_ent" parent="scene_elements/Doors" instance=ExtResource("4_iak0p")]
-position = Vector2(8032, 76)
+position = Vector2(8363, 73)
 destination_level_tag = "house1"
 destination_door_tag = "house1_ext"
 spawn_direction = "right"
 interactable = true
 
 [node name="CollisionShape2D" parent="scene_elements/Doors/Door_house1_ent" index="0"]
-position = Vector2(311, 13)
+position = Vector2(-18, -1)
 
 [node name="Spawn" parent="scene_elements/Doors/Door_house1_ent" index="1"]
-position = Vector2(135, 49)
+position = Vector2(73, 65)
 
 [node name="AOEs" type="Node" parent="scene_elements"]
 

@@ -1,7 +1,7 @@
 extends Node
 
 @export var minigamescore = 0
-var storedscore1 = 11
+var storedscore1 = minigamescore
 
 var riddleMinigame = {
 	1:{

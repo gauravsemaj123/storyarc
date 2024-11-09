@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmbk6il4ljeu6"]
+
+[ext_resource type="Script" path="res://scenes/scene_changer/loading/loadingscreen.gd" id="1_i8275"]
+[ext_resource type="Texture2D" uid="uid://cnxtu62gvyy14" path="res://scenes/scene_changer/loading/pattern.png" id="1_mci87"]
+[ext_resource type="Script" path="res://scenes/scene_changer/loading/loadingbg.gd" id="2_6jnga"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="4_gy3ly"]
+[ext_resource type="Texture2D" uid="uid://ceos725jbdch6" path="res://characters/Lisa/sleep.png" id="5_vf7q1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_to2el"]
+
+[sub_resource type="Theme" id="Theme_k4q8i"]
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_to2el")
+ProgressBar/styles/fill = null
+
+[node name="loadingscreen" type="Control" node_paths=PackedStringArray("loadingbar", "phrase")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i8275")
+loadingbar = NodePath("loadingbar")
+phrase = NodePath("phrase")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1015, 0)
+script = ExtResource("2_6jnga")
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.211899, 0.266642, 0.728474, 1)
+
+[node name="TextureRect" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+self_modulate = Color(1, 1, 1, 0.145098)
+position = Vector2(564, 333)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_mci87")
+
+[node name="loadingbar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 527.0
+offset_right = 155.0
+offset_bottom = 579.0
+theme = SubResource("Theme_k4q8i")
+theme_override_fonts/font = ExtResource("4_gy3ly")
+theme_override_font_sizes/font_size = 34
+max_value = 1.0
+step = 0.0
+
+[node name="phrase" type="Label" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 494.0
+offset_right = 209.0
+offset_bottom = 517.0
+theme_override_fonts/font = ExtResource("4_gy3ly")
+text = "Saglit lang..."
+
+[node name="lisahead" type="Sprite2D" parent="."]
+position = Vector2(143, 452)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("5_vf7q1")
+hframes = 3

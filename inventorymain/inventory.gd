@@ -55,3 +55,26 @@ func remove(Item):
 func _on_button_pressed() -> void:
 	Questlines.updateQuest()
 	button.text = "questnumber: " + str(Questlines.questline_number)
+
+
+func _on_instantiate_pressed() -> void:
+	#add(0)
+	#add(1)
+	#add(3)
+	#add(2)
+	#add(4)
+	#add(6)
+	#add(5)
+	#add(7)
+	#add(8)
+	#add(9)
+	#add(16)
+	#add(15)
+	#add(10)
+	#add(11)
+	#add(14)
+	#add(13)
+	#add(12)
+	#add(18)
+	#add(17)
+	add(21)

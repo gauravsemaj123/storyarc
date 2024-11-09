@@ -48,7 +48,9 @@ func _on_interact():
 			player.dialogactive = true
 			dialog_inprocess = true
 			await DialogueManager.dialogue_ended
-			TransferrerCutscene.transferCutscene("ruinspring")
+			TransferrerCutscene.is_in_cutscene = true
+			NavigationManager.go_to_level("ruinspring", "ruin_front")
+			return
 		elif Questlines.questline_number == 9:
 			ItemDetection.itemdetect(21)
 			if ItemDetection.is_detected == true:
@@ -63,6 +65,7 @@ func _on_interact():
 				player.dialogactive = false
 				dialog_inprocess = false
 				Cutscene.just_out()
+				return
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/harold.dialogue"), "youdonthave");
 				player.uiactive = true
@@ -72,6 +75,7 @@ func _on_interact():
 				player.uiactive = false
 				player.dialogactive = false
 				dialog_inprocess = false
+				return
 		else:
 			if is_offering == false:
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/harold.dialogue"), "hi")
@@ -82,6 +86,7 @@ func _on_interact():
 				player.uiactive = false
 				dialog_inprocess = false
 				player.dialogactive = false
+				return
 			elif is_offering == true:
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/harold.dialogue"), "hiwithguide")
 				player.uiactive = true
@@ -91,8 +96,9 @@ func _on_interact():
 				player.uiactive = false
 				dialog_inprocess = false
 				player.dialogactive = false
+				return
 	else:
 		pass
-	return
+
 
 		

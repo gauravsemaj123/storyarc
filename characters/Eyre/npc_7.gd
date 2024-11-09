@@ -9,20 +9,21 @@ var item_sequence: int = 0
 var itemremove: bool = false
 const MINIGAME_1 = preload("res://scenes/minigames/minigame1.tscn")
 @onready var cutscene_manage: AnimationPlayer = $"../../../Cutscene/CutsceneManage"
+@onready var npc_7: Node2D = $"."
 
-var is_on_quest11: bool = false
-var is_on_quest12: bool = false
 @onready var sphere: Sprite2D = $"../sphere"
 @onready var miraclelight: PointLight2D = $"../../lighteff/miraclelight"
 
+var strings: String
+var key: int
 func _process(_delta: float) -> void:
 	
-	if is_on_quest11:
+	if Questlines.questline_number == 11:
 		sphere.visible = true
 		miraclelight.texture_scale = 30.38
 		miraclelight.energy = 1
 		
-	if is_on_quest12:
+	if  Questlines.questline_number == 12:
 		sphere.visible = true
 		miraclelight.texture_scale = 0
 		miraclelight.energy = 0
@@ -38,20 +39,25 @@ func _process(_delta: float) -> void:
 		pass
 	
 	if itemremove == true:
-		inventory.remove(item_sequence)
+		pass
 
 func _ready():
 	print(MinigameResources.storedscore1)
 	interaction_area.interact = Callable(self, "_on_interact")
-	
 
 func _on_interact():
 	if inventory.visible != true:
 		if Questlines.questline_number == 11 and item_sequence <= 18:
+			#strings = str(Global.inventory[0]["Name"])
+			#key = Global.inventory.find_key(strings)
+			#
+			#print(strings)
+			#print(key)
 			print(item_sequence)
 			ItemDetection.itemdetect(item_sequence)
 			if ItemDetection.is_detected == true:
-				itemremove = true
+				inventory.remove(item_sequence)
+				#itemremove = true
 				await get_tree().create_timer(.1).timeout
 				itemremove = false
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "magaling");
@@ -73,6 +79,15 @@ func _on_interact():
 			Transition.transition()
 			await Transition.on_transition_finished
 			get_tree().call_deferred("change_scene_to_packed", MINIGAME_1)
+			player.uiactive = false
+			player.dialogactive = false
+			dialog_inprocess = false
+		elif Questlines.questline_number == 11 and Global.inventory == null:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "none");
+			player.uiactive = true
+			player.dialogactive = true
+			dialog_inprocess = true
+			await DialogueManager.dialogue_ended
 			player.uiactive = false
 			player.dialogactive = false
 			dialog_inprocess = false

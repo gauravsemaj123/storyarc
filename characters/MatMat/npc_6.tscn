@@ -304,6 +304,7 @@ sprite_frames = SubResource("SpriteFrames_8svcf")
 autoplay = "default"
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_ekw0e")]
+action_name = "Kausapin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(4.5, -1)

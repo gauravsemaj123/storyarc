@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://dwcshkpdbdu24"]
+[gd_scene load_steps=30 format=4 uid="uid://dwcshkpdbdu24"]
 
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_bsxwc"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_narqj"]
 [ext_resource type="Script" path="res://scripts/elements/backcloud.gd" id="3_2ufmy"]
 [ext_resource type="Texture2D" uid="uid://db365euxvnwq7" path="res://textures/backgrounds/maps/plains/backcloud.png" id="4_rl3bn"]
@@ -1168,6 +1169,7 @@ size = Vector2(1198.25, 542)
 size = Vector2(169, 520)
 
 [node name="harold" type="Node2D"]
+script = ExtResource("1_bsxwc")
 
 [node name="scene_elements" type="Node" parent="."]
 
@@ -1284,6 +1286,14 @@ position = Vector2(-19, 2)
 [node name="Spawn" parent="scene_elements/Doors/Door_haro_ex" index="1"]
 position = Vector2(93, 43)
 
+[node name="Door_ruin_back" parent="scene_elements/Doors" instance=ExtResource("12_5w8n2")]
+position = Vector2(942, -355)
+destination_level_tag = "ruinspring"
+destination_door_tag = "ruin_front"
+
+[node name="CollisionShape2D" parent="scene_elements/Doors/Door_ruin_back" index="0"]
+position = Vector2(-8, -12)
+
 [node name="AOEs" type="Node" parent="scene_elements"]
 
 [node name="cameralimith1" type="Area2D" parent="scene_elements/AOEs"]
@@ -1318,3 +1328,4 @@ visible = false
 [connection signal="body_entered" from="scene_elements/AOEs/sandali" to="scene_elements/AOEs/sandali" method="_on_body_entered"]
 
 [editable path="scene_elements/Doors/Door_haro_ex"]
+[editable path="scene_elements/Doors/Door_ruin_back"]

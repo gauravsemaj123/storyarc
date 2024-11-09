@@ -104,6 +104,7 @@ _data = {
 }
 
 [node name="Cutscene" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_hlrlu")
 
 [node name="moviebarup" type="ColorRect" parent="."]

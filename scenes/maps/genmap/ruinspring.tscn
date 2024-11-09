@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://d1qfa756aqya1"]
+[gd_scene load_steps=45 format=4 uid="uid://d1qfa756aqya1"]
 
 [ext_resource type="Texture2D" uid="uid://b8rtt8lpy1cuv" path="res://textures/backgrounds/maps/ruins/backr.png" id="1_6vdsl"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_htcl3"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://d07n7jrc2qpkg" path="res://ui/misc/spheresprite.png" id="13_rj5f4"]
 [ext_resource type="Texture2D" uid="uid://baegncujkj6ue" path="res://inventorymain/inventory/itemlists/panulat.png" id="14_xfdb4"]
 [ext_resource type="Script" path="res://scenes/scene_changer/for_cutscene.gd" id="18_b43v5"]
+[ext_resource type="Script" path="res://scripts/elements/cutsceneEyre.gd" id="20_ha227"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4cum"]
 texture = ExtResource("7_35e3i")
@@ -557,7 +558,10 @@ size = Vector2(469, 527)
 size = Vector2(488, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1cih"]
-size = Vector2(190, 66)
+size = Vector2(190, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oarci"]
+size = Vector2(191, 120)
 
 [sub_resource type="Gradient" id="Gradient_acx3m"]
 interpolation_mode = 2
@@ -691,6 +695,71 @@ tracks/9/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(2.75)
+}
+
+[sub_resource type="Animation" id="Animation_cmv3s"]
+resource_name = "give"
+length = 7.5
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../scene_elements/sprites/pen:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75, 6, 7.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../scene_elements/sprites/pen:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75, 6, 7.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../scene_elements/sprites/pen:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(2911, -0.25, 0, 0.25, 0, 2889, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2668, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 2, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../scene_elements/sprites/pen:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(473, -0.25, 0, 0.25, 0, 409, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 433, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 433, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 433, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 566, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 2, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7.5)
+}
+
+[sub_resource type="Animation" id="Animation_65c0c"]
+resource_name = "goodbye"
+length = 2.0
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../scene_elements/lighteff/miraclelight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
 }
 
 [sub_resource type="Animation" id="Animation_aj8ul"]
@@ -860,71 +929,6 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.75)
 }
 
-[sub_resource type="Animation" id="Animation_cmv3s"]
-resource_name = "give"
-length = 7.5
-step = 0.25
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../scene_elements/sprites/pen:scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.75, 6, 7.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../scene_elements/sprites/pen:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 3.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.75, 6, 7.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../scene_elements/sprites/pen:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(2911, -0.25, 0, 0.25, 0, 2889, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2668, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.5, 2, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7.5)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../scene_elements/sprites/pen:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(473, -0.25, 0, 0.25, 0, 409, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 433, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 433, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 433, -0.25, 0, 0.25, 0, 443, -0.25, 0, 0.25, 0, 566, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.5, 2, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7.5)
-}
-
-[sub_resource type="Animation" id="Animation_65c0c"]
-resource_name = "goodbye"
-length = 2.0
-step = 0.25
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../scene_elements/lighteff/miraclelight:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g0iwy"]
 _data = {
 "emit": SubResource("Animation_pyvv2"),
@@ -1021,7 +1025,7 @@ tile_set = SubResource("TileSet_nc5m0")
 [node name="sprites" type="Node" parent="scene_elements"]
 
 [node name="Player" parent="scene_elements/sprites" instance=ExtResource("7_bxscj")]
-position = Vector2(2369, 460)
+position = Vector2(2448, 437)
 
 [node name="npc_5" parent="scene_elements/sprites" instance=ExtResource("11_6wuj1")]
 position = Vector2(2510, -541)
@@ -1072,6 +1076,12 @@ spawn_direction = "left"
 [node name="Spawn" parent="scene_elements/Doors/Door_ruins_ex" index="1"]
 position = Vector2(122, -3)
 
+[node name="Door_ruin_front" parent="scene_elements/Doors" instance=ExtResource("9_t72wd")]
+position = Vector2(2324, -392)
+
+[node name="Spawn" parent="scene_elements/Doors/Door_ruin_front" index="1"]
+position = Vector2(78, 769)
+
 [node name="AOEs" type="Node" parent="scene_elements"]
 
 [node name="interactables" type="Node" parent="scene_elements/AOEs"]
@@ -1118,8 +1128,17 @@ position = Vector2(2358, 558)
 script = ExtResource("18_b43v5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/FOR_CUTSCENE"]
-position = Vector2(85, 23)
+position = Vector2(85, -5.5)
 shape = SubResource("RectangleShape2D_n1cih")
+
+[node name="FOR_CUTSCENE2" type="Area2D" parent="scene_elements/AOEs"]
+position = Vector2(2358, -558)
+script = ExtResource("20_ha227")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/FOR_CUTSCENE2"]
+position = Vector2(84.5, -4)
+shape = SubResource("RectangleShape2D_oarci")
+debug_color = Color(0.639428, 0.525169, 1.92523e-07, 0.42)
 
 [node name="lighteff" type="Node" parent="scene_elements"]
 
@@ -1210,5 +1229,7 @@ libraries = {
 [connection signal="body_entered" from="scene_elements/AOEs/Area2D" to="scene_elements/AOEs/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="scene_elements/AOEs/updatequest" to="scene_elements/AOEs/updatequest" method="_on_body_entered"]
 [connection signal="body_entered" from="scene_elements/AOEs/FOR_CUTSCENE" to="scene_elements/AOEs/FOR_CUTSCENE" method="_on_body_entered"]
+[connection signal="body_entered" from="scene_elements/AOEs/FOR_CUTSCENE2" to="scene_elements/AOEs/FOR_CUTSCENE2" method="_on_body_entered"]
 
 [editable path="scene_elements/Doors/Door_ruins_ex"]
+[editable path="scene_elements/Doors/Door_ruin_front"]

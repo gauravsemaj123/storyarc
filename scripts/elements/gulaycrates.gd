@@ -16,7 +16,10 @@ func _process(delta: float) -> void:
 		player.dialogactive = false
 	if is_gulay_got == true:
 		InteractionManager.unreg_area(self)
-
+	if Questlines.questline_number != 11:
+		position.y = -305
+	else:
+		position.y = 305
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	is_gulay_got = false
@@ -49,6 +52,7 @@ func _on_interact():
 			player.uiactive = false
 			player.dialogactive = false
 			is_gulay_got = true
+			queue_free()
 		else:
 			pass
 		pass

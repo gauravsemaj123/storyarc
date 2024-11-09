@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 		player.dialogactive = true
 	else:
 		player.dialogactive = false
+		
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
