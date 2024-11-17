@@ -1502,13 +1502,13 @@ position = Vector2(754, 290)
 polygon = PackedVector2Array(1326, -374, 1323, 456, 1017, 813, 166, 947, -1291, 924, -1388, -18, -1358, -576, -1627, -358, -1398, 988, -56, 1294, 1427, 1092, 2039, 554, 2322, -112, 1952, -496)
 
 [node name="mangga" type="Node2D" parent="scene_elements/AOEs"]
-position = Vector2(1560, 318)
+position = Vector2(1649, 366)
 script = ExtResource("15_1m314")
 
 [node name="InteractionArea" parent="scene_elements/AOEs/mangga" instance=ExtResource("16_a3vb0")]
+action_name = "Pitasin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/mangga/InteractionArea"]
-position = Vector2(98, 50.5)
 shape = SubResource("RectangleShape2D_tlq34")
 
 [node name="UI" type="CanvasLayer" parent="."]

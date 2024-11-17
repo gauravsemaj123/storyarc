@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnxtu62gvyy14"
-path="res://.godot/imported/pattern.png-91c671f3d93553ddc6177abdd2668c73.ctex"
+uid="uid://p6wv7cadlxf4"
+path="res://.godot/imported/minigame2BG.png-259de5537311a5fbbdfa35f367956c77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/scene_changer/loading/pattern.png"
-dest_files=["res://.godot/imported/pattern.png-91c671f3d93553ddc6177abdd2668c73.ctex"]
+source_file="res://ui/misc/minigames/minigame2BG.png"
+dest_files=["res://.godot/imported/minigame2BG.png-259de5537311a5fbbdfa35f367956c77.ctex"]
 
 [params]
 

@@ -16,26 +16,35 @@ func _process(_delta: float) -> void:
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
+func on_openDialog():
+	print(dialog_inprocess)
+	if dialog_inprocess:
+		player.uiactive = true
+		player.dialogactive = true
+		player.JUMP_VELOCITY = 0
+		player.SPEED = 0
+	else:
+		player.uiactive = false
+		player.dialogactive = false
+		player.JUMP_VELOCITY = -600.0
+		player.SPEED = 700.0
+
 func _on_interact():
 	if inventory.visible != true:
 		if Questlines.questline_number == 2:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/reggiethefrog.dialogue"), "start")
 			dialog_inprocess = true
-			player.uiactive = true
-			player.dialogactive = true
+			on_openDialog()
 			await DialogueManager.dialogue_ended
-			player.uiactive = false
 			dialog_inprocess = false
-			player.dialogactive = false
+			on_openDialog()
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/reggiethefrog.dialogue"), "unrecognized")
 			dialog_inprocess = true
-			player.uiactive = true
-			player.dialogactive = true
+			on_openDialog()
 			await DialogueManager.dialogue_ended
-			player.uiactive = false
 			dialog_inprocess = false
-			player.dialogactive = false
+			on_openDialog()
 	else:
 		pass
 	return

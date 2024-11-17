@@ -30,7 +30,7 @@ Lisa: Naka-kandado pinto! Mas mabuting huwag pumasok!
 ~ atisget
 Bathalang Eyre: *Boses mula sa malayo* Anak ko! Ayan ang aking tinutukoy! Hayaan mo ako na ang maglaglag ng bunga mula sa'yo!
 do Notifier.newitemAnnounce("Atis")
-Bathalang Eyre: Sa nayon ay mayroong sampu, sa bukirin ay mayroong pito, at ang huling dalawa ay nasa ilog.
+Bathalang Eyre: Sa nayon ay mayroong siyam, sa bukirin ay mayroong pito, at ang huling dalawa ay nasa ilog.
 => END
 
 ~ paalammuna
@@ -39,5 +39,5 @@ Lisa: Opo!
 => END 
 
 ~ gulaycrateget
-Lisa: Isang okra, ube, kamatis, talong, at wansoy. Ayos!
+Lisa: Isang okra, ube, kamatis, at talong. Ayos!
 => END

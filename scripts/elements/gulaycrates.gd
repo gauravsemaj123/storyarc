@@ -43,7 +43,6 @@ func _on_interact():
 			player.uiactive = true
 			player.dialogactive = true
 			await DialogueManager.dialogue_ended
-			inventory.add(17)
 			inventory.add(16)
 			inventory.add(3)
 			inventory.add(4)

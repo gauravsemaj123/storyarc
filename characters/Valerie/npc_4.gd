@@ -73,6 +73,16 @@ func _on_interact():
 			player.SPEED = 300
 			player.JUMP_VELOCITY = -400
 			dialog_inprocess = false
+		elif Questlines.questline_number == 11 and gulaycrate.is_permitted == true:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
+			player.uiactive = true
+			player.SPEED = 0
+			dialog_inprocess = true
+			await DialogueManager.dialogue_ended
+			shop.open()
+			player.inventoryactive = true
+			shop_inprocess = true
+			InteractionManager.visible = false
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
 			player.uiactive = true

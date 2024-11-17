@@ -39,6 +39,7 @@ func _on_interact():
 			inventory.add(10)
 			inventory.add(14)
 			inventory.add(15)
+			is_given = true
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/matmat.dialogue"), "kasomeronna")
 			await DialogueManager.dialogue_ended

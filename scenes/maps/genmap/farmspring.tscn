@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://64nvd2timav6"]
+[gd_scene load_steps=38 format=4 uid="uid://64nvd2timav6"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ymxgy"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_1r8lc"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://crp2euy6hpq45" path="res://textures/backgrounds/maps/plains/ground.png" id="9_drrxm"]
 [ext_resource type="Texture2D" uid="uid://cklnyr4yobq6n" path="res://textures/gentextures/housetilesets.png" id="11_2j888"]
 [ext_resource type="Texture2D" uid="uid://bsmd6uclb0l1m" path="res://textures/gentextures/treetilesets.png" id="12_m7fv3"]
+[ext_resource type="Texture2D" uid="uid://c18hq1e17a5k7" path="res://textures/gentextures/woodlanternhead.png" id="13_1nfk8"]
 [ext_resource type="PackedScene" uid="uid://bgjxwtmktnlvg" path="res://characters/MatMat/npc_6.tscn" id="14_4qwgj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4cw03"]
@@ -819,9 +820,19 @@ texture = ExtResource("12_m7fv3")
 14:9/0 = 0
 15:9/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_do7p7"]
+texture = ExtResource("13_1nfk8")
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_v5w3a"]
 sources/0 = SubResource("TileSetAtlasSource_yp5rq")
 sources/1 = SubResource("TileSetAtlasSource_xbklc")
+sources/2 = SubResource("TileSetAtlasSource_do7p7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnhu5"]
 texture = ExtResource("11_2j888")

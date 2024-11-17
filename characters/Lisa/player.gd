@@ -1,8 +1,8 @@
 class_name Player extends CharacterBody2D
 @onready var spriteanims = $AnimatedSprite2D
-var SPEED = 700.0
 const SWIM_SPEED = 250.0
 var JUMP_VELOCITY = -600.0
+var SPEED = 700.0
 const SWIM_JUMP = -250
 @export var SWIM_FACTOR: float = 0.50
 var paused = false
@@ -104,10 +104,6 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 		if is_in_water:
 			velocity.y = SWIM_JUMP
-		if inventoryactive == true:
-			velocity.y = 0
-		if dialogactive == true:
-			velocity.y = 0
 	#Dynamic front and back shit
 	if velocity.x < 0:
 		spriteanims.flip_h = true
@@ -119,16 +115,8 @@ func _physics_process(delta):
 	if direction:
 		if is_in_water:
 			velocity.x = direction * SWIM_SPEED
-			if inventoryactive == true:
-				velocity.x = 0
-			if dialogactive == true:
-				velocity.x = 0
 		else:
 			velocity.x = direction * SPEED
-			if inventoryactive == true:
-				velocity.x = 0
-			if dialogactive == true:
-				velocity.x = 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

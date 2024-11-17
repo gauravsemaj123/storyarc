@@ -36,7 +36,6 @@ TransferrerCutscene="*res://scenes/scene_changer/transferrer_cutscene.tscn"
 JustFade="*res://ui/misc/just_fade.tscn"
 Cutscene="*res://ui/misc/cutscene.tscn"
 ItemDetection="*res://scripts/itemDetection.gd"
-Loader="*res://scripts/elements/Loader.gd"
 
 [display]
 
@@ -52,6 +51,10 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 [filesystem]
 
 import/blender/enabled=false
+
+[gui]
+
+theme/custom_font="res://ui/fonts/PIXEARG_.TTF"
 
 [importer_defaults]
 

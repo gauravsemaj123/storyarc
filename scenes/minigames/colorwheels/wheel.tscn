@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://df4f3u6n37r0"]
+
+[ext_resource type="Texture2D" uid="uid://bbysu53qjfa88" path="res://ui/misc/minigames/wheel.png" id="1_y3oik"]
+[ext_resource type="Texture2D" uid="uid://ddtnsqavh3ik3" path="res://ui/misc/minigames/guide.png" id="2_tup4s"]
+[ext_resource type="Texture2D" uid="uid://cmqgm75c2gb5s" path="res://ui/misc/minigames/red.png" id="3_qu08t"]
+[ext_resource type="Script" path="res://scenes/minigames/colorwheels/red.gd" id="3_vllm8"]
+[ext_resource type="Texture2D" uid="uid://bhvxbyo8vb8mc" path="res://ui/misc/minigames/yellow.png" id="4_wtdwg"]
+[ext_resource type="Texture2D" uid="uid://ct7sgjdbuay5j" path="res://ui/misc/minigames/blue.png" id="5_0a2si"]
+[ext_resource type="Script" path="res://scenes/minigames/colorwheels/yellow.gd" id="5_6u2gp"]
+[ext_resource type="Script" path="res://scenes/minigames/colorwheels/blue.gd" id="7_hwcgh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5tflh"]
+
+[node name="wheel" type="Node2D"]
+
+[node name="bg" type="TextureRect" parent="."]
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_y3oik")
+metadata/_edit_use_anchors_ = true
+
+[node name="guide" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.137255)
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+scale = Vector2(4, 4)
+texture = ExtResource("2_tup4s")
+metadata/_edit_use_anchors_ = true
+
+[node name="red" type="CharacterBody2D" parent="."]
+position = Vector2(0, 62)
+script = ExtResource("3_vllm8")
+
+[node name="Red" type="Sprite2D" parent="red"]
+scale = Vector2(3, 3)
+texture = ExtResource("3_qu08t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red"]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_5tflh")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="yellow" type="CharacterBody2D" parent="."]
+position = Vector2(56, -33)
+script = ExtResource("5_6u2gp")
+
+[node name="Yellow" type="Sprite2D" parent="yellow"]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_wtdwg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="yellow"]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_5tflh")
+debug_color = Color(1, 1, 0, 0.419608)
+
+[node name="blue" type="CharacterBody2D" parent="."]
+position = Vector2(-55, -33)
+script = ExtResource("7_hwcgh")
+
+[node name="Blue" type="Sprite2D" parent="blue"]
+scale = Vector2(3, 3)
+texture = ExtResource("5_0a2si")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="blue"]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_5tflh")
+debug_color = Color(0, 0, 1, 0.419608)

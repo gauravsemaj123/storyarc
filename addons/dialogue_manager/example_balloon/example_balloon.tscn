@@ -239,6 +239,7 @@ text = "Response example"
 [node name="typingsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_q7i1t")
 pitch_scale = 0.71
+max_distance = 1e+13
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

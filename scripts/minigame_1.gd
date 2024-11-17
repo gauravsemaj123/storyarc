@@ -62,13 +62,14 @@ func ready_question():
 		riddle.text = "BUGTONG, BUGTONG: " + str(MinigameResources.riddleMinigame[randomize]["question"]) + " Ano ito?"
 		timer.paused = false
 		countdown()
-	elif MinigameResources.minigamescore > 7 and question_number == 10:
+	elif MinigameResources.minigamescore >= 7 and question_number == 10:
 		NavigationManager.go_to_level("ruinspring", "ruin_front")
 		
 	else:
 		remove_checks()
 		MinigameResources.minigamescore = 0
 		question_number = 0
+		check = 1
 		line_edit.visible = false
 		riddle.text = "Uulitin na'tin anak."
 		timerlang.play("riddletype")

@@ -31,6 +31,6 @@ func _on_interact():
 			inventory.add(11)
 			Notifier.newitemAnnounce("Mangga")
 		else:
-			pass
+			position.y = -366
 		pass
 	return

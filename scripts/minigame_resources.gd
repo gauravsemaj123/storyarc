@@ -45,3 +45,18 @@ var riddleMinigame = {
 	"answer": "Libro"
 	}
 }
+
+var colorMinigame = {
+	0:{
+		"texture": "red.png",
+		"placeholder_slottype": 0
+	},
+	1:{
+		"texture": "yellow.png",
+		"placeholder_slottype": 0
+	},
+	2:{
+		"texture": "blue.png",
+		"placeholder_slottype": 0
+	},
+}

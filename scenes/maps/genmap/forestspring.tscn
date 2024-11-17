@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://b11gq5ug8nyvo"]
+[gd_scene load_steps=60 format=4 uid="uid://b11gq5ug8nyvo"]
 
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="1_88idd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_l0hn2"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://scripts/elements/atis.gd" id="24_fj1r2"]
 [ext_resource type="PackedScene" uid="uid://bfrpxjouc78yk" path="res://inventorymain/Inventory.tscn" id="25_iy2qw"]
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="25_pesbn"]
+[ext_resource type="Texture2D" uid="uid://pw4a5trq87xm" path="res://inventorymain/inventory/itemlists/atis.png" id="25_yd38l"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="26_w7obl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3omn5"]
@@ -1510,6 +1511,21 @@ shape = SubResource("RectangleShape2D_r58jq")
 [node name="atis" type="Node2D" parent="scene_elements/AOEs/interactables"]
 position = Vector2(3092, 276)
 script = ExtResource("24_fj1r2")
+
+[node name="bunga" type="Sprite2D" parent="scene_elements/AOEs/interactables/atis"]
+position = Vector2(-90, -245)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_yd38l")
+
+[node name="bunga2" type="Sprite2D" parent="scene_elements/AOEs/interactables/atis"]
+position = Vector2(57, -314)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_yd38l")
+
+[node name="bunga3" type="Sprite2D" parent="scene_elements/AOEs/interactables/atis"]
+position = Vector2(83, -217)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_yd38l")
 
 [node name="InteractionArea" parent="scene_elements/AOEs/interactables/atis" instance=ExtResource("19_q3idm")]
 action_name = "Tignan"

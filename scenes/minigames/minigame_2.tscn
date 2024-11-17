@@ -1,0 +1,636 @@
+[gd_scene load_steps=47 format=3 uid="uid://cww2c3v475jts"]
+
+[ext_resource type="Script" path="res://scenes/minigames/minigame_2.gd" id="1_luqa8"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_6d46x"]
+[ext_resource type="Texture2D" uid="uid://bl8s71nqrm8yg" path="res://ui/misc/uiframe.png" id="2_87ud6"]
+[ext_resource type="Texture2D" uid="uid://p6wv7cadlxf4" path="res://ui/misc/minigames/minigame2BG.png" id="3_2qam7"]
+[ext_resource type="Texture2D" uid="uid://bbysu53qjfa88" path="res://ui/misc/minigames/wheel.png" id="6_m4265"]
+[ext_resource type="Script" path="res://scenes/minigames/colorwheels/spin_1.gd" id="6_tmn8c"]
+[ext_resource type="Texture2D" uid="uid://ddtnsqavh3ik3" path="res://ui/misc/minigames/guide.png" id="7_r2bq0"]
+[ext_resource type="AudioStream" uid="uid://dij465knup15k" path="res://ui/misc/minigames/itemback.mp3" id="7_rsukm"]
+[ext_resource type="PackedScene" uid="uid://df4f3u6n37r0" path="res://scenes/minigames/colorwheels/wheel.tscn" id="8_5qfhv"]
+[ext_resource type="Script" path="res://scenes/minigames/spin_2.gd" id="8_bimpy"]
+[ext_resource type="Texture2D" uid="uid://dch22u2cewy1n" path="res://ui/misc/minigames/empty.png" id="8_p1ocs"]
+[ext_resource type="Texture2D" uid="uid://cmqgm75c2gb5s" path="res://ui/misc/minigames/red.png" id="8_xncnv"]
+[ext_resource type="Script" path="res://scenes/minigames/red.gd" id="9_f6t4x"]
+[ext_resource type="Texture2D" uid="uid://bhvxbyo8vb8mc" path="res://ui/misc/minigames/yellow.png" id="9_hv53r"]
+[ext_resource type="Script" path="res://scenes/minigames/spin_3.gd" id="9_jicj1"]
+[ext_resource type="Texture2D" uid="uid://ct7sgjdbuay5j" path="res://ui/misc/minigames/blue.png" id="10_3bpdx"]
+[ext_resource type="Texture2D" uid="uid://btb357runl7wy" path="res://ui/misc/minigames/reset.png" id="11_lgbui"]
+[ext_resource type="Script" path="res://scenes/minigames/yellow.gd" id="11_qqeho"]
+[ext_resource type="Script" path="res://scenes/minigames/blue.gd" id="13_5qulo"]
+[ext_resource type="Script" path="res://scenes/minigames/signalizer.gd" id="20_1cu3g"]
+[ext_resource type="Script" path="res://scenes/minigames/signalizer_2.gd" id="21_3hcm8"]
+[ext_resource type="Script" path="res://scenes/minigames/signalizer_3.gd" id="21_bcdgi"]
+[ext_resource type="AudioStream" uid="uid://dkt4gtesd6a8f" path="res://ui/misc/minigames/item_put.mp3" id="23_nsn2t"]
+[ext_resource type="AudioStream" uid="uid://bp2dwaxme5guc" path="res://ui/misc/minigames/chestopen.mp3" id="24_gbq8n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibnj8"]
+shader = ExtResource("2_6d46x")
+shader_parameter/blur_amount = Vector2(0.01, 0.01)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eby61"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_207f5"]
+radius = 5.00625
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ws3y8"]
+radius = 4.98121
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkic3"]
+radius = 5.34439
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_py5vt"]
+radius = 5.5509
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqpf4"]
+radius = 5.3033
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydr1f"]
+radius = 5.00625
+
+[sub_resource type="Animation" id="Animation_qrtss"]
+resource_name = "new_animation"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin1/wheel1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4.18879, -0.25, 0, 0.25, 0, -2.0944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_vr8ou"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin1/wheel1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.18879, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dyub6"]
+resource_name = "wheel1spin2"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin1/wheel1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.0944, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_g4hlp"]
+resource_name = "wheel1spin3"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin1/wheel1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2.0944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_yo6r8"]
+resource_name = "wheel2spin1"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin2/wheel2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4.18879, -0.25, 0, 0.25, 0, -2.0944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_c7dsr"]
+resource_name = "RESET2"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin2/wheel2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.18879, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qhau2"]
+resource_name = "wheel2spin2"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin2/wheel2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.0944, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_3v8cs"]
+resource_name = "wheel2spin3"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin2/wheel2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2.0944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_6pfkc"]
+resource_name = "wheel3spin1"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin3/wheel3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4.18879, -0.25, 0, 0.25, 0, -2.0944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_v1dd2"]
+resource_name = "RESET3"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin3/wheel3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.18879, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_3pbdj"]
+resource_name = "wheel3spin2"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin3/wheel3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.0944, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_imid7"]
+resource_name = "wheel3spin3"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spin3/wheel3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2.0944, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_kgsdq"]
+resource_name = "fadeout"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25blb"]
+_data = {
+"RESET": SubResource("Animation_vr8ou"),
+"RESET2": SubResource("Animation_c7dsr"),
+"RESET3": SubResource("Animation_v1dd2"),
+"fadeout": SubResource("Animation_kgsdq"),
+"wheel1spin1": SubResource("Animation_qrtss"),
+"wheel1spin2": SubResource("Animation_dyub6"),
+"wheel1spin3": SubResource("Animation_g4hlp"),
+"wheel2spin1": SubResource("Animation_yo6r8"),
+"wheel2spin2": SubResource("Animation_qhau2"),
+"wheel2spin3": SubResource("Animation_3v8cs"),
+"wheel3spin1": SubResource("Animation_6pfkc"),
+"wheel3spin2": SubResource("Animation_3pbdj"),
+"wheel3spin3": SubResource("Animation_imid7")
+}
+
+[node name="minigame2" type="CanvasLayer"]
+script = ExtResource("1_luqa8")
+
+[node name="MINIGAME ELEMENTS" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blur" type="ColorRect" parent="MINIGAME ELEMENTS"]
+material = SubResource("ShaderMaterial_ibnj8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="wew" type="NinePatchRect" parent="MINIGAME ELEMENTS"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = 21.0
+offset_right = -857.0
+offset_bottom = -507.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+texture = ExtResource("2_87ud6")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="background" type="TextureRect" parent="MINIGAME ELEMENTS/wew"]
+modulate = Color(0.593134, 0.593134, 0.593134, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 3.6
+offset_right = 171.0
+offset_bottom = 115.6
+texture = ExtResource("3_2qam7")
+
+[node name="Button" type="Button" parent="MINIGAME ELEMENTS"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 183.0
+offset_top = 53.0
+offset_right = 199.0
+offset_bottom = 69.0
+scale = Vector2(4, 4)
+
+[node name="background" type="TextureRect" parent="MINIGAME ELEMENTS/Button"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.203
+anchor_top = -0.844
+anchor_right = -0.203
+anchor_bottom = 0.156
+offset_left = 19.498
+offset_top = 13.254
+offset_right = 19.498
+offset_bottom = 13.254
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_lgbui")
+
+[node name="spin1" type="Button" parent="MINIGAME ELEMENTS"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 484.0
+offset_top = 138.0
+offset_right = 647.0
+offset_bottom = 265.0
+script = ExtResource("6_tmn8c")
+
+[node name="wheel1" parent="MINIGAME ELEMENTS/spin1" instance=ExtResource("8_5qfhv")]
+position = Vector2(81, 82)
+rotation = -4.18879
+scale = Vector2(0.85, 0.85)
+
+[node name="spin2" type="Button" parent="MINIGAME ELEMENTS"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 384.0
+offset_top = 310.0
+offset_right = 524.0
+offset_bottom = 474.0
+script = ExtResource("8_bimpy")
+
+[node name="wheel2" parent="MINIGAME ELEMENTS/spin2" instance=ExtResource("8_5qfhv")]
+position = Vector2(80, 82)
+rotation = -4.18879
+scale = Vector2(0.85, 0.85)
+
+[node name="spin3" type="Button" parent="MINIGAME ELEMENTS"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 618.0
+offset_top = 308.0
+offset_right = 752.0
+offset_bottom = 474.0
+script = ExtResource("9_jicj1")
+
+[node name="wheel3" parent="MINIGAME ELEMENTS/spin3" instance=ExtResource("8_5qfhv")]
+position = Vector2(52, 83)
+rotation = -2.0944
+scale = Vector2(0.85, 0.85)
+
+[node name="center" type="Control" parent="MINIGAME ELEMENTS"]
+anchors_preset = 0
+offset_left = 566.0
+offset_top = 331.0
+offset_right = 606.0
+offset_bottom = 371.0
+rotation = 3.14159
+
+[node name="bg" type="TextureRect" parent="MINIGAME ELEMENTS/center"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+scale = Vector2(4, 4)
+texture = ExtResource("6_m4265")
+metadata/_edit_use_anchors_ = true
+
+[node name="guide" type="TextureRect" parent="MINIGAME ELEMENTS/center"]
+modulate = Color(1, 1, 1, 0.137255)
+layout_mode = 0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -48.0
+offset_bottom = -48.0
+scale = Vector2(4, 4)
+texture = ExtResource("7_r2bq0")
+metadata/_edit_use_anchors_ = true
+
+[node name="red" type="Area2D" parent="MINIGAME ELEMENTS/center"]
+position = Vector2(54, -33)
+script = ExtResource("9_f6t4x")
+
+[node name="Red" type="Sprite2D" parent="MINIGAME ELEMENTS/center/red"]
+scale = Vector2(3, 3)
+texture = ExtResource("8_xncnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/center/red"]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_eby61")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="yellow" type="Area2D" parent="MINIGAME ELEMENTS/center"]
+position = Vector2(7.62939e-06, 62)
+script = ExtResource("11_qqeho")
+
+[node name="Yellow" type="Sprite2D" parent="MINIGAME ELEMENTS/center/yellow"]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("9_hv53r")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MINIGAME ELEMENTS/center/yellow"]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_eby61")
+debug_color = Color(1, 1, 0, 0.419608)
+
+[node name="blue" type="Area2D" parent="MINIGAME ELEMENTS/center"]
+position = Vector2(-55, -33)
+script = ExtResource("13_5qulo")
+
+[node name="Blue" type="Sprite2D" parent="MINIGAME ELEMENTS/center/blue"]
+scale = Vector2(3, 3)
+texture = ExtResource("10_3bpdx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MINIGAME ELEMENTS/center/blue"]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_eby61")
+debug_color = Color(0, 0, 1, 0.419608)
+
+[node name="signalizer" type="Sprite2D" parent="MINIGAME ELEMENTS"]
+position = Vector2(435, 261)
+scale = Vector2(4, 4)
+texture = ExtResource("8_p1ocs")
+script = ExtResource("20_1cu3g")
+
+[node name="connectA" type="Area2D" parent="MINIGAME ELEMENTS/signalizer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/signalizer/connectA"]
+position = Vector2(21, -17)
+shape = SubResource("CircleShape2D_207f5")
+debug_color = Color(0, 0.644153, 0.286512, 0.42)
+
+[node name="connectB" type="Area2D" parent="MINIGAME ELEMENTS/signalizer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/signalizer/connectB"]
+position = Vector2(-4.25, 26.25)
+shape = SubResource("CircleShape2D_ws3y8")
+debug_color = Color(0.697383, 0.493774, 3.85046e-07, 0.42)
+
+[node name="signalizer2" type="Sprite2D" parent="MINIGAME ELEMENTS"]
+position = Vector2(698, 263)
+scale = Vector2(4, 4)
+texture = ExtResource("8_p1ocs")
+script = ExtResource("21_3hcm8")
+
+[node name="connectA" type="Area2D" parent="MINIGAME ELEMENTS/signalizer2"]
+position = Vector2(-21.5, -17.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/signalizer2/connectA"]
+shape = SubResource("CircleShape2D_bkic3")
+
+[node name="connectB" type="Area2D" parent="MINIGAME ELEMENTS/signalizer2"]
+position = Vector2(4.25, 25.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/signalizer2/connectB"]
+shape = SubResource("CircleShape2D_py5vt")
+
+[node name="signalizer3" type="Sprite2D" parent="MINIGAME ELEMENTS"]
+position = Vector2(566, 473)
+scale = Vector2(4, 4)
+texture = ExtResource("8_p1ocs")
+script = ExtResource("21_bcdgi")
+
+[node name="connectA" type="Area2D" parent="MINIGAME ELEMENTS/signalizer3"]
+position = Vector2(-25.25, -6.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/signalizer3/connectA"]
+shape = SubResource("CircleShape2D_oqpf4")
+debug_color = Color(3.32102e-06, 0.648976, 0.161954, 0.42)
+
+[node name="connectB" type="Area2D" parent="MINIGAME ELEMENTS/signalizer3"]
+position = Vector2(25.75, -6.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MINIGAME ELEMENTS/signalizer3/connectB"]
+shape = SubResource("CircleShape2D_ydr1f")
+debug_color = Color(1, 0.00933159, 0.0364816, 0.42)
+
+[node name="reset" type="AudioStreamPlayer2D" parent="MINIGAME ELEMENTS"]
+position = Vector2(0, -25)
+stream = ExtResource("7_rsukm")
+
+[node name="spinclick" type="AudioStreamPlayer2D" parent="MINIGAME ELEMENTS"]
+position = Vector2(0, -25)
+stream = ExtResource("23_nsn2t")
+
+[node name="chestopen" type="AudioStreamPlayer2D" parent="MINIGAME ELEMENTS"]
+stream = ExtResource("24_gbq8n")
+
+[node name="spin" type="AnimationPlayer" parent="MINIGAME ELEMENTS"]
+libraries = {
+"": SubResource("AnimationLibrary_25blb")
+}
+
+[connection signal="pressed" from="MINIGAME ELEMENTS/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MINIGAME ELEMENTS/spin1" to="." method="_on_spin_1_pressed"]
+[connection signal="pressed" from="MINIGAME ELEMENTS/spin2" to="." method="_on_spin_2_pressed"]
+[connection signal="pressed" from="MINIGAME ELEMENTS/spin3" to="." method="_on_spin_3_pressed"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/center/red" to="MINIGAME ELEMENTS/center/red" method="_on_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/center/red" to="MINIGAME ELEMENTS/center/red" method="_on_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/center/yellow" to="MINIGAME ELEMENTS/center/yellow" method="_on_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/center/yellow" to="MINIGAME ELEMENTS/center/yellow" method="_on_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/center/blue" to="MINIGAME ELEMENTS/center/blue" method="_on_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/center/blue" to="MINIGAME ELEMENTS/center/blue" method="_on_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/signalizer/connectA" to="MINIGAME ELEMENTS/signalizer" method="_on_connect_a_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/signalizer/connectA" to="MINIGAME ELEMENTS/signalizer" method="_on_connect_a_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/signalizer/connectB" to="MINIGAME ELEMENTS/signalizer" method="_on_connect_b_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/signalizer/connectB" to="MINIGAME ELEMENTS/signalizer" method="_on_connect_b_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/signalizer2/connectA" to="MINIGAME ELEMENTS/signalizer2" method="_on_connect_a_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/signalizer2/connectA" to="MINIGAME ELEMENTS/signalizer2" method="_on_connect_a_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/signalizer2/connectB" to="MINIGAME ELEMENTS/signalizer2" method="_on_connect_b_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/signalizer2/connectB" to="MINIGAME ELEMENTS/signalizer2" method="_on_connect_b_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/signalizer3/connectA" to="MINIGAME ELEMENTS/signalizer3" method="_on_connect_a_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/signalizer3/connectA" to="MINIGAME ELEMENTS/signalizer3" method="_on_connect_a_body_exited"]
+[connection signal="body_entered" from="MINIGAME ELEMENTS/signalizer3/connectB" to="MINIGAME ELEMENTS/signalizer3" method="_on_connect_b_body_entered"]
+[connection signal="body_exited" from="MINIGAME ELEMENTS/signalizer3/connectB" to="MINIGAME ELEMENTS/signalizer3" method="_on_connect_b_body_exited"]

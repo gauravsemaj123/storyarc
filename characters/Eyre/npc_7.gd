@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 		miraclelight.texture_scale = 0
 		miraclelight.energy = 0
 	
-	if item_sequence <= 18:
+	if item_sequence <= 19:
 		interaction_area.action_name = "Ibigay"
 	else:
 		interaction_area.action_name = "Sabihing tapos na ang misyon"
@@ -47,7 +47,7 @@ func _ready():
 
 func _on_interact():
 	if inventory.visible != true:
-		if Questlines.questline_number == 11 and item_sequence <= 18:
+		if Questlines.questline_number == 11 and item_sequence <= 19:
 			#strings = str(Global.inventory[0]["Name"])
 			#key = Global.inventory.find_key(strings)
 			#

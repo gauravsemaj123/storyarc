@@ -20,9 +20,23 @@ func _process(_delta: float) -> void:
 		position.y = -276
 	else:
 		position.y = 276
+
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	is_atis_got = false
+
+func on_openDialog():
+	print(dialog_inprocess)
+	if dialog_inprocess:
+		player.uiactive = true
+		player.dialogactive = true
+		player.JUMP_VELOCITY = 0
+		player.SPEED = 0
+	else:
+		player.uiactive = false
+		player.dialogactive = false
+		player.JUMP_VELOCITY = -600.0
+		player.SPEED = 700.0
 
 func _on_interact():
 	if Questlines.questline_number != 11:
@@ -31,11 +45,11 @@ func _on_interact():
 		if is_atis_got == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "atisget")
 			dialog_inprocess = true
-			player.uiactive = true
+			on_openDialog()
 			await DialogueManager.dialogue_ended
 			inventory.add(0)
 			dialog_inprocess = false
-			player.uiactive = false
+			on_openDialog()
 			is_atis_got = true
 		else:
 			pass

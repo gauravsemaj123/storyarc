@@ -69,11 +69,61 @@ var quest_database = {
 		"QuestImage": preload("res://textures/characterports/Stacey.png")
 	},
 	13:{
-		"QuestName": "TAPOS NA ANG UNANG KABANATA",
+		"QuestName": "SAGLIT LANG NASAAN ANG INGAY",
+		"QuestDesc": "Hanapin ang ingay na iyon! Napakalakas at tila nasa kailaliman!",
+		"QuestImage": preload("res://textures/characterports/Lisa.png")
+	},
+	14:{
+		"QuestName": "GALING PALA SA IBABA",
+		"QuestDesc": "Dinig na na’tin ang ingay! Hanapin siya!",
+		"QuestImage": preload("res://textures/characterports/Lisa.png")
+	},
+	15:{
+		"QuestName": "SI DANNY AT ANG KANYANG HILING",
+		"QuestDesc": "Umiiyak si Danny dahil hindi niya mahanap ang kuwintas ng kaniyang kaibigan na si Merry! Hanapin kung nasaan!",
+		"QuestImage": preload("res://textures/characterports/Danny.png")
+	},
+	16:{
+		"QuestName": "ANG MAKULAY NA PALAISIPAN",
+		"QuestDesc": "Tila ang bulwagang ito ay mayroong kahong may pazel! Buksan na’tin, alamin ang pazel at tignan ang laman!",
+		"QuestImage": preload("res://textures/characterports/Danny.png")
+	},
+	17:{
+		"QuestName": "IBALIK ANG KUWINTAS NG SIRENA",
+		"QuestDesc": "Ang laman ng kahon ay kuwintas ni Merry! Tama nga ang namumuno ng nayon! Tinago nila ito sa kadahilanang baka mawala!",
+		"QuestImage": preload("res://textures/characterports/Merry.png")
+	},
+	18:{
+		"QuestName": "TAPOS NA SIGURO",
 		"QuestDesc": "Bumalik kay Lola Nita upang bumalik sa tunay na mundo!",
 		"QuestImage": preload("res://textures/characterports/Lola Nita.png")
-	}
-	
+	},
+	19:{
+		"QuestName": "MERON NA NAMAN",
+		"QuestDesc": "Mukhang hindi ka makakabalik ulit ah? Tignan na’tin kung nasaan! Maaring nasa sakahan?",
+		"QuestImage": preload("res://textures/characterports/MatMat.png")
+	},
+	20:{
+		"QuestName": "ANG KAGUSTUHAN NI MATMAT",
+		"QuestDesc": "Tila si Mat-mat ay hindi marunong bumili! Sa madaling salita, hindi niya alam ang matematika! Maaari na’tin siyang tulungan sa pagtanong kay Ate Valerie kung ano ang mga presyo nito!",
+		"QuestImage": preload("res://textures/characterports/MatMat.png")
+	},
+	21:{
+		"QuestName": "MAGKANO ANG PERA NA AABUTIN",
+		"QuestDesc": "Natanong na kay Ate Valerie ang mga presyo! Ngayon, kausapin si Mat-mat kung magkano ang kaniyang dala!",
+		"QuestImage": preload("res://textures/characterports/Valerie.png")
+	},
+	22:{
+		"QuestName": "ANG PLANO AT PAGDIRIWANG",
+		"QuestDesc": "Ngayon, kausapin si Ate Valerie upang bumili! At ngayon ay pinasuyo sa’yo ni Mat-mat ang bilihin at ikaw na mismo ang gagawa!",
+		"QuestImage": preload("res://textures/characterports/Lisa.png")
+	},
+	23:{
+		"QuestName": "TAPOS NA LAHAT SA WAKAS",
+		"QuestDesc": "Bumalik kay Lola Nita! Alamin kung ano ang natutunan sa lahat-lahat ng iyong mga nalaman!",
+		"QuestImage": preload("res://textures/characterports/Lola Nita.png")
+	},
+
 }
 
 func updateQuest():
