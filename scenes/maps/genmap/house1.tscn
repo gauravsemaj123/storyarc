@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://g5olwa54kcla"]
+[gd_scene load_steps=31 format=4 uid="uid://g5olwa54kcla"]
 
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_u5tbf"]
 [ext_resource type="Script" path="res://scripts/elements/backcloud.gd" id="3_yq0gj"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cw57v0sm37vhi" path="res://scenes/scene_changer/door.tscn" id="12_mtx0c"]
 [ext_resource type="Texture2D" uid="uid://bsmd6uclb0l1m" path="res://textures/gentextures/treetilesets.png" id="12_xql0y"]
 [ext_resource type="Script" path="res://scripts/elements/mangga.gd" id="15_1m314"]
+[ext_resource type="Texture2D" uid="uid://hsfw1agingx8" path="res://inventorymain/inventory/itemlists/mangga.png" id="16_6koa8"]
 [ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="16_a3vb0"]
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="17_hv4od"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="18_w6sqe"]
@@ -1437,13 +1438,13 @@ tile_set = SubResource("TileSet_tis4c")
 [node name="Doors" type="Node" parent="scene_elements"]
 
 [node name="Door_house1_ext" parent="scene_elements/Doors" instance=ExtResource("12_mtx0c")]
-position = Vector2(27, 351)
+position = Vector2(30, 570)
 destination_level_tag = "farmspring"
 destination_door_tag = "house1_ent"
 spawn_direction = "right"
 
 [node name="Spawn" parent="scene_elements/Doors/Door_house1_ext" index="1"]
-position = Vector2(72, 0)
+position = Vector2(85, -162)
 
 [node name="AOEs" type="Node" parent="scene_elements"]
 
@@ -1510,6 +1511,21 @@ action_name = "Pitasin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/mangga/InteractionArea"]
 shape = SubResource("RectangleShape2D_tlq34")
+
+[node name="Mangga" type="Sprite2D" parent="scene_elements/AOEs/mangga"]
+position = Vector2(-65, -38)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("16_6koa8")
+
+[node name="Mangga2" type="Sprite2D" parent="scene_elements/AOEs/mangga"]
+position = Vector2(31, -88)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("16_6koa8")
+
+[node name="Mangga3" type="Sprite2D" parent="scene_elements/AOEs/mangga"]
+position = Vector2(66, 11)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("16_6koa8")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

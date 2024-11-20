@@ -20,6 +20,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://noimage.png"
 config/icon="res://game.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 NavigationManager="*res://scripts/navigation_manager.gd"

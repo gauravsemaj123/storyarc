@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dr2t8w8i7ye2p"]
+[gd_scene load_steps=40 format=4 uid="uid://dr2t8w8i7ye2p"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_q8ec2"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="1_qmw1g"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://scripts/elements/wansoy.gd" id="17_piuaa"]
 [ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="18_v6vyj"]
 [ext_resource type="Script" path="res://scripts/elements/yangka.gd" id="19_bsfpc"]
+[ext_resource type="Texture2D" uid="uid://bnxdk7pckqjm7" path="res://inventorymain/inventory/itemlists/yangka.png" id="20_gpacc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loccn"]
 texture = ExtResource("10_catgy")
@@ -1701,6 +1702,21 @@ shape = SubResource("RectangleShape2D_uy5p4")
 position = Vector2(430, 507)
 script = ExtResource("19_bsfpc")
 
+[node name="Yangka" type="Sprite2D" parent="scene_elements/AOEs/yangka"]
+position = Vector2(-77, -209)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("20_gpacc")
+
+[node name="Yangka2" type="Sprite2D" parent="scene_elements/AOEs/yangka"]
+position = Vector2(37, -275)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("20_gpacc")
+
+[node name="Yangka3" type="Sprite2D" parent="scene_elements/AOEs/yangka"]
+position = Vector2(50, -175)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("20_gpacc")
+
 [node name="InteractionArea" parent="scene_elements/AOEs/yangka" instance=ExtResource("18_v6vyj")]
 action_name = "Tignan"
 
@@ -1710,6 +1726,10 @@ shape = SubResource("RectangleShape2D_whth2")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Notifier" parent="UI" instance=ExtResource("14_h6s15")]
+offset_left = -163.0
+offset_top = 13.0
+offset_right = -163.0
+offset_bottom = 13.0
 
 [node name="PauseScene" parent="UI" instance=ExtResource("15_t2bgy")]
 visible = false

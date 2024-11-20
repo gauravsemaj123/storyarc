@@ -6,7 +6,7 @@ signal on_stage_finished
 
 @onready var control = $Control
 @onready var animation_player = $AnimationPlayer
-@onready var label = $Control/TextureRect/Label
+@onready var label = $Control/Label
 
 func _ready():
 	control.visible = false

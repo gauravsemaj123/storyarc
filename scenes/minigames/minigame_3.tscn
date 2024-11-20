@@ -1,5 +1,6 @@
-[gd_scene load_steps=108 format=4 uid="uid://vxgart1trg24"]
+[gd_scene load_steps=127 format=4 uid="uid://vxgart1trg24"]
 
+[ext_resource type="Script" path="res://scenes/minigames/minigame_3.gd" id="1_8w6gc"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="1_ntmbf"]
 [ext_resource type="Script" path="res://scripts/elements/backcloud.gd" id="2_j5wsr"]
 [ext_resource type="Texture2D" uid="uid://db365euxvnwq7" path="res://textures/backgrounds/maps/plains/backcloud.png" id="3_6qwvw"]
@@ -8,12 +9,31 @@
 [ext_resource type="Texture2D" uid="uid://ds0n0um5cc6qw" path="res://textures/backgrounds/maps/plains/bmountain.png" id="6_3omt7"]
 [ext_resource type="Texture2D" uid="uid://dosd34n7grkva" path="res://textures/backgrounds/maps/plains/mountain.png" id="7_8vsgt"]
 [ext_resource type="Texture2D" uid="uid://crp2euy6hpq45" path="res://textures/backgrounds/maps/plains/ground.png" id="8_bmok7"]
+[ext_resource type="Texture2D" uid="uid://c5yuigh7vxq1y" path="res://textures/misc/physics/drop.png" id="9_6nbf1"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="9_d4e61"]
 [ext_resource type="Texture2D" uid="uid://cklnyr4yobq6n" path="res://textures/gentextures/housetilesets.png" id="10_nle58"]
 [ext_resource type="Texture2D" uid="uid://bsmd6uclb0l1m" path="res://textures/gentextures/treetilesets.png" id="11_u8hx0"]
 [ext_resource type="Texture2D" uid="uid://c18hq1e17a5k7" path="res://textures/gentextures/woodlanternhead.png" id="12_05bly"]
 [ext_resource type="Texture2D" uid="uid://cl5574fjwmyjb" path="res://characters/Valerie/valerie_idle.png" id="13_rhjda"]
 [ext_resource type="Texture2D" uid="uid://p40afv2v7roo" path="res://characters/Lisa/idle.png" id="14_oke8i"]
+[ext_resource type="Texture2D" uid="uid://bl8s71nqrm8yg" path="res://ui/misc/uiframe.png" id="15_tdcab"]
+[ext_resource type="Texture2D" uid="uid://d4d31shkii0k" path="res://inventorymain/inventory/invframeslot.png" id="17_llmc8"]
+[ext_resource type="Texture2D" uid="uid://desdwj1qccvmr" path="res://textures/characterports/Valerie.png" id="18_yl128"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="20_mf500"]
+[ext_resource type="Theme" uid="uid://b6ju4l1dem84b" path="res://scenes/minigames/minigame3buttons.tres" id="20_qeb1a"]
+[ext_resource type="AudioStream" uid="uid://chyt3uw4xulgn" path="res://sounds/SFX/clonck.mp3" id="22_kgyji"]
+[ext_resource type="AudioStream" uid="uid://b2rxxrhjo81ud" path="res://sounds/SFX/bing_wa_wa_ui.mp3" id="23_xp7iw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uovde"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+initial_velocity_max = 38.22
+angular_velocity_min = 9.99998
+angular_velocity_max = 9.99998
+gravity = Vector3(0, 98, 0)
+scale_max = 3.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1yqb8"]
 texture = ExtResource("9_d4e61")
@@ -2005,15 +2025,115 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oblcq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frbqn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4f4cy"]
+
+[sub_resource type="Theme" id="Theme_7q3xm"]
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_oblcq")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_frbqn")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_4f4cy")
+
+[sub_resource type="Animation" id="Animation_jqbdg"]
+resource_name = "typebegin"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("minigameui/main/questionpanel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_xchqm"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("minigameui/main/questionpanel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fve74"]
+resource_name = "SKIP"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("minigameui/main/questionpanel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dypax"]
+resource_name = "totalprice"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("minigameui/main/answers:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(131, -0.25, 0, 0.25, 0, 131, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("minigameui/main/answers:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u28ni"]
+_data = {
+"RESET": SubResource("Animation_xchqm"),
+"SKIP": SubResource("Animation_fve74"),
+"totalprice": SubResource("Animation_dypax"),
+"typebegin": SubResource("Animation_jqbdg")
+}
+
 [node name="minigame3" type="Node2D"]
+script = ExtResource("1_8w6gc")
 
 [node name="scene_elements" type="Node" parent="."]
+
+[node name="rain" type="GPUParticles2D" parent="scene_elements"]
+position = Vector2(1591, -138)
+scale = Vector2(3.5, 3.5)
+amount = 7500
+process_material = SubResource("ParticleProcessMaterial_uovde")
+texture = ExtResource("9_6nbf1")
+lifetime = 61.5
+speed_scale = 5.0
+fixed_fps = 60
 
 [node name="dyn_background" type="Node" parent="scene_elements"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="scene_elements/dyn_background"]
 
 [node name="sky" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
+modulate = Color(0.57, 0.57, 0.57, 1)
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(1584, 0)
 
@@ -2023,6 +2143,7 @@ scale = Vector2(4.5, 4.5)
 texture = ExtResource("1_ntmbf")
 
 [node name="backcloud" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
+modulate = Color(0.351563, 0.351563, 0.351563, 1)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1232, 0)
 script = ExtResource("2_j5wsr")
@@ -2034,6 +2155,7 @@ scale = Vector2(3.5, 3.5)
 texture = ExtResource("3_6qwvw")
 
 [node name="frontcloud" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
+modulate = Color(0.351563, 0.351563, 0.351563, 1)
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1232, 0)
 script = ExtResource("4_2opgk")
@@ -2043,7 +2165,26 @@ position = Vector2(557, 282)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("5_j0kyu")
 
+[node name="Sprite2D2" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/frontcloud"]
+modulate = Color(0.65834, 0.65834, 0.658339, 1)
+position = Vector2(212, -235)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_6qwvw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/frontcloud"]
+modulate = Color(0.65834, 0.65834, 0.658339, 1)
+position = Vector2(787, -149)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_6qwvw")
+
+[node name="Sprite2D4" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/frontcloud"]
+modulate = Color(0.65834, 0.65834, 0.658339, 1)
+position = Vector2(13, -76)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_6qwvw")
+
 [node name="backmount" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
+modulate = Color(0.380392, 0.556863, 0.678431, 1)
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(1232, 0)
 
@@ -2053,6 +2194,7 @@ scale = Vector2(3.5, 3.5)
 texture = ExtResource("6_3omt7")
 
 [node name="frontmount" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
+modulate = Color(0.380392, 0.556863, 0.678431, 1)
 motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1232, 0)
 
@@ -2062,6 +2204,7 @@ scale = Vector2(3.5, 3.5)
 texture = ExtResource("7_8vsgt")
 
 [node name="ground" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
+modulate = Color(0.380392, 0.556863, 0.678431, 1)
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(1232, 0)
 
@@ -2130,4 +2273,203 @@ autoplay = "default"
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="scene_elements"]
-position = Vector2(1663, 469)
+position = Vector2(1661, 414)
+
+[node name="minigameui" type="CanvasLayer" parent="."]
+
+[node name="main" type="Control" parent="minigameui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="NinePatchRect" parent="minigameui/main"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 73.0
+offset_right = 551.0
+offset_bottom = 223.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("15_tdcab")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="frame" type="NinePatchRect" parent="minigameui/main"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 111.0
+offset_right = 420.0
+offset_bottom = 169.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("17_llmc8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="image" type="TextureRect" parent="minigameui/main/frame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.541
+anchor_top = 0.952
+anchor_right = 0.541
+anchor_bottom = 0.952
+offset_left = -32.0209
+offset_top = -63.6903
+offset_right = 31.9791
+offset_bottom = 0.309711
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("18_yl128")
+
+[node name="results" type="NinePatchRect" parent="minigameui/main"]
+offset_left = 362.0
+offset_top = 331.0
+offset_right = 420.0
+offset_bottom = 398.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("17_llmc8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="resultpanel" type="RichTextLabel" parent="minigameui/main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.045
+anchor_right = 0.948
+anchor_bottom = 0.955
+offset_left = 317.096
+offset_top = 317.84
+offset_right = 149.904
+offset_bottom = 753.16
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/normal_font_size = 71
+text = "• The result goes here"
+tab_size = 1
+
+[node name="questions" type="NinePatchRect" parent="minigameui/main"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 111.0
+offset_right = 725.0
+offset_bottom = 193.0
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("17_llmc8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="questionpanel" type="RichTextLabel" parent="minigameui/main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.045
+anchor_right = 0.948
+anchor_bottom = 0.955
+offset_left = 548.096
+offset_top = 95.84
+offset_right = -54.0961
+offset_bottom = -234.84
+theme_override_font_sizes/normal_font_size = 16
+text = "The Question goes here"
+tab_size = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="answers" type="NinePatchRect" parent="minigameui/main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.713
+anchor_top = 0.751
+anchor_right = 0.713
+anchor_bottom = 0.751
+offset_left = -227.376
+offset_top = -80.648
+offset_right = -96.3761
+offset_bottom = -34.648
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("17_llmc8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="ANSWERPANEL" type="HBoxContainer" parent="minigameui/main"]
+layout_mode = 2
+offset_left = 626.0
+offset_top = 436.0
+offset_right = 1022.0
+offset_bottom = 536.0
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="VBOX" type="VBoxContainer" parent="minigameui/main/ANSWERPANEL"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="A" type="Button" parent="minigameui/main/ANSWERPANEL/VBOX"]
+layout_mode = 2
+theme = ExtResource("20_qeb1a")
+theme_override_fonts/font = ExtResource("20_mf500")
+theme_override_font_sizes/font_size = 21
+
+[node name="B" type="Button" parent="minigameui/main/ANSWERPANEL/VBOX"]
+layout_mode = 2
+theme = ExtResource("20_qeb1a")
+theme_override_fonts/font = ExtResource("20_mf500")
+theme_override_font_sizes/font_size = 21
+
+[node name="VBOX2" type="VBoxContainer" parent="minigameui/main/ANSWERPANEL"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="C" type="Button" parent="minigameui/main/ANSWERPANEL/VBOX2"]
+layout_mode = 2
+theme = ExtResource("20_qeb1a")
+theme_override_fonts/font = ExtResource("20_mf500")
+theme_override_font_sizes/font_size = 21
+
+[node name="D" type="Button" parent="minigameui/main/ANSWERPANEL/VBOX2"]
+layout_mode = 2
+theme = ExtResource("20_qeb1a")
+theme_override_fonts/font = ExtResource("20_mf500")
+theme_override_font_sizes/font_size = 21
+
+[node name="totalanswer" type="LineEdit" parent="minigameui/main"]
+visible = false
+layout_mode = 0
+offset_left = 610.0
+offset_top = 419.0
+offset_right = 1034.0
+offset_bottom = 449.0
+theme = SubResource("Theme_7q3xm")
+placeholder_text = "KABUUANG GASTUSIN"
+alignment = 1
+
+[node name="typing" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u28ni")
+}
+
+[node name="dialog" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_kgyji")
+
+[node name="in" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_xp7iw")
+volume_db = 9.984
+
+[connection signal="pressed" from="minigameui/main/ANSWERPANEL/VBOX/A" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="minigameui/main/ANSWERPANEL/VBOX/B" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="minigameui/main/ANSWERPANEL/VBOX2/C" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="minigameui/main/ANSWERPANEL/VBOX2/D" to="." method="_on_d_pressed"]

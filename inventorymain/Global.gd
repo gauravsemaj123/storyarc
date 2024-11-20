@@ -2,6 +2,8 @@ extends Node
 
 var gold = 0
 
+var compute = 0
+
 var valerie_shopDialog = {
 	0:{
 		"say": "Ayan ba gusto mo anak?"
@@ -172,8 +174,8 @@ var items = {
 		"Icon": preload("res://inventorymain/inventory/itemlists/panulat.png")
 	},
 	20:{
-		"Name": "Kutsilyo" ,
-		"Des": "Isang matalim na bagay na kadalasang pinapanghiwa sa pagkain. Ingatang mabuti!",
+		"Name": "Papel" ,
+		"Des": "Naglalaman ito ng mga bibilihin ni MatMat!",
 		"Cost": 0,
 		"Icon": null
 	},
@@ -184,29 +186,30 @@ var items = {
 		"Icon": preload("res://inventorymain/inventory/itemlists/sphere.png")
 	},
 	22:{
+		"Name": "Papel" ,
+		"Des":  "Naglalaman ito ng mga bibilihin ni MatMat! At meron ding nakasulat na aabuting gastos na halagang " + str(compute) + "! Abutin kay MatMat!",
+		"Cost": 0,
+		"Icon": null
+	},
+	23:{
 		"Name": "Fortune Cookie #1" ,
 		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
 		"Cost": 0,
 		"Icon": null
 	},
-	23: {
+	24: {
 		"Name": "Fortune Cookie #2" ,
 		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
 		"Cost": 0,
 		"Icon": null
 	},
-	24: {
+	25: {
 		"Name": "Fortune Cookie #3" ,
 		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
 		"Cost": 0,
 		"Icon": null
-	},
-	25:{
-		"Name": "Fortune Cookie #4" ,
-		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
-		"Cost": 0,
-		"Icon": null
 	}
+
 }
 
 var inventory = { 

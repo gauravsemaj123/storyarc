@@ -117,15 +117,18 @@ offset_bottom = 74.0
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("1_76dfr")
 
-[node name="Label" type="Label" parent="Control/TextureRect"]
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 9.0
-offset_top = 43.0
-offset_right = 81.0
-offset_bottom = 68.0
+offset_left = 31.0
+offset_top = 151.0
+offset_right = 871.0
+offset_bottom = 444.0
+scale = Vector2(0.3, 0.3)
 theme = SubResource("Theme_pghxa")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
+theme_override_font_sizes/font_size = 110
 text = "City Label"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -60,3 +60,18 @@ var colorMinigame = {
 		"placeholder_slottype": 0
 	},
 }
+
+var computingMinigame = {
+	0:{
+		"question": "Ang presyo ng kada kilo ng bihon ay 20, at ang pansit gulay naman ay 15. Magkano ang aabutin sa tatlong kilo ng Bihon at ng dalawang kilo ng Pansit Gulay??"
+	},
+	1:{
+		"question": "Ang isang pakete na'min ng kikiam ay 25, at ang bote ng toyo naman ay 20. Magkano ang aabutin sa isang pakete ng kikiam at bote ng toyo?"
+	},
+	2:{
+		"question": "Ang presyo ng tinging mantika na'min ay 5, gayundin sa isang paketeng asin. Magkano ang aabutin sa dalawang tinging mantika at isang paketeng asin?"
+	},
+	3:{
+		"question": "Ang presyo ng kada pakete ng paminta ay 5, ang isang buong bawang ay 7, at ang isang pirasong sibuyas ay 6. Magkano ang aabutin sa isang paketeng paminta, isang buong bawang, at dalawang pirasong sibuyas?"
+	}
+}
