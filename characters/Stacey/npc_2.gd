@@ -19,7 +19,7 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func on_openDialog():
-	print(dialog_inprocess)
+	print("dialog_inprocess: " + str(dialog_inprocess))
 	if dialog_inprocess:
 		player.uiactive = true
 		player.dialogactive = true

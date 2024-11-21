@@ -104,6 +104,8 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 		if is_in_water:
 			velocity.y = SWIM_JUMP
+		if uiactive:
+			velocity.y = 0
 	#Dynamic front and back shit
 	if velocity.x < 0:
 		spriteanims.flip_h = true
@@ -117,6 +119,8 @@ func _physics_process(delta):
 			velocity.x = direction * SWIM_SPEED
 		else:
 			velocity.x = direction * SPEED
+		if uiactive:
+			velocity.x = 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

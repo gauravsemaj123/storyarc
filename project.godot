@@ -40,6 +40,7 @@ TransferrerCutscene="*res://scenes/scene_changer/transferrer_cutscene.tscn"
 JustFade="*res://ui/misc/just_fade.tscn"
 Cutscene="*res://ui/misc/cutscene.tscn"
 ItemDetection="*res://scripts/itemDetection.gd"
+Weather="*res://scenes/weather/weather.tscn"
 
 [display]
 

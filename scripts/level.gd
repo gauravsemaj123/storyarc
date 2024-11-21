@@ -1,8 +1,10 @@
 extends Node2D
 
 var questnumber = Questlines.questline_number
+var is_maulan = Weather.is_rainy
 
 func _ready():
+	print("maulan: " + str(is_maulan))
 	print(questnumber)
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)

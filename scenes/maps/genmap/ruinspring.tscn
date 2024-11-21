@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://d1qfa756aqya1"]
+[gd_scene load_steps=47 format=4 uid="uid://d1qfa756aqya1"]
 
 [ext_resource type="Texture2D" uid="uid://b8rtt8lpy1cuv" path="res://textures/backgrounds/maps/ruins/backr.png" id="1_6vdsl"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_htcl3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="8_6b08u"]
 [ext_resource type="Texture2D" uid="uid://d0jugotrn8alp" path="res://textures/gentextures/ruinlantern.png" id="8_o2j1b"]
 [ext_resource type="PackedScene" uid="uid://cw57v0sm37vhi" path="res://scenes/scene_changer/door.tscn" id="9_t72wd"]
+[ext_resource type="Texture2D" uid="uid://c18hq1e17a5k7" path="res://textures/gentextures/woodlanternhead.png" id="10_udc07"]
 [ext_resource type="PackedScene" uid="uid://mx0vwltq3tj" path="res://characters/Harold/npc_5.tscn" id="11_6wuj1"]
 [ext_resource type="Script" path="res://scripts/elements/ruinboundarycam.gd" id="11_h5iuw"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="11_wej4b"]
@@ -542,11 +543,17 @@ texture = ExtResource("8_o2j1b")
 0:0/animation_frame_3/duration = 1.0
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vv3gr"]
+texture = ExtResource("10_udc07")
+0:0/animation_columns = 4
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_nc5m0"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_y4cum")
 sources/1 = SubResource("TileSetAtlasSource_c1o24")
 sources/2 = SubResource("TileSetAtlasSource_42mg4")
+sources/3 = SubResource("TileSetAtlasSource_vv3gr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb1s1"]
 size = Vector2(159.5, 96)

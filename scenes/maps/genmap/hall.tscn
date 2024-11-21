@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://5spk65e1rini"]
+[gd_scene load_steps=26 format=4 uid="uid://5spk65e1rini"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_gbnja"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="1_iww0d"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://crp2euy6hpq45" path="res://textures/backgrounds/maps/plains/ground.png" id="8_t4vfg"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="9_28aew"]
 [ext_resource type="Texture2D" uid="uid://bxa7umlldpe8o" path="res://textures/misc/physics/front.png" id="10_0k7tr"]
+[ext_resource type="PackedScene" uid="uid://dtrqxricltona" path="res://scenes/weather/weatherfilter.tscn" id="10_hat3m"]
 [ext_resource type="Texture2D" uid="uid://bx8ddo1dvdk5g" path="res://textures/misc/physics/back.png" id="11_5cj5l"]
 [ext_resource type="Texture2D" uid="uid://c18hq1e17a5k7" path="res://textures/gentextures/woodlanternhead.png" id="12_cqqos"]
 [ext_resource type="Texture2D" uid="uid://dq6naomndwlum" path="res://textures/gentextures/stonelanternhead.png" id="13_h7qkg"]
@@ -572,6 +573,8 @@ motion_mirroring = Vector2(1232, 0)
 position = Vector2(557, 190)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("8_t4vfg")
+
+[node name="weatherfilter" parent="scene_elements/dyn_background/ParallaxBackground/ground" instance=ExtResource("10_hat3m")]
 
 [node name="backtexture" type="Node" parent="scene_elements"]
 

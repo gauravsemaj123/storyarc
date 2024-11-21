@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://b11gq5ug8nyvo"]
+[gd_scene load_steps=61 format=4 uid="uid://b11gq5ug8nyvo"]
 
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="1_88idd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_l0hn2"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bggqgmacrolat" path="res://textures/backgrounds/maps/forest/decof.png" id="7_gluxs"]
 [ext_resource type="Texture2D" uid="uid://bxa7umlldpe8o" path="res://textures/misc/physics/front.png" id="7_ihy47"]
 [ext_resource type="Texture2D" uid="uid://bdsnvw8s8a41v" path="res://textures/backgrounds/maps/forest/forpath.png" id="8_5l0rl"]
+[ext_resource type="PackedScene" uid="uid://dtrqxricltona" path="res://scenes/weather/weatherfilter.tscn" id="9_k3por"]
 [ext_resource type="Texture2D" uid="uid://bsmd6uclb0l1m" path="res://textures/gentextures/treetilesets.png" id="13_vt54k"]
 [ext_resource type="PackedScene" uid="uid://cyqja7nwr5os5" path="res://characters/Lola Nita/npc_1.tscn" id="15_tdhti"]
 [ext_resource type="PackedScene" uid="uid://bpw11rqy7wrmn" path="res://characters/Stacey/npc_2.tscn" id="16_oxyl5"]
@@ -1233,6 +1234,8 @@ position = Vector2(616, 171)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("8_5l0rl")
 
+[node name="weatherfilter" parent="scene_elements/dyn_background/ParallaxBackground/tfront" instance=ExtResource("9_k3por")]
+
 [node name="backtexture" type="Node" parent="scene_elements"]
 
 [node name="back2" type="TileMapLayer" parent="scene_elements/backtexture"]
@@ -1489,6 +1492,21 @@ debug_color = Color(0.984314, 0, 0.352941, 0.419608)
 
 [node name="interactables" type="Node" parent="scene_elements/AOEs"]
 
+[node name="bunga" type="Sprite2D" parent="scene_elements/AOEs/interactables"]
+position = Vector2(3002, 31)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_yd38l")
+
+[node name="bunga2" type="Sprite2D" parent="scene_elements/AOEs/interactables"]
+position = Vector2(3149, -38)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_yd38l")
+
+[node name="bunga3" type="Sprite2D" parent="scene_elements/AOEs/interactables"]
+position = Vector2(3175, 59)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("25_yd38l")
+
 [node name="Node2D" type="Node2D" parent="scene_elements/AOEs/interactables"]
 z_index = -5
 position = Vector2(10584, 454)
@@ -1511,21 +1529,6 @@ shape = SubResource("RectangleShape2D_r58jq")
 [node name="atis" type="Node2D" parent="scene_elements/AOEs/interactables"]
 position = Vector2(3092, 276)
 script = ExtResource("24_fj1r2")
-
-[node name="bunga" type="Sprite2D" parent="scene_elements/AOEs/interactables/atis"]
-position = Vector2(-90, -245)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("25_yd38l")
-
-[node name="bunga2" type="Sprite2D" parent="scene_elements/AOEs/interactables/atis"]
-position = Vector2(57, -314)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("25_yd38l")
-
-[node name="bunga3" type="Sprite2D" parent="scene_elements/AOEs/interactables/atis"]
-position = Vector2(83, -217)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("25_yd38l")
 
 [node name="InteractionArea" parent="scene_elements/AOEs/interactables/atis" instance=ExtResource("19_q3idm")]
 action_name = "Tignan"

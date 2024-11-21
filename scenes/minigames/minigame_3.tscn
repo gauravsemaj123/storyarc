@@ -2036,21 +2036,6 @@ LineEdit/styles/focus = SubResource("StyleBoxEmpty_oblcq")
 LineEdit/styles/normal = SubResource("StyleBoxEmpty_frbqn")
 LineEdit/styles/read_only = SubResource("StyleBoxEmpty_4f4cy")
 
-[sub_resource type="Animation" id="Animation_jqbdg"]
-resource_name = "typebegin"
-length = 1.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("minigameui/main/questionpanel:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.5)
-}
-
 [sub_resource type="Animation" id="Animation_xchqm"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -2103,6 +2088,21 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_jqbdg"]
+resource_name = "typebegin"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("minigameui/main/questionpanel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u28ni"]
@@ -2327,6 +2327,7 @@ grow_vertical = 0
 texture = ExtResource("18_yl128")
 
 [node name="results" type="NinePatchRect" parent="minigameui/main"]
+layout_mode = 0
 offset_left = 362.0
 offset_top = 331.0
 offset_right = 420.0

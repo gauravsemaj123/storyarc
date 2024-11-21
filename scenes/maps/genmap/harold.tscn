@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dwcshkpdbdu24"]
+[gd_scene load_steps=31 format=4 uid="uid://dwcshkpdbdu24"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bsxwc"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_narqj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ds0n0um5cc6qw" path="res://textures/backgrounds/maps/plains/bmountain.png" id="7_28vlt"]
 [ext_resource type="Texture2D" uid="uid://dosd34n7grkva" path="res://textures/backgrounds/maps/plains/mountain.png" id="8_eg8i6"]
 [ext_resource type="Texture2D" uid="uid://crp2euy6hpq45" path="res://textures/backgrounds/maps/plains/ground.png" id="9_cejfv"]
+[ext_resource type="PackedScene" uid="uid://dtrqxricltona" path="res://scenes/weather/weatherfilter.tscn" id="10_7c420"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="10_gmhc7"]
 [ext_resource type="Texture2D" uid="uid://cklnyr4yobq6n" path="res://textures/gentextures/housetilesets.png" id="11_kkwye"]
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="11_pgbvc"]
@@ -1230,6 +1231,8 @@ motion_mirroring = Vector2(1232, 0)
 position = Vector2(557, 282)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("9_cejfv")
+
+[node name="weatherfilter" parent="scene_elements/ParallaxBackground/ground" instance=ExtResource("10_7c420")]
 
 [node name="dyn_background" type="Node" parent="scene_elements"]
 
