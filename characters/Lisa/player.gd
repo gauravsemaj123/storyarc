@@ -18,8 +18,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var is_in_water: bool = false
 
-@export var currscene = NavigationManager.currentscene
-
 func _ready():
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 
@@ -72,8 +70,8 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent):
 	if (event.is_action_pressed("jump")):
 		if is_on_floor():
-			pass
-			#sfx.play()
+			if !is_in_water:
+				AUDIO.sfx("jump")
 	if (event.is_action_pressed("inventory") && inventoryactive == false):
 		print(DialogueManager.is_processing())
 		if DialogueManager.is_processing():
@@ -82,6 +80,7 @@ func _unhandled_input(event: InputEvent):
 			inventoryactive = true
 		else:
 			print("ui activated")
+			AUDIO.sfx("land")
 			uiactive = true
 			inventoryactive = true
 	elif (event.is_action_pressed("inventory") && inventoryactive == true):
@@ -104,6 +103,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 		if is_in_water:
 			velocity.y = SWIM_JUMP
+			AUDIO.swim()
 		if uiactive:
 			velocity.y = 0
 	#Dynamic front and back shit

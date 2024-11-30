@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://st0un8llop1p"]
+[gd_scene load_steps=48 format=4 uid="uid://duap6lmm8ti70"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_71q4v"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="1_wv2so"]

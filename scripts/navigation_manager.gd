@@ -12,7 +12,7 @@ const shack = preload("res://scenes/maps/genmap/shack.tscn")
 const villagespring = preload("res://scenes/maps/genmap/villagespring.tscn")
 
 
-@export var currentscene: String
+var currentscene
 signal on_trigger_player_spawn
 
 var spawn_door_tag
@@ -58,7 +58,13 @@ func go_to_level(level_tag, destination_tag):
 		await Transition.on_transition_finished
 		Signage.transition()
 		Signage.stagename_change(stage_tag)
-		currentscene = str(scene_to_load)
+		currentscene = scene_to_load
+		if currentscene == ruinspring || currentscene == cavespring:
+			Weather.visible = false
+			Weather.cloudhide()
+		else:
+			Weather.visible = true
+			Weather.cloudshow()
 		spawn_door_tag = destination_tag
 		get_tree().call_deferred("change_scene_to_packed", scene_to_load)
 

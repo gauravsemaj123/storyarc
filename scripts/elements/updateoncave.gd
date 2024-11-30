@@ -8,3 +8,8 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		Questlines.updateQuest()
 		Notifier.questnext("")
+	if Questlines.questline_number == 13 and body is Player:
+		await get_tree().create_timer(.5).timeout
+		
+		Questlines.updateQuest()
+		Notifier.questnext("")

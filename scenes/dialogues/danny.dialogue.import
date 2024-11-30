@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cjqu6d8bo51gh"
+path="res://.godot/imported/danny.dialogue-d19ea48aeed58142f4c4e4d35f99306b.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/danny.dialogue"
+dest_files=["res://.godot/imported/danny.dialogue-d19ea48aeed58142f4c4e4d35f99306b.tres"]
+
+[params]
+
+defaults=true

@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dyx6ndl04mr3g"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dyx6ndl04mr3g"]
 
 [ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="1_y3akv"]
 [ext_resource type="Texture2D" uid="uid://d168b3jwkb4ha" path="res://ui/misc/buttons/choicebar.png" id="2_3wpcs"]
+[ext_resource type="Texture2D" uid="uid://blx8wo26qjvov" path="res://ui/misc/buttons/focusedbr.png" id="2_f3y18"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4t1e"]
 expand_margin_left = 10.0
@@ -10,7 +11,7 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4bgc"]
-texture = ExtResource("2_3wpcs")
+texture = ExtResource("2_f3y18")
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0

@@ -1,0 +1,43 @@
+~ ineedhelp
+Danny: Kailangan ko ng tulong! Sumigaw ako nang sobrang lakas, dahil daw sabi ni Bathalang Eyre ay may tutulong daw sa akin na'ng magdasal ako![next=0.05]
+Danny: At tingin ko ikaw ang aking hinahanap![next=0.05]
+Danny: At saka ikaw na yata ang aking solusyon para sa aking kaibigang sirena na si Merry![next=0.05]
+Danny: Na mahanap ang nawawala niyang kuwin- [next=0.05]
+Lisa: Saglit!
+do wait(1)
+Danny: Ahehehehe, pasens'ya na! Sobra kasi akong excited na narinig ni Bathalang Eyre yung prayers ko!!!
+- Lisa: Kaya pala
+- Tanungin kung bakit
+	Lisa: Bakit? Ano pala ang nangyari?
+Danny: Sobra kasing hirap ako sa kahahanap ng nawawalang kuwintas!
+Danny: Ang sabi naman ng mga tiga-nayon, ay nasa kanila raw. Pero hindi ko maintindihan ang mga kulay!
+Danny: Matutulungan mo ba ako, superhero?
+- Lisa: Matutulungan kita
+	Danny: Yay! Maraming salamat! Teka, ano pala pangalan mo?
+	- Ang pangalan ko ay Lisa
+		Lisa: Ang pangalan ko po ay Lisa!
+		Danny: Nice to meet you, Lisa! Ano ba sa tagalog yung nice to meet you?
+		- Ikinagagalak kitang makilala
+			Lisa: Ikinagagalak kong makilala ka!
+			Danny: Ayun! Ikinagagalak kong makilala ka!
+			Lisa: Ikinagagalak din kitang makilala! Ano pala pangalan mo?
+			Danny: Danny!
+			Lisa: Ikinagagalak din kitang makilala, Danny!
+			do Questlines.updateQuest()
+			do Notifier.questnext("")
+		- Hindi ko alam
+			Lisa: Ah.. Eh... Hindi ko alam eh.
+			Danny: Ahhhh okay lang!!
+			Lisa: Ano pala pangalan mo?
+			Danny: Danny!
+			Lisa: Nice to meet you, Danny!
+			do Questlines.updateQuest()
+			do Notifier.questnext("")
+- Lisa: Hindi yata
+	Danny: Ay, ganu'n ba? Sige, thank you na lang! (Sana magbago isip hehe)
+=> END
+
+~ bakanasavillagers
+Danny: Sa tingin ko baka nasa Villagers lahat sa Happy Village eh. Naandon daw!
+Lisa: Salamat!
+=> END 

@@ -1,9 +1,17 @@
 extends CanvasLayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var parallax_background: ParallaxBackground = $ParallaxBackground
 
 var weatherlayer = layer
 var is_rainy = false
 
+func cloudhide():
+	parallax_background.visible = false
+
+func cloudshow():
+	parallax_background.visible = true
+
+	
 func sunny():
 	animation_player.play("RESET")
 

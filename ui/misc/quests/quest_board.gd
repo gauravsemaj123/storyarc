@@ -6,10 +6,11 @@ extends Control
 var questTrack = Questlines.questline_number
 
 func _process(_delta: float) -> void:
+	#SOUND EFFECT
 	#GET QUEST NUMBER
 	questTrack = Questlines.questline_number
 	#SHOW QUEST
-	if Questlines.questline_number < 14:
+	if Questlines.questline_number <= 23:
 		quest_title.text = Questlines.quest_database[questTrack]["QuestName"]
 		quest_desc.text = Questlines.quest_database[questTrack]["QuestDesc"]
 		quest_provider.texture = Questlines.quest_database[questTrack]["QuestImage"]

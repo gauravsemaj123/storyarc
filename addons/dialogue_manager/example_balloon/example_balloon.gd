@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 @onready var portrait = $Balloon/Portrait
 @onready var typingsfx: AudioStreamPlayer2D = $typingsfx
+@onready var agree: AudioStreamPlayer2D = $agree
 
 
 
@@ -160,6 +161,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+	agree.play()
 	next(response.next_id)
 
 

@@ -35,6 +35,8 @@ func _on_body_entered(body: Node2D) -> void:
 			on_openDialog()
 			Weather.rainy()
 			weatherFilter.fadeIn()
+			player.camera_2d.position.y = -600
+			await get_tree().create_timer(1).timeout
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "nakuumuulan")
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false

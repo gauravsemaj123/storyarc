@@ -8,6 +8,7 @@ var overlapping_areas
 
 func _on_body_entered(_body: Node2D) -> void:
 	onsplash()
+	AUDIO.sfx("watsplash")
 	print("nandito")
 	if (is_in_water == false):
 		overlapping_areas = get_overlapping_areas()

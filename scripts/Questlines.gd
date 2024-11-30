@@ -75,7 +75,7 @@ var quest_database = {
 	},
 	14:{
 		"QuestName": "GALING PALA SA IBABA",
-		"QuestDesc": "Dinig na na’tin ang ingay! Hanapin siya!",
+		"QuestDesc": "Dinig na na'tin ang ingay! Hanapin siya!",
 		"QuestImage": preload("res://textures/characterports/Lisa.png")
 	},
 	15:{

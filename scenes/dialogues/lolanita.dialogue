@@ -27,6 +27,38 @@ Lola Nita: Nakuha mo ba lahat?
 Lola Nita: Tignan na na'tin kung bakit nawawala ang panulat ni Binibining Stacey!
 => END
 
+~ itsaprank
+
+Lola Nita: Tara na, apo! Oras na para umuwi! Maulan na sobra![next=0.5]
+: [shake rate=20 level=10]Sandali![next=2] [/shake]
+do wait(1)
+Lola Nita: Sino 'yon?
+Bathalang Eyre: Magandang araw sa inyo, Ate Nita at Lisa!
+Lola Nita: ?!
+Lisa: Bathalang Eyre! Naparito po kayo ulit!
+Bathalang Eyre: Siyang tunay, anak ko. May nangangailangan pa ng iyong tulong!
+Bathalang Eyre: Siya ang batang tiga-tabi ng nayon. Laki siya sa sakahan at sobra siyang maayos at masipag!
+Bathalang Eyre: Subalit, ang problema nga lang ay[do AUDIO.sfx("idea")] hindi siya marunong sa matematika.
+Bathalang Eyre: Kailgangan niya ng tulong upang mamili ng mga bilihin sa palengke ngunit hindi siya makakilos dahil natatakot siya sa 
+Bathalang Eyre: pamimili ng bawat sangkap sa kaniyang lulutuin.
+Bathalang Eyre: Muli, maaari mo ba siyang tulungan?
+~ question
+Lola Nita: Ano ang iyong tugon, apo?
+- Pumayag
+	Lisa: Papayag po ako! May kailangan pa po ng aking tulong!
+	Bathalang Eyre: Mabuti! Ngayon ay puntahan si Mat Mat!
+	Lola Nita: Magi-ingat ka, apo! Ako'y sisilong muna sa puno!
+	Lisa: Maraming salamat po, Lola!
+	=> END 
+- Humindi
+	Lisa: Kailangan ko muna po mag-isip...
+	do wait(0.5)
+	Lola Nita: Aming Bathala, ano po ang maaaring maitutulong ng aking apo? Gusto niya sigurong malaman.
+	Bathalang Eyre: Isa itong nakalinya sa matematika. Maaaring si Mat Mat ay mayroong problema sa pagbibilang.
+	Lisa: Hmmmmm.
+	Lola Nita: Ngayon...
+	=> question
+
 ~ itisdone
 Lola Nita: Magaling, apo! Ano ang natutunan mo sa paglalakbay?
 - Ang ABAKADA

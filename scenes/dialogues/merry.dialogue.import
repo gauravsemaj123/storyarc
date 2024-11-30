@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dq4y4y8sitqj2"
+path="res://.godot/imported/merry.dialogue-9f30b3249219bdf4658375f2d6f7abf3.tres"
+
+[deps]
+
+source_file="res://scenes/dialogues/merry.dialogue"
+dest_files=["res://.godot/imported/merry.dialogue-9f30b3249219bdf4658375f2d6f7abf3.tres"]
+
+[params]
+
+defaults=true

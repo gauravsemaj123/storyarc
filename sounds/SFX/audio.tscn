@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq2aclgxcwhhm"]
+
+[ext_resource type="Script" path="res://scripts/elements/SFX.gd" id="1_8xd1o"]
+
+[node name="AUDIO" type="Node2D"]
+script = ExtResource("1_8xd1o")
+
+[node name="streamplayer" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1e+10
+max_polyphony = 5
+playback_type = 1
+
+[node name="musicplayer" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1e+09
+max_polyphony = 2
+
+[node name="waterplayer" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1e+08
+max_polyphony = 20
+playback_type = 1

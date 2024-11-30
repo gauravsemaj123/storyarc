@@ -1,0 +1,21 @@
+~ colorblindsirena
+
+Merry: Kumusta! Ako pala si Merry. Ang sirena ng tabing dagat ng Setty. Sa ngayon, napartio ako sa ilog para hanapin yung aking kuwintas!
+Merry: Dahil doon, ang paningin ko ay naging kulay abo lahat! Walang tingkad ni isa!
+Merry: Ang sabi raw ng tiga-nayon, eh kailangan ko raw kunin ang aking kuwintas sa ahhalo ng bawat kulay. Kaso hindi ko kaya.
+Merry: Sana'y tulungan mo ako...
+- Lisa: Tutulungan kita
+	Merry: Maraming maraming salamaaat!
+- Ipagsawalang bahala
+
+=> END
+
+~ thankyou
+
+Merry: MARAMING SALAMAT, IHA! Ano ang iyong pangalan? Maaari kong malaman sana!
+- Lisa: Ang pangalan ko ay Lisa
+	Merry: Maraming salamat, Lisa! Ngayo'y nakakakita na ulit ako!
+	Lisa: Walang anuman, ate Merry!
+	do Questlines.updateQuest()
+	do Notifier.questnext("Lola Nita")
+=> END

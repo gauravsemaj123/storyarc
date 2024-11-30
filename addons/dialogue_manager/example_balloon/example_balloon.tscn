@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c54rgtxcgtl5p"]
+[gd_scene load_steps=21 format=3 uid="uid://c54rgtxcgtl5p"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="3_ph4ur"]
 [ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="5_77oic"]
+[ext_resource type="Texture2D" uid="uid://blx8wo26qjvov" path="res://ui/misc/buttons/focusedbr.png" id="7_6rp1h"]
 [ext_resource type="Texture2D" uid="uid://d168b3jwkb4ha" path="res://ui/misc/buttons/choicebar.png" id="7_acvbt"]
 [ext_resource type="AudioStream" uid="uid://chyt3uw4xulgn" path="res://sounds/SFX/clonck.mp3" id="8_q7i1t"]
+[ext_resource type="AudioStream" uid="uid://b2rxxrhjo81ud" path="res://sounds/SFX/bing_wa_wa_ui.mp3" id="10_cfj1q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -73,7 +75,7 @@ content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-texture = ExtResource("7_acvbt")
+texture = ExtResource("7_6rp1h")
 expand_margin_left = 25.0
 expand_margin_right = 25.0
 
@@ -240,6 +242,9 @@ text = "Response example"
 stream = ExtResource("8_q7i1t")
 pitch_scale = 0.71
 max_distance = 1e+13
+
+[node name="agree" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_cfj1q")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

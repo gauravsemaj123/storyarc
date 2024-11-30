@@ -41,6 +41,7 @@ JustFade="*res://ui/misc/just_fade.tscn"
 Cutscene="*res://ui/misc/cutscene.tscn"
 ItemDetection="*res://scripts/itemDetection.gd"
 Weather="*res://scenes/weather/weather.tscn"
+AUDIO="*res://sounds/SFX/audio.tscn"
 
 [display]
 
@@ -126,7 +127,7 @@ mouseLeft={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://scenes/dialogues/lolanita.dialogue", "res://scenes/dialogues/stacey.dialogue", "res://scenes/dialogues/reggiethefrog.dialogue", "res://scenes/dialogues/lisa.dialogue", "res://scenes/dialogues/valerie.dialogue", "res://scenes/dialogues/eyre.dialogue", "res://scenes/dialogues/harold.dialogue", "res://scenes/dialogues/matmat.dialogue")
+locale/translations_pot_files=PackedStringArray("res://scenes/dialogues/lolanita.dialogue", "res://scenes/dialogues/stacey.dialogue", "res://scenes/dialogues/reggiethefrog.dialogue", "res://scenes/dialogues/lisa.dialogue", "res://scenes/dialogues/valerie.dialogue", "res://scenes/dialogues/eyre.dialogue", "res://scenes/dialogues/harold.dialogue", "res://scenes/dialogues/matmat.dialogue", "res://scenes/dialogues/danny.dialogue", "res://scenes/dialogues/merry.dialogue", "res://scenes/dialogues/guard.dialogue")
 
 [layer_names]
 

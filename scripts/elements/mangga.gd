@@ -19,6 +19,10 @@ func _process(_delta: float) -> void:
 		InteractionManager.unreg_area(self)
 	if Questlines.questline_number != 11:
 		interaction_area.visible = false
+		position.y = -366
+	else:
+		position.y = 366
+	
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	is_mangga_got = false

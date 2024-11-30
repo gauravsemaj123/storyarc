@@ -8,7 +8,7 @@ func _ready():
 	print(questnumber)
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
-		
+		 
 
 func _on_level_spawn(destination_tag: String):
 	var door_path = "scene_elements/Doors/Door_" + destination_tag

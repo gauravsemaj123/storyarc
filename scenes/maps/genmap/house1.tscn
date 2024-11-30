@@ -1505,6 +1505,21 @@ position = Vector2(754, 290)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scene_elements/AOEs/StaticBody2D7"]
 polygon = PackedVector2Array(1326, -374, 1323, 456, 1017, 813, 166, 947, -1291, 924, -1388, -18, -1358, -576, -1627, -358, -1398, 988, -56, 1294, 1427, 1092, 2039, 554, 2322, -112, 1952, -496)
 
+[node name="Mangga" type="Sprite2D" parent="scene_elements/AOEs"]
+position = Vector2(1584, 328)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("16_6koa8")
+
+[node name="Mangga2" type="Sprite2D" parent="scene_elements/AOEs"]
+position = Vector2(1680, 278)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("16_6koa8")
+
+[node name="Mangga3" type="Sprite2D" parent="scene_elements/AOEs"]
+position = Vector2(1715, 377)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("16_6koa8")
+
 [node name="mangga" type="Node2D" parent="scene_elements/AOEs"]
 position = Vector2(1649, 366)
 script = ExtResource("15_1m314")
@@ -1514,21 +1529,6 @@ action_name = "Pitasin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/mangga/InteractionArea"]
 shape = SubResource("RectangleShape2D_tlq34")
-
-[node name="Mangga" type="Sprite2D" parent="scene_elements/AOEs/mangga"]
-position = Vector2(-65, -38)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("16_6koa8")
-
-[node name="Mangga2" type="Sprite2D" parent="scene_elements/AOEs/mangga"]
-position = Vector2(31, -88)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("16_6koa8")
-
-[node name="Mangga3" type="Sprite2D" parent="scene_elements/AOEs/mangga"]
-position = Vector2(66, 11)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("16_6koa8")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
