@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://duap6lmm8ti70"]
+[gd_scene load_steps=49 format=4 uid="uid://duap6lmm8ti70"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_71q4v"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="1_wv2so"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://df3wg1nqah00d" path="res://ui/misc/interaction/int_area/InteractionArea.tscn" id="13_5v3wo"]
 [ext_resource type="Script" path="res://scripts/checks/sp_village_check_lock.gd" id="13_hhyux"]
 [ext_resource type="Texture2D" uid="uid://c18hq1e17a5k7" path="res://textures/gentextures/woodlanternhead.png" id="13_l3jcn"]
+[ext_resource type="PackedScene" uid="uid://ra7ee0yjr5x3" path="res://characters/SIDECHARACTERS/Guard/guard.tscn" id="17_2taaw"]
 [ext_resource type="PackedScene" uid="uid://bk8xk5nmsb7sg" path="res://inventorymain/shop.tscn" id="19_0edtx"]
 [ext_resource type="Script" path="res://scripts/elements/gulaycrates.gd" id="19_45ute"]
 [ext_resource type="Script" path="res://scripts/triggercutscenerain.gd" id="20_xtfx8"]
@@ -1577,6 +1578,24 @@ tile_set = SubResource("TileSet_8iwfb")
 [node name="Player" parent="scene_elements/sprites" instance=ExtResource("2_mek5d")]
 position = Vector2(4955, 123)
 
+[node name="guard" parent="scene_elements/sprites" instance=ExtResource("17_2taaw")]
+position = Vector2(916, 495)
+
+[node name="AnimatedSprite2D" parent="scene_elements/sprites/guard" index="0"]
+flip_h = true
+
+[node name="CollisionShape2D" parent="scene_elements/sprites/guard/InteractionArea" index="0"]
+position = Vector2(-56, 0)
+
+[node name="guard2" parent="scene_elements/sprites" instance=ExtResource("17_2taaw")]
+position = Vector2(3781, 272)
+
+[node name="guard3" parent="scene_elements/sprites" instance=ExtResource("17_2taaw")]
+position = Vector2(8179, 439)
+
+[node name="guard4" parent="scene_elements/sprites" instance=ExtResource("17_2taaw")]
+position = Vector2(9865, 608)
+
 [node name="platform" type="TileMapLayer" parent="scene_elements"]
 texture_filter = 1
 use_parent_material = true
@@ -1796,6 +1815,7 @@ visible = false
 
 [connection signal="body_entered" from="scene_elements/AOEs/triggercutscenerain" to="scene_elements/AOEs/triggercutscenerain" method="_on_body_entered"]
 
+[editable path="scene_elements/sprites/guard"]
 [editable path="scene_elements/Doors/Door_prev"]
 [editable path="scene_elements/Doors/Door_next"]
 [editable path="scene_elements/Doors/Door_haro_en"]
