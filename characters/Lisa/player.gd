@@ -36,7 +36,7 @@ func _input(event: InputEvent):
 		position.y += 1
 
 func _process(_delta: float) -> void:
-
+	#print(global_position)
 	if uiactive == true:
 		if dialogactive == true:
 			camera_2d.position.y = spriteanims.position.y

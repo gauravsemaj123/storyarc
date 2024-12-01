@@ -11,7 +11,10 @@ func _input(event: InputEvent):
 			close()
 		else:
 			open()
-		
+
+func _process(delta: float) -> void:
+	get_node("InvContainer").fillInventorySlots()
+
 func open():
 	visible = true
 	is_open = true
@@ -58,4 +61,4 @@ func _on_button_pressed() -> void:
 
 
 func _on_instantiate_pressed() -> void:
-	add(22)
+	add(23)

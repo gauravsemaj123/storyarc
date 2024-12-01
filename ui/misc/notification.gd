@@ -9,6 +9,13 @@ func _ready() -> void:
 	Notifier.goldnotify.connect(showNotifGold)
 	Notifier.newquest.connect(showNotifQuest)
 	Notifier.newitem.connect(showItemNew)
+	Notifier.customnotification.connect(customNotif)
+
+func customNotif(custom):
+	message.text = custom
+	slide.play("slide")
+	await get_tree().create_timer(4, false, true).timeout
+	slide.play_backwards("slide")
 
 func showNotifGold(gold):
 	message.text = "Nadagdagan ng " + str(gold) + " ang iyong bulsa!"

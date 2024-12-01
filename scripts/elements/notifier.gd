@@ -2,6 +2,7 @@ extends Control
 signal goldnotify
 signal newquest
 signal newitem
+signal customnotification
 
 func goldadded(gold):
 	AUDIO.sfx("announce")
@@ -16,3 +17,7 @@ func questnext(name):
 func newitemAnnounce(item):
 	AUDIO.sfx("announce")
 	newitem.emit(item)
+
+func customNotif(custom: String):
+	AUDIO.sfx("announce")
+	customnotification.emit(custom)

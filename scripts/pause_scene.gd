@@ -15,9 +15,11 @@ func paused():
 	$AnimationPlayer.play("pause")
 
 func resume():
+	$AnimationPlayer.play_backwards("pause")
+	await $AnimationPlayer.animation_finished
 	get_tree().paused = false
 	pause_scene.visible = false
-	$AnimationPlayer.play_backwards("pause")
+	$AnimationPlayer.play("RESET")
 
 func _on_resume_pressed():
 	print("resume pressed!")

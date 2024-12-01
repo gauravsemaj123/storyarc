@@ -45,3 +45,18 @@ Lisa: Umuulan!
 ~ gulaycrateget
 Lisa: Isang okra, ube, kamatis, at talong. Ayos!
 => END
+
+~ howdotheyknow
+Lisa: Papaano kaya nila nalalaman kung kaninong ang mga ito?
+=> END 
+
+~ foundmerry
+Lisa: Eto na nga!
+=> END
+
+~ itstime
+Lisa: Ang sabi, pailawin. Tignan na'tin...
+=> END
+
+~ itisopened
+Lisa: Hmmmm.. Nabuksan ko na siya. Babalik ko na lang 'to kay Merry sa pagkakaalam ko.

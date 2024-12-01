@@ -12,10 +12,11 @@ Aristeo: Kumusta! Ako si Kumandante Aristeo. Ang Puno ng Hukbo ng Guwardya sa na
 Aristeo: Ako ay laging naka-atas na bantayan ang gusaling ito upang mabantayan ang mahahalagang gamit!
 => END
 ~ guardhall
-Aristeo: Kumusta! Ako si Kumandante Aristeo. Ang Puno ng Hukbo ng Guwardya sa nayon!
+Aristeo: Kumusta! Ako si Kumandante Aristeo. Ang Punong Hukbo ng Guwardya sa nayon!
 Aristeo: Ako ay laging naka-atas na bantayan ang gusaling ito upang mabantayan ang mahahalagang gamit!
 Aristeo: Ang Happy Hall ay naglalaman ng mga nawawalang gamit. Ang bawat kahon ay naglalaman ng kung anu-anong pazel na naaayon sa kanilang kawalan pagdating sa kaalaman.
 Aristeo: Kagaya na lamang ng isang tiga-nayon, na ang kaniyang kawalan ay hindi siya nakakapagsulat! Kaya naglagay kami ng isang pazel na naaayon na gusto niyang matuto!
+Aristeo: Ayon! Marunong na siya magsulat! Siya nga pala, ano ang maitutulong ko?
 ~ thequestion
 - Tanungin ang sa kahon ni Merry
 	Aristeo: Ang kahon ni Merry? Ahh. Nasa pinaka-dulo! Kung ikaw ay may alam sa pagsalu-salo ng mga pangunahing kulay, tiyak na makukuha mo 'yon!
@@ -23,6 +24,15 @@ Aristeo: Kagaya na lamang ng isang tiga-nayon, na ang kaniyang kawalan ay hindi 
 	Aristeo: At ang mga pangalawang kulay naman ay berde, kahel, at lila.
 	Aristeo: Naparito ka ba upang kunin ang kuwintas? Hindi na'min siya mahanap at yung kaibigan naman niya, walang maiharap sa'king papel.
 	Aristeo: Pasabi kay Merry na kailangan muna niya ng liham na patunay na pinapahintulutan kang kunin ang kahon!
+	- Masusunod po
+		Lisa: Masusunod po, Kuya Aristeo!
+		Aristeo: Sige na, lakad na iha! Magi-ingat ka!
+		if GlobalstateQ2.is_letter_introduced == false:
+			set GlobalstateQ2.is_letter_introduced = true
+			do Notifier.customNotif("Bumalik kay Merry upang humingi ng liham para pahintulutan ka!")
+		else:
+			do Notifier.customNotif("Maaari ka na'ng bumalik kay Merry upang humingi ng liham para pahintulutan ka!")
+		=> END
 - Tanungin ang iba pang kahon
 	Aristeo: Ang iba pang mga kahon ay naglalaman ng isang tula, o anumang imahe na maaari nilang matutunan. Nang sa gayon, ang kanilang kahinaan, ay maging kalakasan!
 - Umalis
@@ -47,9 +57,21 @@ Aristeo: Mayroon ka na bang liham?
 - Mayroon na
 	Aristeo: hmmmm... Maaari mo ba sa'kin ipakita?
 	do wait(1)
+	do ItemDetection.itemdetect(23)
+	if ItemDetection.is_detected == true:
+		=> letterreceive
+	else:
+		=> noletter
 - Wala pa
 	Aristeo: Kung gayon, paalala ko na lang ulit sa'yo na kailangan mo ng liham na pinahihintulutan kitang buksan ang kahon!
 => END 
+
+~ instructions
+Aristeo: Ang pula, dilaw, at asul ay mga pangunahing kulay.
+Aristeo: At ang mga pangalawang kulay naman ay berde, kahel, at lila.
+Aristeo: Kailangan mo lang sila pailawin at siguraduhin na dapat bukas lahat.
+Aristeo: Galingan mo!
+=> END
 
 ~ letterreceive
 Aristeo: Magandang Hapon, Ginoo;
@@ -60,8 +82,9 @@ Aristeo: Nais ko sanang makuha ang kuwintas sa pamamagitan ng pagsulat ng liham 
 Aristeo: Lubos na gumagalang; Merry.
 Aristeo: Kailangan mo lang sila pailawin at siguraduhin na dapat bukas lahat.
 Aristeo: Galingan mo!
+set GlobalstateQ2.is_letter_given = true
 => END 
 
 ~ noletter
-Aristeo: Ipagpaumanhin mo iha, na hindi kita pahihintulutan na kunin ang kahon na walang liham ni Merry.
+Aristeo: Ipagpaumanhin mo iha, na hindi kita pahihintulutan na pakialaman ang kahon na walang liham ni Merry.
 => END

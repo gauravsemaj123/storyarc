@@ -4,16 +4,15 @@ extends Node2D
 @onready var player: Player = $"../Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
 
-var is_in_request: bool = false
 
 var dialog_inprocess: bool = false
 
 func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
 		inventory.close()
-		
 	else:
 		pass
+
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -35,25 +34,41 @@ func _on_interact():
 	if inventory.visible != true:
 		if Questlines.questline_number <= 13:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/guard.dialogue"), "aristeohello")
+			player.dialogactive = true
 			dialog_inprocess = true
 			on_openDialog()
 			await DialogueManager.dialogue_ended
+			player.dialogactive = false
 			dialog_inprocess = false
 			on_openDialog()
-		elif Questlines.questline_number == 14 and is_in_request == false:
+		elif Questlines.questline_number == 15 and GlobalstateQ2.is_letter_introduced == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/guard.dialogue"), "guardhall")
+			player.dialogactive = true
 			dialog_inprocess = true
 			on_openDialog()
 			await DialogueManager.dialogue_ended
+			player.dialogactive = false
 			dialog_inprocess = false
 			on_openDialog()
-		elif Questlines.questline_number == 14 and is_in_request == true:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/guard.dialogue"), "let_them")
-			dialog_inprocess = true
-			on_openDialog()
-			await DialogueManager.dialogue_ended
-			dialog_inprocess = false
-			on_openDialog()
+		elif Questlines.questline_number == 15 and GlobalstateQ2.is_letter_introduced == true:
+			if GlobalstateQ2.is_letter_given != true:
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/guard.dialogue"), "douhave")
+				player.dialogactive = true
+				dialog_inprocess = true
+				on_openDialog()
+				await DialogueManager.dialogue_ended
+				player.dialogactive = false
+				dialog_inprocess = false
+				on_openDialog()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/guard.dialogue"), "instructions")
+				player.dialogactive = true
+				dialog_inprocess = true
+				on_openDialog()
+				await DialogueManager.dialogue_ended
+				player.dialogactive = false
+				dialog_inprocess = false
+				on_openDialog()
 	else:
 		pass
 	return

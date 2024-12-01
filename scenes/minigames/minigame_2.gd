@@ -15,6 +15,8 @@ extends CanvasLayer
 
 @onready var chestopen: AudioStreamPlayer2D = $"MINIGAME ELEMENTS/chestopen"
 
+signal doneminigame
+
 var progress: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +42,8 @@ func opencheck():
 		chestopen.play()
 		spin.play("fadeout")
 		await spin.animation_finished
+		visible = false
+		doneminigame.emit
 	
 func _on_spin_1_pressed() -> void:
 	spin_1.beginspinning()

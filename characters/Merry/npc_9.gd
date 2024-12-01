@@ -37,12 +37,20 @@ func on_openDialog():
 func _on_interact():
 	if inventory.visible != true:
 		if Questlines.questline_number == 15:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "colorblindsirena")
-			dialog_inprocess = true
-			on_openDialog()
-			await DialogueManager.dialogue_ended
-			dialog_inprocess = false
-			on_openDialog()
+			if GlobalstateQ2.is_letter_introduced == true:
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "colorblindsirena")
+				dialog_inprocess = true
+				on_openDialog()
+				await DialogueManager.dialogue_ended
+				dialog_inprocess = false
+				on_openDialog()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "colorblindsirena")
+				dialog_inprocess = true
+				on_openDialog()
+				await DialogueManager.dialogue_ended
+				dialog_inprocess = false
+				on_openDialog()
 		if Questlines.questline_number == 17:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "colorblindsirena")
 			dialog_inprocess = true

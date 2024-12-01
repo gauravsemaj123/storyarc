@@ -863,11 +863,13 @@ script = ExtResource("1_chx8x")
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_b8has")
 animation = &"idle"
+autoplay = "idle"
 frame_progress = 0.326041
+flip_h = true
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_2w0xm")]
 action_name = "Kausapin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(49, 2)
+position = Vector2(-50, 0)
 shape = SubResource("RectangleShape2D_7p54x")

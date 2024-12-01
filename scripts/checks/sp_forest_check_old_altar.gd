@@ -34,29 +34,32 @@ func on_openDialog():
 		player.SPEED = 700.0
 
 func _on_interact():
-	if Questlines.questline_number != 8:
-		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altarcheck")
-		dialog_inprocess = true
-		on_openDialog()
-		await DialogueManager.dialogue_ended
-		dialog_inprocess = false
-		on_openDialog()
-	elif Questlines.questline_number == 8:
-		if state.frame == 0:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altarget")
-			dialog_inprocess = true
-			on_openDialog()
-			await DialogueManager.dialogue_ended
-			inventory.add(21)
-			Questlines.updateQuest()
-			state.frame = 1
-			dialog_inprocess = false
-			on_openDialog()
-		else:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altar_sphere_already")
+	if inventory.visible != true:
+		if Questlines.questline_number != 8:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altarcheck")
 			dialog_inprocess = true
 			on_openDialog()
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
+		elif Questlines.questline_number == 8:
+			if state.frame == 0:
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altarget")
+				dialog_inprocess = true
+				on_openDialog()
+				await DialogueManager.dialogue_ended
+				inventory.add(21)
+				Questlines.updateQuest()
+				state.frame = 1
+				dialog_inprocess = false
+				on_openDialog()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altar_sphere_already")
+				dialog_inprocess = true
+				on_openDialog()
+				await DialogueManager.dialogue_ended
+				dialog_inprocess = false
+				on_openDialog()
+	else:
+		pass
 	return

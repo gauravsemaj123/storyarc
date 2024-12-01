@@ -189,22 +189,22 @@ var items = {
 		"Name": "Papel" ,
 		"Des":  "Naglalaman ito ng mga bibilihin ni MatMat! At meron ding nakasulat na aabuting gastos na halagang " + str(compute) + "! Abutin kay MatMat!",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/listahan.png")
 	},
 	23:{
-		"Name": "Fortune Cookie #1" ,
-		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
+		"Name": "Liham",
+		"Des":  "Ang liham ay isang pribadong mensahe na kalimitang binibigay ng mga mensahero. Huwag basahin ang mga ito habang naka-selyo!",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/listahan.png")
 	},
 	24: {
-		"Name": "Fortune Cookie #2" ,
-		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
+		"Name": "Kuwintas" ,
+		"Des":  "Ang ganda...",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/kwintas.png")
 	},
 	25: {
-		"Name": "Fortune Cookie #3" ,
+		"Name": "Fortune Cookie #2" ,
 		"Des":  "Isang maliit na biskwit na may nakatagong hula sa loob. Kolektahin ang mga 'to!",
 		"Cost": 0,
 		"Icon": null
