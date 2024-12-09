@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://5spk65e1rini"]
+[gd_scene load_steps=35 format=4 uid="uid://5spk65e1rini"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_gbnja"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="1_iww0d"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="23_ekq32"]
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="24_f77fx"]
 [ext_resource type="PackedScene" uid="uid://bfrpxjouc78yk" path="res://inventorymain/Inventory.tscn" id="25_04a4o"]
+[ext_resource type="PackedScene" uid="uid://cww2c3v475jts" path="res://scenes/minigames/minigame_2.tscn" id="26_f6be8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmvse"]
 texture = ExtResource("9_28aew")
@@ -710,6 +711,9 @@ position = Vector2(113, 51)
 visible = false
 
 [node name="Inventory" parent="UI" instance=ExtResource("25_04a4o")]
+visible = false
+
+[node name="minigame2" parent="." instance=ExtResource("26_f6be8")]
 visible = false
 
 [editable path="scene_elements/Doors/Door_hall_exi"]

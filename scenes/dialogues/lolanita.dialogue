@@ -32,6 +32,7 @@ Lola Nita: Tignan na na'tin kung bakit nawawala ang panulat ni Binibining Stacey
 Lola Nita: Tara na, apo! Oras na para umuwi! Maulan na sobra![next=0.5]
 : [shake rate=20 level=10]Sandali![next=2] [/shake]
 do wait(1)
+do GlobalstateQ2.signalshowup(1)
 Lola Nita: Sino 'yon?
 Bathalang Eyre: Magandang araw sa inyo, Ate Nita at Lisa!
 Lola Nita: ?!
@@ -49,6 +50,9 @@ Lola Nita: Ano ang iyong tugon, apo?
 	Bathalang Eyre: Mabuti! Ngayon ay puntahan si Mat Mat!
 	Lola Nita: Magi-ingat ka, apo! Ako'y sisilong muna sa puno!
 	Lisa: Maraming salamat po, Lola!
+	do Questlines.updateQuest()
+	do Notifier.questnext("Mat Mat")
+	do GlobalstateQ2.signalshowup(0)
 	=> END 
 - Humindi
 	Lisa: Kailangan ko muna po mag-isip...

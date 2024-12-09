@@ -3,14 +3,13 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
-@onready var anims: AnimationPlayer = $"../../anims"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var dialog_inprocess: bool = false
 
 func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
 		inventory.close()
-		anims.pause()
 	else:
 		pass
 
@@ -21,6 +20,7 @@ func _ready():
 func on_openDialog():
 	print("dialog_inprocess: " + str(dialog_inprocess))
 	if dialog_inprocess:
+		animation_player.play("idle")
 		player.uiactive = true
 		player.dialogactive = true
 		player.JUMP_VELOCITY = 0
@@ -40,7 +40,7 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
-			anims.play("")
+			animation_player.play()
 		elif Questlines.questline_number < 1:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/stacey.dialogue"), "frustrated")
 			dialog_inprocess = true
@@ -48,7 +48,7 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
-			anims.play("")
+			animation_player.play()
 		elif Questlines.questline_number == 12:
 			ItemDetection.itemdetect(19)
 			if ItemDetection.is_detected == true:
@@ -68,7 +68,7 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
-			anims.play("")
+			animation_player.play()
 	else:
 		pass
 	return

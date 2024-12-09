@@ -15,24 +15,19 @@ func _process(_delta: float) -> void:
 	else:
 		pass
 
-func doitagain():
-	randomrepeatthings()
-
-func randomrepeatthings():
-	var randie = randi_range(1,2)
-	if randie == 1:
-		animated_sprite_2d.animation = "idle"
-		animated_sprite_2d.play()
-		await animated_sprite_2d.animation_finished
-		doitagain()
+func randomcharactergen():
+	var randomgen = randi_range(1,4)
+	if randomgen == 1:
+		print("a")
+	elif randomgen == 2:
+		print("b")
+	elif randomgen == 3:
+		print("c")
 	else:
-		animated_sprite_2d.animation = "idle2"
-		animated_sprite_2d.play()
-		await animated_sprite_2d.animation_finished
-		doitagain()
+		print("d")
 
 func _ready():
-	randomrepeatthings()
+	randomcharactergen()
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func on_openDialog():

@@ -45,7 +45,7 @@ var quest_database = {
 	},
 	8:{
 		"QuestName": "NASAAN ANG ESPERA",
-		"QuestDesc": "Hanapin daw ang espera! Ngunit ano ito at nasaan?",
+		"QuestDesc": "Hanapin daw ang espera! Ngunit ano ito at nasaan? Ang sabi ay nasa Kagubatan!",
 		"QuestImage": preload("res://textures/characterports/Harold.png")
 	},
 	9:{
@@ -80,7 +80,7 @@ var quest_database = {
 	},
 	15:{
 		"QuestName": "SI DANNY AT ANG KANYANG HILING",
-		"QuestDesc": "Umiiyak si Danny dahil hindi niya mahanap ang kuwintas ng kaniyang kaibigan na si Merry! Hanapin kung nasaan!",
+		"QuestDesc": "Sumgaw si Danny dahil hindi niya mahanap ang kuwintas ng kaniyang kaibigan na si Merry! Ang sabi, si Merry ay nasa Ilog Hange!",
 		"QuestImage": preload("res://textures/characterports/Danny.png")
 	},
 	16:{
@@ -95,17 +95,17 @@ var quest_database = {
 	},
 	18:{
 		"QuestName": "TAPOS NA SIGURO",
-		"QuestDesc": "Bumalik kay Lola Nita upang bumalik sa tunay na mundo!",
+		"QuestDesc": "Bumalik kay Lola Nita upang bumalik sa tunay na mundo! Pumunta sa kagubatan.",
 		"QuestImage": preload("res://textures/characterports/Lola Nita.png")
 	},
 	19:{
 		"QuestName": "MERON NA NAMAN",
-		"QuestDesc": "Mukhang hindi ka makakabalik ulit ah? Tignan na’tin kung nasaan! Maaring nasa sakahan?",
+		"QuestDesc": "Mukhang hindi ka makakabalik ulit ah? Tignan natin kung nasaan! Si Mat-mat ay nasa Sakahan!",
 		"QuestImage": preload("res://textures/characterports/MatMat.png")
 	},
 	20:{
 		"QuestName": "ANG KAGUSTUHAN NI MATMAT",
-		"QuestDesc": "Tila si Mat-mat ay hindi marunong bumili! Sa madaling salita, hindi niya alam ang matematika! Maaari na’tin siyang tulungan sa pagtanong kay Ate Valerie kung ano ang mga presyo nito!",
+		"QuestDesc": "Tila si Mat-mat ay hindi marunong bumili! Sa madaling salita, hindi niya alam ang matematika! Maaari natin siyang tulungan sa pagtanong kay Ate Valerie kung ano ang mga presyo nito!",
 		"QuestImage": preload("res://textures/characterports/MatMat.png")
 	},
 	21:{

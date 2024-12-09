@@ -11,6 +11,7 @@ var dialog_inprocess: bool = false
 var moving: bool = false
 @onready var finalposition = $"../../../Marker2D".global_position
 
+@onready var minigame_2: CanvasLayer = $"../../../minigame2"
 
 func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
@@ -23,7 +24,7 @@ func _process(_delta: float) -> void:
 		state.frame = 1
 	
 func _ready():
-	Minigame2.visible = false
+	minigame_2.visible = false
 	interaction_area.interact = Callable(self, "_on_interact")
 	state.frame = 0
 
@@ -79,10 +80,14 @@ func _on_interact():
 				dialog_inprocess = true
 				on_openDialog()
 				await DialogueManager.dialogue_ended
-				Minigame2.visible = true
-				await Minigame2.doneminigame
+				minigame_2.visible = true
+				await minigame_2.doneminigame
+				GlobalstateQ2.is_merrychest_opened = true
 				inventory.add(24)
 				Notifier.newitemAnnounce("Kwintas")
+				await get_tree().create_timer(2.5).timeout
+				Questlines.updateQuest()
+				Notifier.questnext("Merry")
 				dialog_inprocess = false
 				on_openDialog()
 			else:

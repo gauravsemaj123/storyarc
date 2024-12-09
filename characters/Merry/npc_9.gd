@@ -42,6 +42,10 @@ func _on_interact():
 				dialog_inprocess = true
 				on_openDialog()
 				await DialogueManager.dialogue_ended
+				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "needbaletter")
+				await DialogueManager.dialogue_ended
+				inventory.add(23)
+				Notifier.newitemAnnounce("Liham")
 				dialog_inprocess = false
 				on_openDialog()
 			else:
@@ -52,12 +56,13 @@ func _on_interact():
 				dialog_inprocess = false
 				on_openDialog()
 		if Questlines.questline_number == 17:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "colorblindsirena")
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/merry.dialogue"), "meronkana")
 			dialog_inprocess = true
 			on_openDialog()
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
+			inventory.remove(24)
 	else:
 		pass
 	return

@@ -2,7 +2,7 @@
 
 Merry: Kumusta! Ako pala si Merry. Ang sirena ng tabing dagat ng Setty. Sa ngayon, napartio ako sa ilog para hanapin yung aking kuwintas!
 Merry: Dahil doon, ang paningin ko ay naging kulay abo lahat! Walang tingkad ni isa!
-Merry: Ang sabi raw ng tiga-nayon, eh kailangan ko raw kunin ang aking kuwintas sa ahhalo ng bawat kulay. Kaso hindi ko kaya.
+Merry: Ang sabi raw ng tiga-nayon, eh kailangan ko raw kunin ang aking kuwintas sa paghalo ng bawat kulay. Kaso hindi ko kaya.
 Merry: Sana'y tulungan mo ako...
 - Lisa: Tutulungan kita
 	Merry: Maraming maraming salamaaat!
@@ -10,11 +10,36 @@ Merry: Sana'y tulungan mo ako...
 
 => END
 
-~ thankyou
+~ needbaletter
+Merry: Kailangan ng liham mula sa'kin? Saglit. Mga ilang minuto lang...
+do Transition.transition()
+[next=1]
+Merry: Eto na ang liham!!! Magi-ingat ka!
+=> END 
 
+~ meronkana
+Merry: Kumusta! uhmmm... Nasa'yo na 'yung kuwintas?
+- Sabihing nasa iyo na
+	do ItemDetection.itemdetect(24)
+	if ItemDetection.is_detected == true:
+		=> thankyou
+	else:
+		=> walapa
+- Wala pa
+	Lisa: Wala pa po ate Merry eh.
+	Merry: Ay ganu'n ba? Sige maghihintay ako. Maraming salamat at pasens'ya sa abala!
+=> END 
+
+~ walapa
+Merry: Tingin ko, wala pa eh.
+Lisa: Ay ganu'n po ba? Pasens'ya na po!
+Merry: Maghihintay pa rin ako. Maraming salamat at pasens'ya sa abala!
+=> END
+~ thankyou
+do wait(1)
 Merry: MARAMING SALAMAT, IHA! Ano ang iyong pangalan? Maaari kong malaman sana!
 - Lisa: Ang pangalan ko ay Lisa
-	Merry: Maraming salamat, Lisa! Ngayo'y nakakakita na ulit ako!
+	Merry: Maraming salamat, Lisa! Ngayo'y nakakakita na ulit ako ng matitingkad na kulay!
 	Lisa: Walang anuman, ate Merry!
 	do Questlines.updateQuest()
 	do Notifier.questnext("Lola Nita")

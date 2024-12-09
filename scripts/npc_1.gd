@@ -5,6 +5,8 @@ extends Node2D
 @onready var inventory: Control = $"../../../UI/Inventory"
 
 var dialog_inprocess: bool = false
+@onready var eyreanim: AnimationPlayer = $"../eyre/eyreanim"
+
 
 func _process(_delta: float) -> void:
 	if dialog_inprocess == true:
@@ -12,6 +14,7 @@ func _process(_delta: float) -> void:
 		
 	else:
 		pass
+
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -46,8 +49,8 @@ func _on_interact():
 			dialog_inprocess = false
 			on_openDialog()
 			TransferrerCutscene.transferCutscene("goodnight")
-		else:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "let_them")
+		elif Questlines.questline_number == 18:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "itsaprank")
 			dialog_inprocess = true
 			on_openDialog()
 			await DialogueManager.dialogue_ended

@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var ruinaltar: Node2D = $"."
-
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../../../sprites/Player"
 @onready var cutscene_manage: AnimationPlayer = $"../../../../Cutscene/CutsceneManage"
@@ -24,6 +22,10 @@ func _process(_delta: float) -> void:
 	if sphere_given == true:
 		interaction_area.action_name = "Kausapin"
 		inventory.remove(21)
+	if Questlines.questline_number != 10:
+		position.y = -530
+	else:
+		position.y = 530
 
 func _ready():
 	if Questlines.questline_number == 11:

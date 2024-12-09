@@ -2542,12 +2542,9 @@ color = Color(0.699653, 0.699653, 0.699653, 1)
 energy = 1.1
 blend_mode = 1
 
-[node name="UI" type="CanvasLayer" parent="."]
-layer = 4
+[node name="effect" type="CanvasLayer" parent="."]
 
-[node name="effect" type="Node" parent="UI"]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="UI/effect"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="effect"]
 position = Vector2(501, -86)
 scale = Vector2(5, 5)
 amount = 19
@@ -2555,6 +2552,9 @@ process_material = SubResource("ParticleProcessMaterial_tf0wd")
 texture = ExtResource("14_iegj8")
 lifetime = 13.7
 speed_scale = 4.01
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 4
 
 [node name="PauseScene" parent="UI" instance=ExtResource("5_pak82")]
 visible = false

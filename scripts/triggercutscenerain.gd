@@ -29,6 +29,7 @@ func on_openDialog():
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if Questlines.questline_number == 13 and Weather.is_rainy == false:
+			await get_tree().create_timer(1.5).timeout
 			Cutscene.cutscene_begin()
 			await Cutscene.dialog_begin
 			dialog_inprocess = true

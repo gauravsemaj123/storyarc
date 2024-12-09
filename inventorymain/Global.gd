@@ -177,7 +177,7 @@ var items = {
 		"Name": "Papel" ,
 		"Des": "Naglalaman ito ng mga bibilihin ni MatMat!",
 		"Cost": 0,
-		"Icon": null
+		"Icon": preload("res://inventorymain/inventory/itemlists/listahan.png")
 	},
 	21: {
 		"Name": "Espera" ,

@@ -75,7 +75,7 @@ content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-texture = ExtResource("7_6rp1h")
+texture = ExtResource("7_acvbt")
 expand_margin_left = 25.0
 expand_margin_right = 25.0
 
@@ -94,7 +94,7 @@ content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-texture = ExtResource("7_acvbt")
+texture = ExtResource("7_6rp1h")
 expand_margin_left = 25.0
 expand_margin_right = 25.0
 
@@ -103,10 +103,9 @@ content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-texture = ExtResource("7_acvbt")
-texture_margin_left = 25.0
-texture_margin_right = 25.0
-modulate_color = Color(0.568627, 0.568627, 0.568627, 1)
+texture = ExtResource("7_6rp1h")
+expand_margin_left = 25.0
+expand_margin_right = 25.0
 
 [sub_resource type="Theme" id="Theme_dy604"]
 Button/colors/font_color = Color(0, 0, 0, 1)
@@ -120,7 +119,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_0kwi5")
 Button/styles/pressed = SubResource("StyleBoxTexture_eq0is")
 
 [node name="ExampleBalloon" type="CanvasLayer"]
-layer = 3
+layer = 128
 script = ExtResource("1_36de5")
 
 [node name="Balloon" type="Control" parent="."]

@@ -43,7 +43,7 @@ func opencheck():
 		spin.play("fadeout")
 		await spin.animation_finished
 		visible = false
-		doneminigame.emit
+		doneminigame.emit()
 	
 func _on_spin_1_pressed() -> void:
 	spin_1.beginspinning()

@@ -60,6 +60,7 @@ func _on_interact():
 				player.dialogactive = false
 				dialog_inprocess = false
 				on_openDialog()
+				inventory.remove(23)
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/guard.dialogue"), "instructions")
 				player.dialogactive = true

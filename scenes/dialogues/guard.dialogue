@@ -75,13 +75,15 @@ Aristeo: Galingan mo!
 
 ~ letterreceive
 Aristeo: Magandang Hapon, Ginoo;
-Aristeo: Ako si Merry, ang Sirena mula sa Setty. Hindi ako makakakilos sa nayon dahil ako ay isang Sirena.
+Aristeo: Ako si Merry, ang Sirena mula sa Setty. Hindi ako makakakilos papunta sa nayon dahil ako ay isang Sirena.
 Aristeo: Ang aking Kuwintas ay nawala at napadpad sa tabing ilog na maaaring nakuha ng inyong kasamahan.
 Aristeo: Mabuti na lamang at ang nayon na ito ay napaka-tapat sa mga nawawalang gamit!
 Aristeo: Nais ko sanang makuha ang kuwintas sa pamamagitan ng pagsulat ng liham at pahintulutan ang batang nagngangalang Lisa
 Aristeo: Lubos na gumagalang; Merry.
 Aristeo: Kailangan mo lang sila pailawin at siguraduhin na dapat bukas lahat.
 Aristeo: Galingan mo!
+do Questlines.updateQuest()
+do Notifier.questnext("")
 set GlobalstateQ2.is_letter_given = true
 => END 
 

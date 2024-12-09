@@ -28,12 +28,12 @@ func showNotifQuest(name):
 	if name == "":
 		message.text = "May bago kang gagawin! Hindi na'tin alam kung ano iyon. Pindutin ang [I] para makita ang detalye"
 		slide.play("slide")
-		await get_tree().create_timer(2, false, true).timeout
+		await get_tree().create_timer(2).timeout
 		slide.play_backwards("slide")
 	else:
 		message.text = "May bago kang gagawin na patungkol kay " + str(name) + "! Pindutin ang [I] para makita ang detalye"
 		slide.play("slide")
-		await get_tree().create_timer(2, false, true).timeout
+		await get_tree().create_timer(2).timeout
 		slide.play_backwards("slide")
 
 func showItemNew(item):
