@@ -15,6 +15,17 @@ var closeDialog: bool = false
 @onready var direction: Marker2D = $direction
 
 func _ready():
+	if Questlines.questline_number == 21 and GlobalstateQ2.nasabi_na == false:
+		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
+		player.uiactive = true
+		player.SPEED = 0
+		player.JUMP_VELOCITY = 0
+		dialog_inprocess = true
+		await DialogueManager.dialogue_ended
+		player.uiactive = false
+		player.SPEED = 300
+		player.JUMP_VELOCITY = -400
+		dialog_inprocess = false
 	interaction_area.interact = Callable(self, "_on_interact")
 	shop.closeDialog.connect(closeDialogInit)
 

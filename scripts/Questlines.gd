@@ -114,11 +114,16 @@ var quest_database = {
 		"QuestImage": preload("res://textures/characterports/Valerie.png")
 	},
 	22:{
+		"QuestName": "MAGKANO ANG PERA NA AABUTIN",
+		"QuestDesc": "Natanong na kay Ate Valerie ang mga presyo! Ngayon, kausapin si Mat-mat kung magkano ang kaniyang dala!",
+		"QuestImage": preload("res://textures/characterports/Valerie.png")
+	},
+	23:{
 		"QuestName": "ANG PLANO AT PAGDIRIWANG",
 		"QuestDesc": "Ngayon, kausapin si Ate Valerie upang bumili! At ngayon ay pinasuyo sa’yo ni Mat-mat ang bilihin at ikaw na mismo ang gagawa!",
 		"QuestImage": preload("res://textures/characterports/Lisa.png")
 	},
-	23:{
+	24:{
 		"QuestName": "TAPOS NA LAHAT SA WAKAS",
 		"QuestDesc": "Bumalik kay Lola Nita! Alamin kung ano ang natutunan sa lahat-lahat ng iyong mga nalaman!",
 		"QuestImage": preload("res://textures/characterports/Lola Nita.png")

@@ -10,6 +10,8 @@ var is_matmat_convinced: bool = false
 
 var listahan_matmat_given: bool = false
 
+var nasabi_na: bool = false
+
 signal showup
 var is_on = false
 

@@ -1688,6 +1688,12 @@ interactable = true
 [node name="Spawn" parent="scene_elements/Doors/Door_hall_ent" index="1"]
 position = Vector2(109, 45)
 
+[node name="Door_ins_vil" parent="scene_elements/Doors" instance=ExtResource("2_hgd1g")]
+position = Vector2(1248, -21)
+
+[node name="Spawn" parent="scene_elements/Doors/Door_ins_vil" index="1"]
+position = Vector2(57, 317)
+
 [node name="AOEs" type="Node" parent="scene_elements"]
 
 [node name="interactables" type="Node" parent="scene_elements/AOEs"]
@@ -1820,3 +1826,4 @@ visible = false
 [editable path="scene_elements/Doors/Door_next"]
 [editable path="scene_elements/Doors/Door_haro_en"]
 [editable path="scene_elements/Doors/Door_hall_ent"]
+[editable path="scene_elements/Doors/Door_ins_vil"]

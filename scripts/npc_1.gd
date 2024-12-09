@@ -41,7 +41,7 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
-		elif Questlines.questline_number == 23:
+		elif Questlines.questline_number == 24:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "itisdone")
 			dialog_inprocess = true
 			on_openDialog()
