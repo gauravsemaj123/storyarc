@@ -111,6 +111,7 @@ func verdict():
 		await typing.animation_finished
 		await done
 		typing.play("RESET")
+	Global.compute = 168
 	Questlines.updateQuest()
 	NavigationManager.go_to_level("villagespring", "ins_vil")
 

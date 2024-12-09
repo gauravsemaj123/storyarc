@@ -2465,10 +2465,11 @@ libraries = {
 
 [node name="dialog" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_kgyji")
+volume_db = 10.688
 
 [node name="in" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_xp7iw")
-volume_db = 9.984
+volume_db = 14.144
 
 [connection signal="pressed" from="minigameui/main/ANSWERPANEL/VBOX/A" to="." method="_on_a_pressed"]
 [connection signal="pressed" from="minigameui/main/ANSWERPANEL/VBOX/B" to="." method="_on_b_pressed"]

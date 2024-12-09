@@ -2,7 +2,7 @@ extends Node
 
 var gold = 0
 
-var compute = 0
+var compute = 168
 
 var valerie_shopDialog = {
 	0:{

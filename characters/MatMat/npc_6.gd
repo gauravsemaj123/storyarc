@@ -40,6 +40,13 @@ func _on_interact():
 				await get_tree().create_timer(2).timeout
 				inventory.add(20)
 				Notifier.newitemAnnounce("Listahan")
+		elif Questlines.questline_number == 21:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/matmat.dialogue"), "hionchap1")
+			dialog_inprocess = true
+			player.uiactive = true
+			await DialogueManager.dialogue_ended
+			dialog_inprocess = false
+			player.uiactive = false
 		elif Questlines.questline_number == 11:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/matmat.dialogue"), "sabinieyre")
 			dialog_inprocess = true

@@ -42,6 +42,13 @@ Valerie: Magandang araw, anak! Ano maipaglilingkod ko sa'yo?
 		Valerie: Tingin ko wala kang naibigay sa'king [do AUDIO.sfx("idea")]listahan ng sangkap. Balik ka!
 => END
 
+~ gogetem
+do AUDIO.sfx("paper")
+Valerie: O'sya! Ibigay mo na 'yan kay Matmat! Magi-ingat ka!
+Lisa: Marami pong salamat!
+set GlobalstateQ2.nasabi_na = true
+=> END
+
 ~ askpermission
 Lisa: Ate Valerie!
 Valerie: Ano po iyon, anak?

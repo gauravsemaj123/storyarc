@@ -15,8 +15,15 @@ var closeDialog: bool = false
 @onready var direction: Marker2D = $direction
 
 func _ready():
+	interaction_area.interact = Callable(self, "_on_interact")
+	shop.closeDialog.connect(closeDialogInit)
+	readydialogInit()
+
+func readydialogInit():
 	if Questlines.questline_number == 21 and GlobalstateQ2.nasabi_na == false:
-		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
+		await get_tree().create_timer(.5).timeout
+		player.spriteanims.flip_h = true
+		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "gogetem");
 		player.uiactive = true
 		player.SPEED = 0
 		player.JUMP_VELOCITY = 0
@@ -26,8 +33,8 @@ func _ready():
 		player.SPEED = 300
 		player.JUMP_VELOCITY = -400
 		dialog_inprocess = false
-	interaction_area.interact = Callable(self, "_on_interact")
-	shop.closeDialog.connect(closeDialogInit)
+		Notifier.questnext("MatMat")
+		inventory.add(22)
 
 func _process(_delta: float) -> void:
 	if (dialog_inprocess == true):
@@ -104,6 +111,7 @@ func _on_interact():
 			player.uiactive = false
 			player.dialogactive = false
 			dialog_inprocess = false
+			inventory.remove(20)
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
 			player.uiactive = true

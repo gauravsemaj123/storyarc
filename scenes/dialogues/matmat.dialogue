@@ -12,6 +12,9 @@ MatMat: Kaso meron ka na, pasensiya na!
 Lisa: Ay! Nakalimutan ko! pasensiya na rin!
 => END
 
+~ eval
+
+
 ~ patulong
 MatMat: Kumusta! Nais ko sanang magpatulong sa'yo. Ako'y nanghingi ng tulong kay Bathala, subalit ang kaniyang tugon ay may darating daw sa akin!
 MatMat: Ikaw pala iyon, at ako ay natuwa dahil malapit na rin ang aking kaarawan! Hindi kasi ako marunong sa [do AUDIO.sfx("idea")]matematika na siyang
