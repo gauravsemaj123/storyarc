@@ -28,13 +28,27 @@ Valerie: Kumusta, anak! Ako si Valerie, ang tindera rito. Ano ang aking maitutul
 Valerie: Maraming salamat, anak!
 => END
 
+~ beforetest
+Valerie: Magandang araw, anak! Ano maipaglilingkod ko sa'yo?
+- Magtanong kung magkano aabutin ng buong sangkap
+	Valerie: Ay ganu'n ba? Maaari mo bang ipakita sa'kin?
+	do wait(1)
+	do ItemDetection.itemdetect(20)
+	if ItemDetection.is_detected == true:
+		Valerie: Hmmm, isang buong pansit pala ito! Sige, pero dapat ilalagay ko ito sa pagsubok! Dahil sa alam kong ikaw ay itinalaga na ng kaalaman ng Bathala!
+		Valerie: O s'ya! Gawin na na'tin!
+		set GlobalstateQ2.listahan_matmat_given = true
+	else:
+		Valerie: Tingin ko wala kang naibigay sa'king [do AUDIO.sfx("idea")]listahan ng sangkap. Balik ka!
+=> END
+
 ~ askpermission
 Lisa: Ate Valerie!
 Valerie: Ano po iyon, anak?
 Lisa: Nais ko po sana makakakuha ng bawat gulay sa loob ng inyong kahon! Ito ay hamon sa akin ng Bathalang Eyre.
 Valerie: BATHALANG EYRE?!! IKAW AY ITINALAGA NG KAALAMAN, ANAK!
 Valerie: Hanga ako sa'yo!
-Bathalang Eyre: Totoo, Valerie. Siya ay isang hindi pangkaraniwang bata. Siya ay sobrang determinado para sa pagtulong!
+Bathalang Eyre: Totoo, Valerie. Siya ay isang hindi pangkaraniwang bata. Siya ay sobrang determinado sa pagtulong!
 Valerie: Ako'y tutulong din sa kaniya, Bathalang Eyre!
 Valerie: Sige anak, kumuha ka sa kahon banda sa harap ng bahay na'min!
 Lisa: Marami pong salamat!

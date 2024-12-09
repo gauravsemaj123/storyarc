@@ -6,6 +6,7 @@ extends Node2D
 @onready var inventory: Control = $"../../../UI/Inventory"
 @onready var gulaycrate: Node2D = $"../../AOEs/interactables/gulaycrate"
 
+const MINIGAME_3 = preload("res://scenes/minigames/minigame_3.tscn")
 
 var dialog_inprocess: bool = false
 var shop_inprocess: bool = false
@@ -45,10 +46,6 @@ func closeDialogInit():
 	player.uiactive = false
 	
 func _on_interact():
-	if direction.position.x < player.position.x:
-		anim.flip_h = true
-	elif direction.position.x > player.position.x:
-		anim.flip_h = false
 	if shop.visible != true || inventory.visible != true:
 		if Questlines.questline_number == 3:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
@@ -83,6 +80,19 @@ func _on_interact():
 			player.inventoryactive = true
 			shop_inprocess = true
 			InteractionManager.visible = false
+		elif Questlines.questline_number == 20:
+			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "beforetest");
+			player.uiactive = true
+			player.dialogactive = true
+			dialog_inprocess = true
+			await DialogueManager.dialogue_ended
+			if GlobalstateQ2.listahan_matmat_given == true:
+				Transition.transition()
+				await Transition.on_transition_finished
+				get_tree().call_deferred("change_scene_to_packed", MINIGAME_3)
+			player.uiactive = false
+			player.dialogactive = false
+			dialog_inprocess = false
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
 			player.uiactive = true
