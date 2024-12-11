@@ -17,6 +17,7 @@ const swim_3 = preload("res://sounds/SFX/swim3.mp3")
 const announce = preload("res://sounds/SFX/announce.mp3")
 const bum = preload("res://sounds/SFX/bum.mp3")
 const solbeam = preload("res://sounds/SFX/solbeam.mp3")
+const clonck = preload("res://sounds/SFX/clonck.mp3")
 
 #Music Library
 #Code Goes here....
@@ -42,6 +43,8 @@ func sfx(audiofile):
 			streamfile = bum
 		"solbeam":
 			streamfile = solbeam
+		"clonck":
+			streamfile = clonck
 	streamplayer.stream = streamfile
 	streamplayer.play()
 

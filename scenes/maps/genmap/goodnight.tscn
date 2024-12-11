@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c65lurtdtojaj"]
+[gd_scene load_steps=24 format=4 uid="uid://c65lurtdtojaj"]
 
 [ext_resource type="Texture2D" uid="uid://bv8jl7mqmxh7e" path="res://textures/backgrounds/maps/nighthouse/sky.png" id="1_4qwek"]
 [ext_resource type="Script" path="res://scripts/elements/houseelements/goodnight.gd" id="1_y1208"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="8_bfgyk"]
 [ext_resource type="Texture2D" uid="uid://ceos725jbdch6" path="res://characters/Lisa/sleep.png" id="9_npiec"]
 [ext_resource type="Texture2D" uid="uid://ta3ar04wuu7k" path="res://characters/Lola Nita/lolanita.png" id="10_7afwm"]
+[ext_resource type="AudioStream" uid="uid://bg1b1udcgq706" path="res://sounds/OSTs/Story told!.mp3" id="12_4a244"]
 [ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="12_7aguh"]
 [ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="13_bcfiv"]
 
@@ -549,19 +550,19 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Node/totaltextures/Lisa:frame")
+tracks/6/path = NodePath("../scene_elements/totaltextures/Lisa:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_fo1ne"]
 resource_name = "new_animation"
-length = 3.0
+length = 5.0
 step = 0.25
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -572,7 +573,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.75)
+"times": PackedFloat32Array(0, 3)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -583,7 +584,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.75)
+"times": PackedFloat32Array(0, 3)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -594,7 +595,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.75)
+"times": PackedFloat32Array(0, 3)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -605,7 +606,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.75)
+"times": PackedFloat32Array(0, 3.75)
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -614,7 +615,7 @@ tracks/4/path = NodePath("fin:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -626,7 +627,7 @@ tracks/5/path = NodePath("chapdone:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -639,7 +640,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Node/totaltextures/Lisa:frame")
+tracks/0/path = NodePath("../scene_elements/totaltextures/Lisa:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -659,83 +660,82 @@ _data = {
 [node name="goodnight" type="Node2D"]
 script = ExtResource("1_y1208")
 
-[node name="Node" type="Node" parent="."]
+[node name="scene_elements" type="Node" parent="."]
 
-[node name="dyn_background" type="Node" parent="Node"]
+[node name="dyn_background" type="Node" parent="scene_elements"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Node/dyn_background"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="scene_elements/dyn_background"]
 
-[node name="sky" type="ParallaxLayer" parent="Node/dyn_background/ParallaxBackground"]
+[node name="sky" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
 motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(1152, 0)
 
-[node name="1" type="Sprite2D" parent="Node/dyn_background/ParallaxBackground/sky"]
+[node name="1" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/sky"]
 texture_filter = 1
 position = Vector2(616, 148)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("1_4qwek")
 
-[node name="clouds" type="ParallaxLayer" parent="Node/dyn_background/ParallaxBackground"]
+[node name="clouds" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
 motion_mirroring = Vector2(1152, 0)
 script = ExtResource("2_vb61x")
 
-[node name="2" type="Sprite2D" parent="Node/dyn_background/ParallaxBackground/clouds"]
+[node name="2" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/clouds"]
 modulate = Color(0.107241, 0.0811003, 0.195781, 1)
 texture_filter = 1
 position = Vector2(614, 112)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("3_djb22")
 
-[node name="mtn" type="ParallaxLayer" parent="Node/dyn_background/ParallaxBackground"]
+[node name="mtn" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
 motion_mirroring = Vector2(1232, 0)
 
-[node name="3" type="Sprite2D" parent="Node/dyn_background/ParallaxBackground/mtn"]
+[node name="3" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/mtn"]
 texture_filter = 1
 position = Vector2(617, 155)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("4_2dk07")
 
-[node name="tback" type="ParallaxLayer" parent="Node/dyn_background/ParallaxBackground"]
+[node name="tback" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
 motion_scale = Vector2(0.95, 1)
 motion_mirroring = Vector2(1228, 0)
 
-[node name="4" type="Sprite2D" parent="Node/dyn_background/ParallaxBackground/tback"]
+[node name="4" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/tback"]
 texture_filter = 1
 position = Vector2(616, 200)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("5_albye")
 
-[node name="tfront" type="ParallaxLayer" parent="Node/dyn_background/ParallaxBackground"]
+[node name="tfront" type="ParallaxLayer" parent="scene_elements/dyn_background/ParallaxBackground"]
 position = Vector2(-19, -21)
 motion_mirroring = Vector2(1232, 0)
 
-[node name="5" type="Sprite2D" parent="Node/dyn_background/ParallaxBackground/tfront"]
+[node name="5" type="Sprite2D" parent="scene_elements/dyn_background/ParallaxBackground/tfront"]
 texture_filter = 1
 position = Vector2(619, 186)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("6_sib87")
 
-[node name="totaltextures" type="Node" parent="Node"]
+[node name="totaltextures" type="Node" parent="scene_elements"]
 
-[node name="texture" type="TileMapLayer" parent="Node/totaltextures"]
+[node name="texture" type="TileMapLayer" parent="scene_elements/totaltextures"]
 scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAABAAkAAQAOAAMAAAACAAkAAQAOAAMAAAADAAkAAQAOAAMAAAAEAAkAAQAOAAMAAAAFAAkAAQAOAAMAAAAGAAkAAQAOAAMAAAAHAAkAAQAOAAMAAAAIAAkAAQAOAAMAAAAJAAkAAQAOAAMAAAAKAAkAAQAOAAMAAAALAAkAAQAOAAMAAAAMAAkAAQAOAAMAAAANAAkAAQAOAAMAAAAOAAkAAQAOAAMAAAAPAAkAAQAOAAMAAAAQAAkAAQAOAAMAAAARAAkAAQAOAAQAAAASAAkAAQAOAAQAAAATAAkAAQAOAAQAAAAUAAkAAQAOAAQAAAAAAAgAAQAPAAQAAAAAAAcAAQAPAAQAAAAAAAYAAQAPAAQAAAAAAAUAAQAPAAQAAAAAAAQAAQAPAAQAAAAAAAMAAQAPAAQAAAABAAIAAQAOAAUAAAACAAIAAQAOAAUAAAADAAIAAQAOAAUAAAAEAAIAAQAOAAUAAAAFAAIAAQAOAAUAAAAGAAIAAQAOAAUAAAAHAAIAAQAOAAUAAAAIAAIAAQAOAAUAAAAJAAIAAQAOAAUAAAAKAAIAAQAOAAUAAAALAAIAAQAOAAUAAAAMAAIAAQAOAAUAAAARAAMAAQANAAQAAAARAAQAAQANAAQAAAARAAUAAQANAAQAAAARAAYAAQANAAQAAAARAAcAAQANAAQAAAARAAgAAQANAAQAAAANAAIAAQAOAAUAAAAOAAIAAQAOAAUAAAAPAAIAAQAOAAUAAAAQAAIAAQAOAAUAAAARAAIAAQAOAAQAAAD9//3/AQAOAAQAAAD9//7/AQAOAAQAAAD9////AQAOAAQAAAD9/wAAAQAOAAQAAAD9/wEAAQAOAAQAAAD9/wIAAQAOAAQAAAD9/wMAAQAOAAQAAAD9/wQAAQAOAAQAAAD9/wUAAQAOAAQAAAD9/wYAAQAOAAQAAAD9/wcAAQAOAAQAAAD9/wgAAQAOAAQAAAD9/wkAAQAOAAQAAAD9/woAAQAOAAQAAAD9/wsAAQAOAAQAAAD9/wwAAQAOAAQAAAD+//3/AQAOAAQAAAD+//7/AQAOAAQAAAD+////AQAOAAQAAAD+/wAAAQAOAAQAAAD+/wEAAQAOAAQAAAD+/wIAAQAOAAQAAAD+/wMAAQAOAAQAAAD+/wQAAQAOAAQAAAD+/wUAAQAOAAQAAAD+/wYAAQAOAAQAAAD+/wcAAQAOAAQAAAD+/wgAAQAOAAQAAAD+/wkAAQAOAAQAAAD+/woAAQAOAAQAAAD+/wsAAQAOAAQAAAD+/wwAAQAOAAQAAAD//wwAAQAOAAQAAAAAAAwAAQAOAAQAAAABAAwAAQAOAAQAAAACAAwAAQAOAAQAAAADAAwAAQAOAAQAAAAEAAwAAQAOAAQAAAAFAAwAAQAOAAQAAAAGAAwAAQAOAAQAAAAHAAwAAQAOAAQAAAAIAAwAAQAOAAQAAAAJAAwAAQAOAAQAAAAKAAwAAQAOAAQAAAALAAwAAQAOAAQAAAAMAAwAAQAOAAQAAAANAAwAAQAOAAQAAAAOAAwAAQAOAAQAAAAPAAwAAQAOAAQAAAAQAAwAAQAOAAQAAAARAAwAAQAOAAQAAAASAAwAAQAOAAQAAAATAAwAAQAOAAQAAAAUAAwAAQAOAAQAAAAVAAwAAQAOAAQAAAAWAAwAAQAOAAQAAAAWAP3/AQAOAAQAAAAWAP7/AQAOAAQAAAAWAP//AQAOAAQAAAAWAAAAAQAOAAQAAAAWAAEAAQAOAAQAAAAWAAIAAQAOAAQAAAAWAAMAAQAOAAQAAAAWAAQAAQAOAAQAAAAWAAUAAQAOAAQAAAAWAAYAAQAOAAQAAAAWAAcAAQAOAAQAAAAWAAgAAQAOAAQAAAAWAAkAAQAOAAQAAAAWAAoAAQAOAAQAAAAWAAsAAQAOAAQAAAD///3/AQAOAAQAAAAAAP3/AQAOAAQAAAABAP3/AQAOAAQAAAACAP3/AQAOAAQAAAADAP3/AQAOAAQAAAAEAP3/AQAOAAQAAAAFAP3/AQAOAAQAAAAGAP3/AQAOAAQAAAAHAP3/AQAOAAQAAAAIAP3/AQAOAAQAAAAJAP3/AQAOAAQAAAAKAP3/AQAOAAQAAAALAP3/AQAOAAQAAAAMAP3/AQAOAAQAAAANAP3/AQAOAAQAAAAOAP3/AQAOAAQAAAAPAP3/AQAOAAQAAAAQAP3/AQAOAAQAAAARAP3/AQAOAAQAAAASAP3/AQAOAAQAAAATAP3/AQAOAAQAAAAUAP3/AQAOAAQAAAAVAP3/AQAOAAQAAAACAP//AQAOAAQAAAACAP7/AQAOAAQAAAABAP7/AQAOAAQAAAAAAP7/AQAOAAQAAAD///7/AQAOAAQAAAD/////AQAOAAQAAAD//wAAAQAOAAQAAAD//wEAAQAOAAQAAAD//wIAAQAOAAQAAAD//wMAAQAOAAQAAAD//wQAAQAOAAQAAAD//wUAAQAOAAQAAAD//wYAAQAOAAQAAAD//wcAAQAOAAQAAAD//wgAAQAOAAQAAAD//wkAAQAOAAQAAAD//woAAQAOAAQAAAD//wsAAQAOAAQAAAAAAAsAAQAOAAQAAAAAAAoAAQAOAAQAAAAAAAkAAQAOAAQAAAABAAoAAQAOAAQAAAABAAsAAQAOAAQAAAACAAsAAQAOAAQAAAACAAoAAQAOAAQAAAADAAoAAQAOAAQAAAADAAsAAQAOAAQAAAAEAAsAAQAOAAQAAAAEAAoAAQAOAAQAAAAFAAoAAQAOAAQAAAAFAAsAAQAOAAQAAAAGAAsAAQAOAAQAAAAGAAoAAQAOAAQAAAAHAAoAAQAOAAQAAAAHAAsAAQAOAAQAAAAIAAsAAQAOAAQAAAAIAAoAAQAOAAQAAAAJAAoAAQAOAAQAAAAJAAsAAQAOAAQAAAAKAAsAAQAOAAQAAAAKAAoAAQAOAAQAAAALAAoAAQAOAAQAAAALAAsAAQAOAAQAAAAMAAsAAQAOAAQAAAAMAAoAAQAOAAQAAAANAAoAAQAOAAQAAAANAAsAAQAOAAQAAAAOAAsAAQAOAAQAAAAOAAoAAQAOAAQAAAAPAAoAAQAOAAQAAAAPAAsAAQAOAAQAAAAQAAsAAQAOAAQAAAAQAAoAAQAOAAQAAAARAAoAAQAOAAQAAAARAAsAAQAOAAQAAAASAAsAAQAOAAQAAAASAAoAAQAOAAQAAAATAAoAAQAOAAQAAAATAAsAAQAOAAQAAAAUAAsAAQAOAAQAAAAUAAoAAQAOAAQAAAAVAAoAAQAOAAQAAAAVAAkAAQAOAAQAAAAVAAgAAQAOAAQAAAAVAAcAAQAOAAQAAAAVAAYAAQAOAAQAAAAVAAUAAQAOAAQAAAAVAAQAAQAOAAQAAAAVAAMAAQAOAAQAAAAVAAIAAQAOAAQAAAAVAAEAAQAOAAQAAAAVAAAAAQAOAAQAAAAVAP//AQAOAAQAAAAVAP7/AQAOAAQAAAAUAP7/AQAOAAQAAAATAP7/AQAOAAQAAAASAP7/AQAOAAQAAAARAP7/AQAOAAQAAAAQAP7/AQAOAAQAAAAPAP7/AQAOAAQAAAAOAP7/AQAOAAQAAAANAP7/AQAOAAQAAAAMAP7/AQAOAAQAAAALAP7/AQAOAAQAAAAKAP7/AQAOAAQAAAAJAP7/AQAOAAQAAAAIAP7/AQAOAAQAAAAHAP7/AQAOAAQAAAAGAP7/AQAOAAQAAAAFAP7/AQAOAAQAAAAEAP7/AQAOAAQAAAADAP7/AQAOAAQAAAADAP//AQAOAAQAAAADAAAAAQAOAAQAAAACAAAAAQAOAAQAAAABAAAAAQAOAAQAAAABAP//AQAOAAQAAAAAAP//AQAOAAQAAAAAAAAAAQAOAAQAAAAAAAEAAQAOAAQAAAAAAAIAAQAOAAQAAAABAAEAAQAOAAQAAAACAAEAAQAOAAQAAAADAAEAAQAOAAQAAAAEAAEAAQAOAAQAAAAEAAAAAQAOAAQAAAAEAP//AQAOAAQAAAAFAP//AQAOAAQAAAAFAAAAAQAOAAQAAAAFAAEAAQAOAAQAAAAGAAEAAQAOAAQAAAAGAAAAAQAOAAQAAAAGAP//AQAOAAQAAAAHAP//AQAOAAQAAAAHAAAAAQAOAAQAAAAHAAEAAQAOAAQAAAAIAAEAAQAOAAQAAAAIAAAAAQAOAAQAAAAIAP//AQAOAAQAAAAJAP//AQAOAAQAAAAJAAAAAQAOAAQAAAAJAAEAAQAOAAQAAAAKAAEAAQAOAAQAAAAKAAAAAQAOAAQAAAAKAP//AQAOAAQAAAALAP//AQAOAAQAAAALAAAAAQAOAAQAAAALAAEAAQAOAAQAAAAMAAEAAQAOAAQAAAAMAAAAAQAOAAQAAAAMAP//AQAOAAQAAAANAP//AQAOAAQAAAANAAAAAQAOAAQAAAANAAEAAQAOAAQAAAAOAAEAAQAOAAQAAAAOAAAAAQAOAAQAAAAOAP//AQAOAAQAAAAPAP//AQAOAAQAAAAPAAAAAQAOAAQAAAAPAAEAAQAOAAQAAAAQAAEAAQAOAAQAAAAQAAAAAQAOAAQAAAAQAP//AQAOAAQAAAARAP//AQAOAAQAAAARAAAAAQAOAAQAAAARAAEAAQAOAAQAAAASAAEAAQAOAAQAAAASAAAAAQAOAAQAAAASAP//AQAOAAQAAAATAP//AQAOAAQAAAATAAAAAQAOAAQAAAATAAEAAQAOAAQAAAATAAIAAQAOAAQAAAASAAIAAQAOAAQAAAASAAMAAQAOAAQAAAASAAQAAQAOAAQAAAASAAUAAQAOAAQAAAASAAYAAQAOAAQAAAASAAcAAQAOAAQAAAASAAgAAQAOAAQAAAATAAgAAQAOAAQAAAATAAcAAQAOAAQAAAATAAYAAQAOAAQAAAATAAUAAQAOAAQAAAATAAQAAQAOAAQAAAATAAMAAQAOAAQAAAAUAAMAAQAOAAQAAAAUAAIAAQAOAAQAAAAUAAEAAQAOAAQAAAAUAAAAAQAOAAQAAAAUAP//AQAOAAQAAAAUAAQAAQAOAAQAAAAUAAUAAQAOAAQAAAAUAAYAAQAOAAQAAAAUAAcAAQAOAAQAAAAUAAgAAQAOAAQAAAAVAAsAAQAOAAQAAAABAAMAAAACAAQAAAABAAQAAAAAAAQAAFABAAUAAQAUAAMAAAACAAUAAQAVAAMAAAACAAYAAQAVAAQAAAACAAcAAQAVAAUAAAABAAcAAQAUAAUAAAABAAYAAQAUAAQAAAABAAgAAAACAAQAAAACAAgAAAACAAQAAAADAAgAAAACAAQAAAAEAAgAAAACAAQAAAADAAcAAAACAAQAAAADAAYAAAACAAQAAAADAAUAAAACAAQAAAACAAQAAAAAAAQAAFACAAMAAAACAAQAAAADAAMAAAACAAQAAAADAAQAAAAAAAQAAFAEAAYAAQAUAAQAAAAEAAUAAQAUAAMAAAAEAAQAAAAAAAQAAFAEAAMAAAACAAQAAAAEAAcAAQAUAAUAAAAFAAgAAAACAAQAAAAGAAcAAAACAAQAAAAGAAYAAAACAAQAAAAHAAYAAQAUAAQAAAAHAAUAAQAUAAMAAAAHAAQAAAAAAAQAAFAGAAQAAAAAAAQAAFAGAAMAAAACAAQAAAAFAAMAAAACAAQAAAAFAAQAAAAAAAQAAFAFAAUAAQAVAAMAAAAFAAYAAQAVAAQAAAAFAAcAAQAVAAUAAAAGAAUAAAACAAQAAAAGAAgAAAACAAQAAAAHAAMAAAACAAQAAAAHAAcAAQAUAAUAAAAHAAgAAAACAAQAAAAIAAMAAAACAAQAAAAIAAQAAAAAAAQAAFAIAAUAAQAVAAMAAAAIAAYAAQAVAAQAAAAIAAcAAQAVAAUAAAAIAAgAAAACAAQAAAAJAAMAAAACAAQAAAAJAAQAAAAAAAQAAFAJAAUAAAACAAQAAAAJAAYAAAACAAQAAAAJAAcAAAACAAQAAAAJAAgAAAACAAQAAAAKAAMAAAACAAQAAAAKAAQAAAAAAAQAAFAKAAUAAQAUAAMAAAAKAAYAAQAUAAQAAAAKAAcAAQAUAAUAAAAKAAgAAAACAAQAAAALAAMAAAACAAQAAAALAAQAAAAAAAQAAFALAAUAAQAVAAMAAAALAAYAAQAVAAQAAAALAAcAAQAVAAUAAAALAAgAAAACAAQAAAAMAAMAAAACAAQAAAAMAAQAAAAAAAQAAFAMAAUAAAACAAQAAAAMAAYAAAACAAQAAAAMAAcAAAACAAQAAAAMAAgAAAACAAQAAAANAAMAAAACAAQAAAANAAQAAAAAAAQAAFANAAUAAQAUAAMAAAANAAYAAQAUAAQAAAANAAcAAQAUAAUAAAANAAgAAAACAAQAAAAOAAMAAAACAAQAAAAOAAQAAAAAAAQAAFAOAAUAAQAVAAMAAAAOAAYAAQAVAAQAAAAOAAcAAQAVAAUAAAAOAAgAAAACAAQAAAAPAAMAAAACAAQAAAAPAAQAAAAAAAQAAFAPAAUAAAACAAQAAAAPAAYAAAACAAQAAAAPAAcAAAACAAQAAAAPAAgAAAACAAQAAAAQAAMAAAACAAQAAAAQAAQAAAAAAAQAAFAQAAUAAAACAAQAAAAQAAYAAAACAAQAAAAQAAcAAAACAAQAAAAQAAgAAAACAAQAAAA=")
 tile_set = SubResource("TileSet_ukw4a")
 
-[node name="texture2" type="TileMapLayer" parent="Node/totaltextures"]
+[node name="texture2" type="TileMapLayer" parent="scene_elements/totaltextures"]
 scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAAEAAgAAAASAAYAAAAEAAcAAAASAAUAAAA=")
 tile_set = SubResource("TileSet_ukw4a")
 
-[node name="Lisa" type="Sprite2D" parent="Node/totaltextures"]
+[node name="Lisa" type="Sprite2D" parent="scene_elements/totaltextures"]
 position = Vector2(192, 433)
 rotation = -0.0890118
 scale = Vector2(3, 3)
 texture = ExtResource("9_npiec")
 hframes = 3
-frame = 1
 
-[node name="LolaNita" type="Sprite2D" parent="Node/totaltextures"]
+[node name="LolaNita" type="Sprite2D" parent="scene_elements/totaltextures"]
 position = Vector2(315, 445)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("10_7afwm")
@@ -743,32 +743,36 @@ flip_h = true
 hframes = 7
 vframes = 8
 
-[node name="texture3" type="TileMapLayer" parent="Node/totaltextures"]
+[node name="texture3" type="TileMapLayer" parent="scene_elements/totaltextures"]
 scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAADAAgAAAAQAAYAAAAEAAgAAAARAAYAAAA=")
 tile_set = SubResource("TileSet_ukw4a")
 
-[node name="texture4" type="TileMapLayer" parent="Node/totaltextures"]
+[node name="texture4" type="TileMapLayer" parent="scene_elements/totaltextures"]
 scale = Vector2(3.5, 3.5)
 tile_set = SubResource("TileSet_ukw4a")
 
-[node name="Camera2D" type="Camera2D" parent="Node/totaltextures"]
+[node name="Camera2D" type="Camera2D" parent="scene_elements/totaltextures"]
 position = Vector2(351, 404)
 zoom = Vector2(2, 2)
 
-[node name="lightparticles" type="Node" parent="Node"]
+[node name="lightparticles" type="Node" parent="scene_elements"]
 
-[node name="PointLight2D" type="PointLight2D" parent="Node/lightparticles"]
+[node name="PointLight2D" type="PointLight2D" parent="scene_elements/lightparticles"]
 position = Vector2(253, 410)
 color = Color(1, 1, 0.807843, 1)
 energy = 1.13
 texture = SubResource("GradientTexture2D_qyskj")
 texture_scale = 4.35
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Node/lightparticles"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="scene_elements/lightparticles"]
 color = Color(1, 0.44339, 0.377594, 1)
 energy = 2.1
 blend_mode = 1
+
+[node name="goodnight" type="AudioStreamPlayer2D" parent="scene_elements"]
+stream = ExtResource("12_4a244")
+volume_db = 11.663
 
 [node name="animations" type="CanvasLayer" parent="."]
 

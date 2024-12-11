@@ -53,6 +53,12 @@ Stacey: Bale ayun pala ang dahilan bakit nawala. Dahil sa hindi ko nagagamit.
 Stacey: Sige! Gagawin ko ang sinasabi ng Bathala!
 Stacey: Muli, maraming salamat!
 Lisa: Walang anuman!
+do wait(1)
+Stacey: Saglit, saan ang ingay na 'yon?
+Lisa: Oo nga 'no? Hindi ko alam kung saang galing siya!
+Stacey: Maaari mo siyang tignan sa bandang [do AUDIO.sfx("idea")][shake rate=20 level=10]kuweba[/shake]. Pakiramdam ko naandon ang ingay eh, pero hindi ako sigurado.
+Lisa: Tignan ko po, maraming salamat!
+Stacey: Walang anuman!
 do Questlines.updateQuest()
-do Notifier.questnext("Lola Nita")
+do Notifier.questnext("")
 => END 

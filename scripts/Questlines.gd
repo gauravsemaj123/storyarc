@@ -100,7 +100,7 @@ var quest_database = {
 	},
 	19:{
 		"QuestName": "MERON NA NAMAN",
-		"QuestDesc": "Mukhang hindi ka makakabalik ulit ah? Tignan natin kung nasaan! Si Mat-mat ay nasa Sakahan!",
+		"QuestDesc": "Mukhang hindi ka makakabalik ulit ah? Ang sabi ng Bathala ay si MatMat ay nasa sakahan!",
 		"QuestImage": preload("res://textures/characterports/MatMat.png")
 	},
 	20:{

@@ -13,7 +13,16 @@ Lisa: Ay! Nakalimutan ko! pasensiya na rin!
 => END
 
 ~ eval
-
+if GlobalstateQ2.nasabi_na == true:
+	MatMat: Aabutin pala ay 168. Ang nasa isip ko kasi ay 180. Mabuti na lamang ay hindi ako nagmadali at nagmarunong! Ako kasi ay nagdadala ng sakto lamang sa bilihin, dahil sabi 'yun ng aking ama!
+	MatMat: Maraming salamat pala, Lisa! Tara! Sama ka na rin sa handaan na'min!
+	Lisa: Sige ba!
+	set GlobalstateQ2.is_ending = true
+else:
+	MatMat: Nakuha mo na?
+	Lisa: Hindi pa.
+	MatMat: Sige, hihintayin ko, maraming salamat!
+=> END 
 
 ~ patulong
 MatMat: Kumusta! Nais ko sanang magpatulong sa'yo. Ako'y nanghingi ng tulong kay Bathala, subalit ang kaniyang tugon ay may darating daw sa akin!

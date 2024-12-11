@@ -29,8 +29,8 @@ func on_openDialog():
 	else:
 		player.uiactive = false
 		player.dialogactive = false
-		player.JUMP_VELOCITY = -600.0
-		player.SPEED = 700.0
+		player.JUMP_VELOCITY = -400
+		player.SPEED = 300
 
 func _on_interact():
 	if inventory.visible != true:
@@ -48,7 +48,7 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
-			TransferrerCutscene.transferCutscene("goodnight")
+			TransferrerCutscene.toGoodnight()
 		elif Questlines.questline_number == 18:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "itsaprank")
 			dialog_inprocess = true

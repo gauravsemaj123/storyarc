@@ -37,6 +37,7 @@ func readydialogInit():
 		inventory.add(22)
 
 func _process(_delta: float) -> void:
+	
 	if (dialog_inprocess == true):
 		inventory.close()
 		player.dialogactive = true

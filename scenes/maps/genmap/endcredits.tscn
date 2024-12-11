@@ -1,0 +1,344 @@
+[gd_scene load_steps=8 format=3 uid="uid://b78okn3y47ebv"]
+
+[ext_resource type="Script" path="res://scripts/elements/endcredits.gd" id="1_5lg4b"]
+[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="1_so0mh"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="2_dxnfk"]
+[ext_resource type="Texture2D" uid="uid://nh67px64ncwy" path="res://banner.png" id="4_na7k3"]
+
+[sub_resource type="Animation" id="Animation_btwwb"]
+resource_name = "new_animation"
+length = 88.0
+step = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(334, -0.25, 0, 0.25, 0, 328, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 76.4333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(238, -0.25, 0, 0.25, 0, -2186, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 76.4333)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 84.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sds:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 86),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sds2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 86),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_bwkc1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(328, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(239, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sds:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sds2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6lig"]
+_data = {
+"RESET": SubResource("Animation_bwkc1"),
+"new_animation": SubResource("Animation_btwwb")
+}
+
+[node name="endcredits" type="Node2D"]
+script = ExtResource("1_5lg4b")
+
+[node name="outro" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="fin2" type="Label" parent="outro"]
+visible = false
+offset_left = 446.0
+offset_top = 239.0
+offset_right = 693.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("1_so0mh")
+theme_override_font_sizes/font_size = 103
+text = "FIN"
+
+[node name="chapdone2" type="Label" parent="outro"]
+visible = false
+offset_left = 455.0
+offset_top = 335.0
+offset_right = 685.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("2_dxnfk")
+text = "Tapos na!"
+horizontal_alignment = 1
+
+[node name="sds" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.0
+offset_top = 260.0
+offset_right = 1601.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("1_so0mh")
+theme_override_font_sizes/font_size = 120
+text = "MARAMING SALAMAT 
+SA PAGLARO"
+horizontal_alignment = 1
+
+[node name="sds2" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 371.0
+offset_right = 2065.0
+offset_bottom = 590.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+theme_override_fonts/font = ExtResource("2_dxnfk")
+theme_override_font_sizes/font_size = 120
+text = "Thank you for playing!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 334.0
+offset_top = 238.0
+offset_right = 806.0
+offset_bottom = 2892.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="fin" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_so0mh")
+theme_override_font_sizes/font_size = 103
+text = "FIN"
+horizontal_alignment = 1
+
+[node name="chapdone" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxnfk")
+text = "Tapos na!"
+horizontal_alignment = 1
+
+[node name="creditroll" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxnfk")
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STAFF ROLL
+
+Project Manager/Game Director
+James Dometita
+
+-Texture Designers-
+Adrelyn Cabrobias
+James Dometita
+Leo Macalinao
+Paul Drexler Dayola
+
+-Programmer-
+James Dometita
+
+-Level Designer-
+James Dometita
+Paul Drexler Dayola
+
+-Sound Composer-
+James Dometita
+
+-Character Concept-
+James Dometita
+
+--WE ALSO THANK FOR--
+
+-SOUND EFFECTS-
+freesound community from pixabay
+kuzu borhees from pixabay
+joseph levesque from pixabay
+u_go9pkxdnu9 from pixabay
+floraphonic from pixabay
+Issiah Banda
+
+-DIALOGUE MANAGER-
+Nathan Hoad
+
+
+-MESSAGE-
+
+We highly dedicate this capstone project for kids
+as well as to learn basic learnings
+in an entertaining way.
+
+Taos-puso naming ginawa ang larong ito para sa
+mga bata upang matuto sila sa 
+nakatututwang paraan.
+
+
+
+
+-SPECIAL THANKS TO-
+
+Jan Clyde Cañeso
+Faye Villar
+Bernadeth Abayon
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="creditroll2" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_na7k3")
+expand_mode = 5
+
+[node name="creditroll3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxnfk")
+text = "
+
+STORY ARC
+All rights reserved. 2024"
+horizontal_alignment = 1
+
+[node name="abc" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e6lig")
+}

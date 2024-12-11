@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi1rrlhxeig2q"
+path="res://.godot/imported/Tell me a Story!.wav-030d4ceefcea671795955479ddcb99a8.sample"
+
+[deps]
+
+source_file="res://sounds/OSTs/Tell me a Story!.wav"
+dest_files=["res://.godot/imported/Tell me a Story!.wav-030d4ceefcea671795955479ddcb99a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

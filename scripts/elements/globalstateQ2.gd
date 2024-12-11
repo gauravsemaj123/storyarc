@@ -12,6 +12,8 @@ var listahan_matmat_given: bool = false
 
 var nasabi_na: bool = false
 
+var is_ending: bool = false
+
 signal showup
 var is_on = false
 

@@ -65,33 +65,126 @@ Lola Nita: Ano ang iyong tugon, apo?
 
 ~ itisdone
 Lola Nita: Magaling, apo! Ano ang natutunan mo sa paglalakbay?
-- Ang ABAKADA
-	Lisa: Sobrang nakakatuwa hanapin ang bawat letra!
-	Lola Nita: Ano ang bagay na ipinadala sa'yo na nagsisimula sa A?
-	- Lisa: Atis
-		Lola Nita: Magaling, apo!
-		Lola Nita: Sige, ano naman ang sunod?
-		Lola Nita: Ano naman ang bagay na ipinadala sa'yo na nagsisimula sa WA?
-		- Lisa: Wansoy
-			Lola Nita: Tama ka apo!
-			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
-			=> END 
-		- Lisa: Lanzones
-			Lola Nita: Mali, Wansoy, apo!
-			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
-			=> END
-	- Lisa: Hindi ko po alam
-		Lola Nita: Sige, ano naman ang sunod?
-		Lola Nita: Ano naman ang bagay na ipinadala sa'yo na nagsisimula sa WA?
-		- Lisa: Wansoy
-			Lola Nita: Tama ka apo!
-			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
-			=> END 
-		- Lisa: Lanzones
-			Lola Nita: Mali, Wansoy, apo!
-			Lola Nita: O s'ya! Kailangan na na'ting bumalik sa a'ting mundo!
-			=> END
+
+~ questions
+- Kasaysayan
+	Lola Nita: Ang kasaysayan, sige! Magtatanong ako.
+	=> history
+- Mga Kulay
+	Lola Nita: Ang mga kulay, sige! Magtatanong ako.
+	=> colors
+- Kagandahang Asal
+	Lola Nita: Ang kagandahang asal, sige! Magtatanong ako.
+	=> values
+- Pagkukuwenta
+	Lola Nita: Ang pagkukuwenta, sige! Magtatanong ako.
+	=> countings
+- Bugtong at abakada
+	Lola Nita: Ang bugtong at abakada, sige! Magtatanong ako.
+	=> riddlesabakada
+- Lahat
+	Lola Nita: Tignan na'tin, at malalaman na'tin kung handa ka!
+	%1 => history
+	%1 => colors
+	%1 => values
+	%1 => countings
+	%1 => riddlesabakada
+
+~ history
+Lola Nita: Sino ang [wave amp=25 freq=5]Ama ng Katipunan[/wave]?
+- Andres Bonifacio
+	Lola Nita: Tama ka apo ko!
+- Emilio Aguinaldo
+	Lola Nita: Mali. Si Andres Bonifacio ang Ama ng Katipunan, apo!
+- Jose Rizal
+	Lola Nita: Mali. Si Andres Bonifacio ang Ama ng Katipunan, apo!
+
+Lola Nita: Pangalawang tanong, sino ang [wave amp=25 freq=5]pambansang bayani[/wave]?
+- Andres Bonifacio
+	Lola Nita: Mali. Si Andres Bonifacio ang Ama ng Katipunan, apo!
+- Emilio Aguinaldo
+	Lola Nita: Mali. Si Andres Bonifacio ang Ama ng Katipunan, apo!
+- Jose Rizal
+	Lola Nita: Tama ka apo ko!
+
+Lola Nita: O s'ya o s'ya! Oras na para bumalik tayo!
+=> END
+~ colors
+Lola Nita: Ano ang kulay kapag pinagsama ang [wave amp=25 freq=5]Pula at Asul[/wave]?
+- Lila
+	Lola Nita: Tama ka apo ko!
+- Berde
+	Lola Nita: Mali!
+- Dilaw
+	Lola Nita: Mali!
+
+Lola Nita: Pangalawang tanong, ano ang mga [wave amp=25 freq=5]Pangunahing Kulay[/wave]?
+- Pula Dilaw at Asul
+	Lola Nita: Tama ka apo ko!
+- Pula Puti at Itim
+	Lola Nita: Mali!
+- Pula Berde at Asul
+	Lola Nita: Mali!
+
+Lola Nita: O s'ya o s'ya! Oras na para bumalik tayo!
+=> END
+~ values
+Lola Nita: Ang pagsasalita ng po at opo sa nakatatanda ay isang nakakagalang?
+- Tama
+	Lola Nita: Tama ka apo ko!
+- Mali
+	Lola Nita: Mali! Dapat kang magsabi ng po at opo sa nakatatanda!
+
+Lola Nita: Ugaliing kumatok at magsabi ng "Tao po" nang sa gayon ay bigay galang sa maybahay, tama o mali?
+- Tama
+	Lola Nita: Tama ka apo ko!
+- Mali
+	Lola Nita: Mali! Kumatok muna upang malaman ng maybahay na ika'y naandon sa harap ng pinto.
+
+Lola Nita: O s'ya o s'ya! Oras na para bumalik tayo!
+=> END
+~ countings
+Lola Nita: Magkano sa tingin mo aabutin ng tatlong lata ng sardinas na nagkakahalaga ng 10 kada lata?
+- Tatlumpu
+	Lola Nita: Tama ka apo ko!
+- Apatnaput lima
+	Lola Nita: Mali!
+
+Lola Nita: Ang limang mansanas ay nabawasan ng dalawa. Ilan na lang ito?
+- Apat
+	Lola Nita: Mali!
+- Tatlo
+	Lola Nita: Tama ka apo ko!
+
+Lola Nita: O s'ya o s'ya! Oras na para bumalik tayo!
+=> END
+~ riddlesabakada
+Lola Nita: Sa pagkakaalala mo, ano ang pagkain na dinala mo sa Bathala na nagsisimula sa Ha?
+- Halu-Halo
+	Lola Nita: Tama ka apo ko!
+- Halaman
+	Lola Nita: Mali!
+- Halimaw
+	Lola Nita: Mali!
+
+Lola Nita: Pangalawang tanong at ito ay bugtong, Kung kailan mo pinatay, saka humaba ang buhay, ano ito?
+- Kandila
+	Lola Nita: Tama ka apo ko!
+- Kamatis
+	Lola Nita: Mali!
+- Kasoy
+	Lola Nita: Mali!
+
+Lola Nita: O s'ya o s'ya! Oras na para bumalik tayo!
+=> END
 
 ~ goodnightlisa
-Lola Nita: Matulog ka nang mahimbing, Lisa [next=2].
+Lisa: [speed=0.7]Sobrang ganda po ng libro na 'yon, lola![next=1]
+Lola Nita: [speed=0.7]At marami kang natutunan sa librong iyon. Maaaring maging isang masayang paglalakbay 'yun sa'yo, apo ko![next=1]
+Lisa: [speed=0.7]Siguro lahat ng mamamayan ng Happy Village, masaya na sila ngayon! Ang hiwaga rin ng nangyari! Hindi ako makapaniwala sa ganu'n lola![next=1]
+Lola Nita: [speed=0.7]Sobra ka talagang nag-enjoy sa kuwento. Ikaw talaga, apo![next=1]
+Lola Nita: [speed=0.7]O s'ya, ako'y aalis na, apo.[next=1]
+Lisa: [speed=0.7]Lola![next=2]
+Lisa: [speed=0.7]Tulog ka na rin po nang mahimbing po![next=1]
+Lola Nita: [speed=0.2]Matulog ka nang mahimbing, Lisa[next=2].
 => END
