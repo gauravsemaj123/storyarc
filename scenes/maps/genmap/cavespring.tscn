@@ -2344,7 +2344,7 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_5bfpx")
 
 [node name="npc8" parent="scene_elements/sprites" instance=ExtResource("14_dfuiw")]
-position = Vector2(6870, -238)
+position = Vector2(6855, 344)
 
 [node name="fronttexture" type="Node" parent="scene_elements"]
 

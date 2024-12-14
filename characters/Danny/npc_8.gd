@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 		pass
 		
 	if Questlines.questline_number >= 14:
-		position.y = 354
+		position.y = 344
 
 func _ready():
 	position.y = -238

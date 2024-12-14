@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://b11gq5ug8nyvo"]
+[gd_scene load_steps=72 format=4 uid="uid://b11gq5ug8nyvo"]
 
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="1_88idd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_l0hn2"]
@@ -30,6 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://doait32ac34fr" path="res://ui/misc/pause/pause_scene.tscn" id="25_pesbn"]
 [ext_resource type="Texture2D" uid="uid://pw4a5trq87xm" path="res://inventorymain/inventory/itemlists/atis.png" id="25_yd38l"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="26_w7obl"]
+[ext_resource type="Script" path="res://scripts/elements/skey.gd" id="28_ft15l"]
+[ext_resource type="Texture2D" uid="uid://dgv8a2ee21t0a" path="res://ui/mainmenu/instruction.png" id="29_qqt65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3omn5"]
 texture = ExtResource("2_titqm")
@@ -1633,6 +1635,9 @@ size = Vector2(142, 137)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbs1c"]
 size = Vector2(616, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5b06"]
+size = Vector2(267, 135)
+
 [sub_resource type="Gradient" id="Gradient_w6yny"]
 offsets = PackedFloat32Array(0, 0.702564, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.0410256, 0.0410256, 0.0410256, 1, 0, 0, 0, 1)
@@ -2036,6 +2041,21 @@ position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_bbs1c")
 one_way_collision = true
 
+[node name="Node2D" type="Node2D" parent="scene_elements/AOEs"]
+position = Vector2(4353, 416)
+script = ExtResource("28_ft15l")
+
+[node name="Sprite2D" type="Sprite2D" parent="scene_elements/AOEs/Node2D"]
+position = Vector2(-183, -23)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("29_qqt65")
+
+[node name="Area2D" type="Area2D" parent="scene_elements/AOEs/Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/Node2D/Area2D"]
+position = Vector2(-182.5, 61)
+shape = SubResource("RectangleShape2D_n5b06")
+
 [node name="lighting" type="Node" parent="scene_elements"]
 
 [node name="PointLight2D" type="PointLight2D" parent="scene_elements/lighting"]
@@ -2090,5 +2110,8 @@ blend_mode = 1
 
 [node name="Inventory" parent="UI" instance=ExtResource("25_iy2qw")]
 visible = false
+
+[connection signal="body_entered" from="scene_elements/AOEs/Node2D/Area2D" to="scene_elements/AOEs/Node2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="scene_elements/AOEs/Node2D/Area2D" to="scene_elements/AOEs/Node2D" method="_on_area_2d_body_exited"]
 
 [editable path="scene_elements/Doors/Door_next"]

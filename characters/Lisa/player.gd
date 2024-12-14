@@ -1,8 +1,8 @@
 class_name Player extends CharacterBody2D
 @onready var spriteanims = $AnimatedSprite2D
 const SWIM_SPEED = 250.0
-var JUMP_VELOCITY = -600.0
-var SPEED = 700.0
+var JUMP_VELOCITY = -400
+var SPEED = 300
 const SWIM_JUMP = -250
 @export var SWIM_FACTOR: float = 0.50
 var paused = false
