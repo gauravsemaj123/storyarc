@@ -1813,10 +1813,10 @@ shape = SubResource("RectangleShape2D_rbc3f")
 
 [node name="Notifier" parent="UI" instance=ExtResource("6_qsg6f")]
 
-[node name="Shop" parent="UI" instance=ExtResource("19_0edtx")]
+[node name="Inventory" parent="UI" instance=ExtResource("7_sical")]
 visible = false
 
-[node name="Inventory" parent="UI" instance=ExtResource("7_sical")]
+[node name="Shop" parent="UI" instance=ExtResource("19_0edtx")]
 visible = false
 
 [connection signal="body_entered" from="scene_elements/AOEs/triggercutscenerain" to="scene_elements/AOEs/triggercutscenerain" method="_on_body_entered"]

@@ -271,6 +271,7 @@ text = "Ituloy"
 
 [node name="Save" type="Button" parent="."]
 process_mode = 3
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = -357.0

@@ -1,6 +1,6 @@
 extends Node
 
-var gold = 0
+var gold = 300
 
 var compute = 168
 

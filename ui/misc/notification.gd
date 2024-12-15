@@ -14,13 +14,13 @@ func _ready() -> void:
 func customNotif(custom):
 	message.text = custom
 	slide.play("slide")
-	await get_tree().create_timer(4, false, true).timeout
+	await get_tree().create_timer(4).timeout
 	slide.play_backwards("slide")
 
 func showNotifGold(gold):
 	message.text = "Nadagdagan ng " + str(gold) + " ang iyong bulsa!"
 	slide.play("slide")
-	await get_tree().create_timer(2, false, true).timeout
+	await get_tree().create_timer(2).timeout
 	slide.play_backwards("slide")
 
 @warning_ignore("shadowed_variable_base_class")
@@ -39,5 +39,5 @@ func showNotifQuest(name):
 func showItemNew(item):
 	message.text = "Nalagay ang " + str(item) + " sa iyong imbentaryo! Pindutin ang [I] nang makita ito!"
 	slide.play("slide")
-	await get_tree().create_timer(2, false, true).timeout
+	await get_tree().create_timer(2).timeout
 	slide.play_backwards("slide")

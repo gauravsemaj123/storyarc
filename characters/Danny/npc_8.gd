@@ -15,6 +15,8 @@ func _process(_delta: float) -> void:
 		
 	if Questlines.questline_number >= 14:
 		position.y = 344
+	else:
+		position.y = -500
 
 func _ready():
 	position.y = -238
@@ -30,8 +32,8 @@ func on_openDialog():
 	else:
 		player.uiactive = false
 		player.dialogactive = false
-		player.JUMP_VELOCITY = -400
-		player.SPEED = 300
+		player.JUMP_VELOCITY = -450
+		player.SPEED = 600
 
 func _on_interact():
 	if inventory.visible != true:

@@ -47,7 +47,7 @@ func _ready():
 
 func _on_interact():
 	if inventory.visible != true:
-		if Questlines.questline_number == 11 and item_sequence <= 19:
+		if Questlines.questline_number == 11 and item_sequence <= 18:
 			#strings = str(Global.inventory[0]["Name"])
 			#key = Global.inventory.find_key(strings)
 			#

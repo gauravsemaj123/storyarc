@@ -1828,6 +1828,12 @@ spawn_direction = "right"
 [node name="Spawn" parent="scene_elements/Doors/Door_next" index="1"]
 position = Vector2(-357, 112)
 
+[node name="Door_intro" parent="scene_elements/Doors" instance=ExtResource("19_18nrl")]
+position = Vector2(989, -317)
+
+[node name="Spawn" parent="scene_elements/Doors/Door_intro" index="1"]
+position = Vector2(71, 540)
+
 [node name="AOEs" type="Node" parent="scene_elements"]
 
 [node name="boundaries" type="StaticBody2D" parent="scene_elements/AOEs"]
@@ -2115,3 +2121,4 @@ visible = false
 [connection signal="body_exited" from="scene_elements/AOEs/Node2D/Area2D" to="scene_elements/AOEs/Node2D" method="_on_area_2d_body_exited"]
 
 [editable path="scene_elements/Doors/Door_next"]
+[editable path="scene_elements/Doors/Door_intro"]

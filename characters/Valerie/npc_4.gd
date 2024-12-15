@@ -30,8 +30,8 @@ func readydialogInit():
 		dialog_inprocess = true
 		await DialogueManager.dialogue_ended
 		player.uiactive = false
-		player.SPEED = 300
-		player.JUMP_VELOCITY = -400
+		player.JUMP_VELOCITY = -450
+		player.SPEED = 600
 		dialog_inprocess = false
 		Notifier.questnext("MatMat")
 		inventory.add(22)
@@ -61,7 +61,7 @@ func closeDialogInit():
 	InteractionManager.visible = true
 	dialog_inprocess = false
 	player.inventoryactive = false
-	player.SPEED = 300
+	player.SPEED = 800
 	player.uiactive = false
 	
 func _on_interact():
@@ -74,8 +74,8 @@ func _on_interact():
 			dialog_inprocess = true
 			await DialogueManager.dialogue_ended
 			player.uiactive = false
-			player.SPEED = 300
-			player.JUMP_VELOCITY = -400
+			player.JUMP_VELOCITY = -450
+			player.SPEED = 600
 			dialog_inprocess = false
 		elif Questlines.questline_number == 11 and gulaycrate.is_permitted == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "askpermission")
@@ -86,8 +86,8 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			gulaycrate.is_permitted = true
 			player.uiactive = false
-			player.SPEED = 300
-			player.JUMP_VELOCITY = -400
+			player.JUMP_VELOCITY = -450
+			player.SPEED = 600
 			dialog_inprocess = false
 		elif Questlines.questline_number == 11 and gulaycrate.is_permitted == true:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
