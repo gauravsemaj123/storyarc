@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1uhhteuk3vmm"
+path="res://.godot/imported/village - anti markkainen.mp3-2572360e17092c5addcae8e5f02bc74a.mp3str"
+
+[deps]
+
+source_file="res://sounds/OSTs/village - anti markkainen.mp3"
+dest_files=["res://.godot/imported/village - anti markkainen.mp3-2572360e17092c5addcae8e5f02bc74a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

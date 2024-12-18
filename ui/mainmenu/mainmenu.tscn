@@ -528,6 +528,7 @@ theme_override_constants/separation = 30
 alignment = 1
 
 [node name="options" type="Button" parent="mainui/Control/vertical2"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_ccx7r")
 text = "Mga Pagpipilian"

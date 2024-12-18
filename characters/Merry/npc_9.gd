@@ -31,8 +31,8 @@ func on_openDialog():
 	else:
 		player.uiactive = false
 		player.dialogactive = false
-		player.JUMP_VELOCITY = -400
-		player.SPEED = 300
+		player.JUMP_VELOCITY = -450
+		player.SPEED = 600
 
 func _on_interact():
 	if inventory.visible != true:

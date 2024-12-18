@@ -64,6 +64,7 @@ func _on_interact():
 				player.uiactive = false
 				player.dialogactive = false
 				dialog_inprocess = false
+				TransferrerCutscene.transferCutscene("ruinspring", "ruin_front")
 				Cutscene.just_out()
 				return
 			else:

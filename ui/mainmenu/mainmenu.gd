@@ -25,10 +25,7 @@ func background_transition():
 
 
 func _on_newgame_pressed():
-	Transition.transition()
-	await get_tree().create_timer(1, false, false, true).timeout
-	get_tree().change_scene_to_file("res://scenes/maps/genmap/forestspring.tscn")
-
+	NavigationManager.go_to_level("forestspring", "intro")
 func _on_options_pressed():
 	pass # Replace with function body.
 

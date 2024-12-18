@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://c54rgtxcgtl5p"]
+[gd_scene load_steps=20 format=3 uid="uid://c54rgtxcgtl5p"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://7dqu0proy0ly" path="res://ui/misc/buttons/dialog panel.png" id="2_v6iir"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="3_ph4ur"]
 [ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="5_77oic"]
 [ext_resource type="Texture2D" uid="uid://blx8wo26qjvov" path="res://ui/misc/buttons/focusedbr.png" id="7_6rp1h"]
 [ext_resource type="Texture2D" uid="uid://d168b3jwkb4ha" path="res://ui/misc/buttons/choicebar.png" id="7_acvbt"]
@@ -112,7 +111,7 @@ Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("3_ph4ur")
+Button/fonts/font = ExtResource("5_77oic")
 Button/styles/focus = SubResource("StyleBoxTexture_m1l1m")
 Button/styles/hover = SubResource("StyleBoxTexture_q0jg4")
 Button/styles/normal = SubResource("StyleBoxTexture_0kwi5")
@@ -186,8 +185,9 @@ modulate = Color(0, 0, 0, 1)
 texture_filter = 3
 layout_mode = 2
 mouse_filter = 1
-theme_override_fonts/normal_font = ExtResource("3_ph4ur")
-theme_override_font_sizes/normal_font_size = 36
+theme_override_fonts/normal_font = ExtResource("5_77oic")
+theme_override_fonts/bold_font = ExtResource("5_77oic")
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -234,7 +234,7 @@ offset_right = 756.0
 offset_bottom = 341.0
 theme = SubResource("Theme_dy604")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ph4ur")
+theme_override_fonts/font = ExtResource("5_77oic")
 text = "Response example"
 
 [node name="typingsfx" type="AudioStreamPlayer2D" parent="."]

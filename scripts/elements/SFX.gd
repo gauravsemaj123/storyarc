@@ -20,6 +20,11 @@ const solbeam = preload("res://sounds/SFX/solbeam.mp3")
 const clonck = preload("res://sounds/SFX/clonck.mp3")
 
 #Music Library
+const cave = preload("res://sounds/OSTs/cave.mp3")
+const ruins = preload("res://sounds/OSTs/ruins - scott buckley.mp3")
+const convo = preload("res://sounds/OSTs/Should I Start, or Continue.wav")
+const village = preload("res://sounds/OSTs/village - anti markkainen.mp3")
+const forest = preload("res://sounds/OSTs/forest - infraction.mp3")
 #Code Goes here....
 
 func sfx(audiofile):
@@ -53,18 +58,24 @@ func music(audiofile):
 	if audiofile == "stop":
 		musicplayer.stop()
 	match audiofile:
-		"idea":
-			streamfile = idea
-		"jump":
-			streamfile = jump
-		"land":
-			streamfile = land
-		"pickup":
-			streamfile = pickup
-		"watsplash":
-			streamfile = watsplash
-	musicplayer.stream = streamfile
-	musicplayer.play()
+		"cave":
+			streamfile = cave
+		"ruins":
+			streamfile = ruins
+		"convo":
+			streamfile = convo
+		"village":
+			streamfile = village
+		"forest":
+			streamfile = forest
+	if musicplayer.stream != streamfile:
+		musicplayer.stream = streamfile
+		musicplayer.play()
+	else:
+		pass
+	
+	if musicplayer.finished:
+		musicplayer.play()
 	
 func swim():
 	var waterfile
