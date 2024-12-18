@@ -75,7 +75,6 @@ offset_right = 6.0
 offset_bottom = 498.0
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 448.0
@@ -84,7 +83,6 @@ offset_bottom = 479.0
 text = "questnumber: xx"
 
 [node name="instantiate" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 21.0
 offset_top = 332.0
