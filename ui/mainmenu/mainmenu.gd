@@ -10,6 +10,8 @@ func _ready():
 	$AnimationPlayer.play("menu_intro")
 	cavevar.visible = false
 	plainvar.visible = false
+	await $AnimationPlayer.animation_finished
+	AUDIO.music("convo")
 	
 func _process(_delta):
 	await get_tree().create_timer(2.5, false, false, true).timeout

@@ -5,10 +5,10 @@ Valerie: Kumusta, anak! Ako si Valerie, ang tindera rito. May bibilihin ka ba, a
 Valerie: Kumusta, anak! Ako si Valerie, ang tindera rito. Ano ang aking maitutulong?
 - Tanungin kung sino ang arkeologo ng nayon
 	Lisa: P'wede ko po ba malaman kung sino po yung arkeologo ng nayon na ito?
-	Valerie: Ah! Siya ay ang aking asawa na si Harold! Ano ang sadiya mo sa kaniya, anak?
+	Valerie: Ah! Siya ay ang aking asawa na si Harold! Ano ang sadya mo sa kaniya, anak?
 	- Tanungin sa misteryosong bagay
 		Lisa: Nais ko lamang po siya tanungin kung may alam po siya sa mga misteryosong nangyayari.
-		Valerie: Ganu'n ba, anak? Sige! Ang bahay na'min ay katabi lamang nitong mumunting palengke!
+		Valerie: Ganu'n ba, anak? Sige! Ang bahay namin ay katabi lamang nitong mumunting palengke!
 		- Magpasalamat
 			Lisa: Maraming salamat po, Ate Valerie!
 			Valerie: Walang anuman!
@@ -44,7 +44,7 @@ Valerie: Magandang araw, anak! Ano maipaglilingkod ko sa'yo?
 
 ~ gogetem
 do AUDIO.sfx("paper")
-Valerie: O'sya! Ibigay mo na 'yan kay Matmat! Magi-ingat ka!
+Valerie: O'sya! Ibigay mo na 'yan kay Matmat! Mag-iingat ka!
 Lisa: Marami pong salamat!
 set GlobalstateQ2.nasabi_na = true
 => END
@@ -53,7 +53,7 @@ set GlobalstateQ2.nasabi_na = true
 Lisa: Ate Valerie!
 Valerie: Ano po iyon, anak?
 Lisa: Nais ko po sana makakakuha ng bawat gulay sa loob ng inyong kahon! Ito ay hamon sa akin ng Bathalang Eyre.
-Valerie: BATHALANG EYRE?!! IKAW AY ITINALAGA NG KAALAMAN, ANAK!
+Valerie: BATHALANG EYRE?! IKAW AY ITINALAGA NG KAALAMAN, ANAK!
 Valerie: Hanga ako sa'yo!
 Bathalang Eyre: Totoo, Valerie. Siya ay isang hindi pangkaraniwang bata. Siya ay sobrang determinado sa pagtulong!
 Valerie: Ako'y tutulong din sa kaniya, Bathalang Eyre!

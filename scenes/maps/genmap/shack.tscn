@@ -824,6 +824,7 @@ destination_level_tag = "river"
 destination_door_tag = "shack_entrance"
 spawn_direction = "right"
 interactable = true
+action_name = "Lumabas"
 
 [node name="Spawn" parent="scene_elements/Doors/Door_shack_exit" index="1"]
 position = Vector2(69, 58)

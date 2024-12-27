@@ -26,39 +26,30 @@ func go_to_level(level_tag, destination_tag):
 			scene_to_load = forestspring
 			stage_tag = "Evisu Forest"
 		"villagespring":
-
 			scene_to_load = villagespring
 			stage_tag = "Happy Village"
 		"farmspring":
-
 			scene_to_load = farmspring
 			stage_tag = "Farm"
 		"cavespring":
-
 			scene_to_load = cavespring
 			stage_tag = "Mystic Cave"
 		"ruinspring":
-
 			scene_to_load = ruinspring
 			stage_tag = "Ancient Ruins"
 		"harold":
-
 			scene_to_load = harold
 			stage_tag = "Harold's House"
 		"house1":
-
 			scene_to_load = house1
 			stage_tag = "House"
 		"river":
-
 			scene_to_load = river
 			stage_tag = "Hange River"
 		"shack":
-
 			scene_to_load = shack
 			stage_tag = "Shack"
 		"hall":
-
 			scene_to_load = hall
 			stage_tag = "Happy Hall"
 	 

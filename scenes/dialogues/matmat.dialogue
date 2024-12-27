@@ -15,7 +15,7 @@ Lisa: Ay! Nakalimutan ko! pasensiya na rin!
 ~ eval
 if GlobalstateQ2.nasabi_na == true:
 	MatMat: Aabutin pala ay 168. Ang nasa isip ko kasi ay 180. Mabuti na lamang ay hindi ako nagmadali at nagmarunong! Ako kasi ay nagdadala ng sakto lamang sa bilihin, dahil sabi 'yun ng aking ama!
-	MatMat: Maraming salamat pala, Lisa! Tara! Sama ka na rin sa handaan na'min!
+	MatMat: Maraming salamat pala, Lisa! Tara! Sama ka na rin sa handaan namin!
 	Lisa: Sige ba!
 	set GlobalstateQ2.is_ending = true
 else:
@@ -36,8 +36,8 @@ MatMat: Kinahihirapan ko! Maaari mo ba akong matulungan?
 	MatMat: Gusto mo ba magkuwento ako patungkol sa mga magsasaka?
 	- Makinig
 		Lisa: Sige ba!
-		MatMat: Ganito kasi 'yan! Ang pagsasaka ay hindi biro! Pero ito ang pinakamarangal na trabaho dahil naipapakain daw na'min ang mga tiga-nayon o tiga-siyudad, sabi ng aking ama!
-		MatMat: Gayunpaman na kahit na kakarampot man ang aming kinikita, ang dedikasyon na'min dito ay hindi mapapantayan! Nagpapasalamat pa rin ako sa Bathalang Eyre na sinusustentuhan ang aming pananim sa pamamagitan ng pagpigil ng mga bagyo!
+		MatMat: Ganito kasi 'yan! Ang pagsasaka ay hindi biro! Pero ito ang pinakamarangal na trabaho dahil naipapakain daw namin ang mga taga-nayon o taga-siyudad, sabi ng aking ama!
+		MatMat: Gayunpaman na kahit na kakarampot man ang aming kinikita, ang dedikasyon namin dito ay hindi mapapantayan! Nagpapasalamat pa rin ako sa Bathalang Eyre na sinusustentuhan ang aming pananim sa pamamagitan ng pagpigil ng mga bagyo!
 		MatMat: Kagaya na lamang ng bulubunduking Sierra Madre na makikita mo sa likuran! Siya ang nagpapahina ng hangin at ginagabayan din kami ni Bathalang Eyre na maging wais sa pagtapon ng mga basura!
 		MatMat: Ang pagsasaka ay isa sa mga magandang gawain! At ito ay sobrang kinaaaliwan ko! Meron bang mga magsasaka sa inyo?
 		- Lisa: Meron
@@ -54,9 +54,9 @@ MatMat: Kinahihirapan ko! Maaari mo ba akong matulungan?
 			MatMat: Ay wala? Sayang! Pero alam ko meron pa rin!
 			Lisa: Siguro nga, hindi ko lang nakikita!
 			MatMat: Makikita mo rin sila!
-			Lisa: Pagkabalik ko sa mundo na'min!
+			Lisa: Pagkabalik ko sa mundo namin!
 			MatMat: Ay isa ka lang dayuhan dito?
-			Lisa: Galing ako sa ibang dimensyon. Napadpad kami rito upang tumulong dahil sa nakikita ko ang iba ay kailangan ng tulong na'min!
+			Lisa: Galing ako sa ibang dimensyon. Napadpad kami rito upang tumulong dahil sa nakikita ko ang iba ay kailangan ng tulong namin!
 			MatMat: Ang galing!
 			=> isokay
 	- Huwag na lang

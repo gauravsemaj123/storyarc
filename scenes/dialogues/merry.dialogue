@@ -1,10 +1,10 @@
 ~ colorblindsirena
 
-Merry: Kumusta! Ako pala si Merry. Ang sirena ng tabing dagat ng Setty. Sa ngayon, napartio ako sa ilog para hanapin yung aking kuwintas!
+Merry: Kumusta! Ako pala si Merry. Ang sirena ng tabing dagat ng Setty. Sa ngayon, naparito ako sa ilog para hanapin yung aking kuwintas!
 Merry: Dahil doon, ang paningin ko ay naging kulay abo lahat! Walang tingkad ni isa!
-Merry: Ang sabi raw ng tiga-nayon, eh kailangan ko raw kunin ang aking kuwintas sa paghalo ng bawat kulay. Kaso hindi ko kaya.
+Merry: Ang sabi raw ng taga-nayon, eh kailangan ko raw kunin ang aking kuwintas sa paghalo ng bawat kulay. Kaso hindi ko kaya.
 Merry: Sana'y tulungan mo ako...
-- Lisa: Tutulungan kita
+- Lisa: Tutulungan kita!
 	Merry: Maraming maraming salamaaat!
 - Ipagsawalang bahala
 
@@ -14,7 +14,7 @@ Merry: Sana'y tulungan mo ako...
 Merry: Kailangan ng liham mula sa'kin? Saglit. Mga ilang minuto lang...
 do Transition.transition()
 [next=1]
-Merry: Eto na ang liham!!! Magi-ingat ka!
+Merry: Eto na ang liham!!! Mag-iingat ka!
 => END 
 
 ~ meronkana

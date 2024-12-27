@@ -738,7 +738,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(2911, -0.25, 0, 0.25, 0, 2889, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2668, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(2911, -0.25, 0, 0.25, 0, 2889, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2813, -0.25, 0, 0.25, 0, 2608, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0.5, 2, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7.5)
 }
 tracks/3/type = "bezier"
@@ -1046,9 +1046,8 @@ scale = Vector2(3.5, 3.5)
 texture = ExtResource("13_rj5f4")
 
 [node name="pen" type="Sprite2D" parent="scene_elements/sprites"]
-visible = false
-position = Vector2(2889, 409)
-scale = Vector2(3.5, 3.5)
+position = Vector2(2608, 566)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("14_xfdb4")
 
 [node name="fronttexture" type="Node" parent="scene_elements"]
@@ -1143,7 +1142,7 @@ position = Vector2(2358, -558)
 script = ExtResource("20_ha227")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/FOR_CUTSCENE2"]
-position = Vector2(84.5, -4)
+position = Vector2(92, -137)
 shape = SubResource("RectangleShape2D_oarci")
 debug_color = Color(0.639428, 0.525169, 1.92523e-07, 0.42)
 

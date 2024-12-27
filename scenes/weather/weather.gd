@@ -13,6 +13,7 @@ func cloudshow():
 
 	
 func sunny():
+	is_rainy = false
 	animation_player.play("RESET")
 
 func rainy():

@@ -1282,6 +1282,7 @@ destination_level_tag = "villagespring"
 destination_door_tag = "haro_en"
 spawn_direction = "right"
 interactable = true
+action_name = "Lumabas"
 
 [node name="CollisionShape2D" parent="scene_elements/Doors/Door_haro_ex" index="0"]
 position = Vector2(-19, 2)

@@ -37,6 +37,7 @@ func on_openDialog():
 
 func _on_interact():
 	if inventory.visible != true:
+		AUDIO.stopstream()
 		if Questlines.questline_number == 14:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/danny.dialogue"), "ineedhelp")
 			dialog_inprocess = true

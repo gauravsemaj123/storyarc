@@ -3,6 +3,7 @@ extends Node2D
 @onready var streamplayer: AudioStreamPlayer2D = $streamplayer
 @onready var musicplayer: AudioStreamPlayer2D = $musicplayer
 @onready var waterplayer: AudioStreamPlayer2D = $waterplayer
+@onready var screaming: AudioStreamPlayer2D = $screaming
 
 #Sound Effects Library
 const idea = preload("res://sounds/SFX/idea.mp3")
@@ -25,7 +26,13 @@ const ruins = preload("res://sounds/OSTs/ruins - scott buckley.mp3")
 const convo = preload("res://sounds/OSTs/Should I Start, or Continue.wav")
 const village = preload("res://sounds/OSTs/village - anti markkainen.mp3")
 const forest = preload("res://sounds/OSTs/forest - infraction.mp3")
+const graduation = preload("res://sounds/OSTs/graduation.mp3")
 #Code Goes here....
+
+func _ready() -> void:
+	streamplayer.volume_db = 9
+	musicplayer.volume_db = 7
+	waterplayer.volume_db = 8
 
 func sfx(audiofile):
 	var streamfile
@@ -55,8 +62,12 @@ func sfx(audiofile):
 
 func music(audiofile):
 	var streamfile
+	if audiofile == "pause":
+		musicplayer.stream_paused = true
 	if audiofile == "stop":
 		musicplayer.stop()
+	if audiofile == "play":
+		musicplayer.stream_paused = false
 	match audiofile:
 		"cave":
 			streamfile = cave
@@ -68,15 +79,28 @@ func music(audiofile):
 			streamfile = village
 		"forest":
 			streamfile = forest
+		"graduation":
+			streamfile = graduation
 	if musicplayer.stream != streamfile:
 		musicplayer.stream = streamfile
-		musicplayer.play()
+		startmusic()
 	else:
 		pass
 	
-	if musicplayer.finished:
-		musicplayer.play()
 	
+	if get_tree().paused == true:
+		musicplayer.volume_db = 1.0
+	else:
+		musicplayer.volume_db = 7
+
+func startmusic():
+	musicplayer.play()
+	await musicplayer.finished
+	repeatit()
+
+func repeatit():
+	startmusic()
+
 func swim():
 	var waterfile
 	var rander = randi_range(1,3)
@@ -88,3 +112,14 @@ func swim():
 		waterfile = swim_3
 	waterplayer.stream = waterfile
 	waterplayer.play()
+
+func repeatscream():
+	startscream()
+
+func startscream():
+	screaming.play()
+	await screaming.finished
+	repeatscream()
+
+func stopstream():
+	screaming.stop()

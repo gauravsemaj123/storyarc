@@ -47,7 +47,9 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			player.uiactive = false
+			inventory.remove(22)
 			if GlobalstateQ2.nasabi_na == true:
+				AUDIO.music("stop")
 				TransferrerCutscene.toFinal()
 		elif Questlines.questline_number == 11:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/matmat.dialogue"), "sabinieyre")

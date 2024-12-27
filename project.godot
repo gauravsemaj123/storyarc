@@ -43,6 +43,7 @@ ItemDetection="*res://scripts/itemDetection.gd"
 Weather="*res://scenes/weather/weather.tscn"
 AUDIO="*res://sounds/SFX/audio.tscn"
 GlobalstateQ2="*res://scripts/elements/globalstateQ2.gd"
+Shop="*res://inventorymain/shop.tscn"
 
 [display]
 

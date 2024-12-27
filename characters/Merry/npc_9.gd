@@ -35,6 +35,7 @@ func on_openDialog():
 		player.SPEED = 600
 
 func _on_interact():
+	AUDIO.stopstream()
 	if inventory.visible != true:
 		if Questlines.questline_number == 15:
 			if GlobalstateQ2.is_letter_introduced == true:

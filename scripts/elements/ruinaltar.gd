@@ -59,12 +59,16 @@ func _on_interact():
 				sphere_given = true
 				player.uiactive = true
 				dialog_inprocess = true
+				AUDIO.music("stop")
+				AUDIO.sfx("land")
 				cutscene_manage.play("scenebegin")
 				await get_tree().create_timer(2).timeout
 				cutscene_manage.play("emit")
+				AUDIO.sfx("solbeam")
 				await cutscene_manage.animation_finished
 				cutscene_manage.play("lightloop")
-				await cutscene_manage.animation_finished
+				await get_tree().create_timer(3.5).timeout
+				AUDIO.music("ruins")
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "calling")
 				await DialogueManager.dialogue_ended
 				cutscene_manage.play("remove")

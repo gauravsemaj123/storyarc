@@ -900,7 +900,8 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_qtikm"]
 resource_name = "decrease"
-length = 10.0
+length = 20.0
+step = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -910,7 +911,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(263, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"times": PackedFloat32Array(0, 20)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -921,7 +922,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(9, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 10)
+"times": PackedFloat32Array(0, 20)
 }
 
 [sub_resource type="Animation" id="Animation_uu4y3"]
@@ -1277,7 +1278,7 @@ color = Color(0.374139, 0.374139, 0.374139, 1)
 [node name="activebar" type="ColorRect" parent="MINIGAMEUI/timerbar"]
 offset_left = 448.0
 offset_top = 275.0
-offset_right = 448.0
+offset_right = 711.0
 offset_bottom = 284.0
 color = Color(0.493513, 0.58708, 1, 1)
 
@@ -1297,7 +1298,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("15_23f1y")
 theme_override_font_sizes/font_size = 16
-text = "10"
+text = "20"
 
 [node name="timerlang" type="AnimationPlayer" parent="MINIGAMEUI/timerbar"]
 root_node = NodePath("../..")
@@ -1306,7 +1307,7 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="MINIGAMEUI/timerbar"]
-wait_time = 10.0
+wait_time = 20.0
 
 [node name="answer" type="Label" parent="MINIGAMEUI/timerbar"]
 offset_left = 484.0

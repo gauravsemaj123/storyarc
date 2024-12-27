@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://dyx6ndl04mr3g"]
 
-[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="1_y3akv"]
+[ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="1_mnhc4"]
 [ext_resource type="Texture2D" uid="uid://d168b3jwkb4ha" path="res://ui/misc/buttons/choicebar.png" id="2_3wpcs"]
 [ext_resource type="Texture2D" uid="uid://blx8wo26qjvov" path="res://ui/misc/buttons/focusedbr.png" id="2_f3y18"]
 
@@ -52,8 +52,8 @@ Button/colors/icon_hover_color = Color(0.65098, 0.65098, 0.65098, 1)
 Button/colors/icon_hover_pressed_color = Color(0.65098, 0.65098, 0.65098, 1)
 Button/colors/icon_normal_color = Color(0.65098, 0.65098, 0.65098, 1)
 Button/colors/icon_pressed_color = Color(0.65098, 0.65098, 0.65098, 1)
-Button/font_sizes/font_size = 38
-Button/fonts/font = ExtResource("1_y3akv")
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_mnhc4")
 Button/styles/disabled = SubResource("StyleBoxTexture_n4t1e")
 Button/styles/focus = SubResource("StyleBoxTexture_j4bgc")
 Button/styles/hover = SubResource("StyleBoxTexture_rti1o")

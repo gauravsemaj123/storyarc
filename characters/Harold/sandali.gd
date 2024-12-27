@@ -20,6 +20,7 @@ func _process(_delta: float) -> void:
 func _on_body_entered(_body: Node2D) -> void:
 	if npc_5.is_declining == true and npc_5.is_offering == false:
 		flipflip()
+		AUDIO.music("pause")
 		DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/harold.dialogue"), "toobusybutgivesguide2")
 		player.uiactive = true
 		player.dialogactive = true

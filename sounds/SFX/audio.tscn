@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq2aclgxcwhhm"]
+[gd_scene load_steps=3 format=3 uid="uid://dq2aclgxcwhhm"]
 
 [ext_resource type="Script" path="res://scripts/elements/SFX.gd" id="1_8xd1o"]
+[ext_resource type="AudioStream" uid="uid://it6pnsrc6j3s" path="res://sounds/SFX/dannyscream.mp3" id="2_u5y5j"]
 
 [node name="AUDIO" type="Node2D"]
 script = ExtResource("1_8xd1o")
@@ -11,6 +12,7 @@ max_polyphony = 5
 playback_type = 1
 
 [node name="musicplayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 max_distance = 1e+09
 max_polyphony = 2
 
@@ -18,3 +20,7 @@ max_polyphony = 2
 max_distance = 1e+08
 max_polyphony = 20
 playback_type = 1
+
+[node name="screaming" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_u5y5j")
+max_distance = 1e+11

@@ -3,7 +3,7 @@ Harold: Kumusta Anak!
 - Kausapin
 	Lisa: Kay ganda naman po ng inyong bahay, Kuya Harold!
 	Harold: [#mood]Ahh hehe! Maayos lang at ako kasi ay hanga sa mga bagay na ginawa ng mga sinaunang tao rito sa nayon.
-	Harold: Sa katunayan, hindi na nga na'min alam kung sino ang katutubo ang lahi rito dahil sa kolonisasyon.
+	Harold: Sa katunayan, hindi na nga namin alam kung sino ang katutubo rito dahil sa kolonisasyon.
 	Lisa: Ganu'n po ba?
 	% => trivia1
 	% => trivia2
@@ -31,7 +31,7 @@ Harold: Kumusta Anak!
 => END
 
 ~ toobusybutgivesguide
-Harold: Naku, anak! Pasens'ya na. Hindi kita matutulungan diyan sapgkat walang magbabantay nitong mumunting bahay na'min!
+Harold: Naku, anak! Pasensya na. Hindi kita matutulungan diyan sapagkat walang magbabantay nitong mumunting bahay na'min!
 Lisa: Ganu'n po ba? Marami pong salamat Kuya Harold!
 => END
 
@@ -60,7 +60,6 @@ Harold: Alam mo na ang paparoon, kaya mag-iingat ka!
 Lisa: Marami pong salamat!
 Harold: Walang anuman, anak! Mag iingat talaga!
 do Questlines.updateQuest()
-do Notifier.questnext("")
 => END
 
 ~ youdonthave
@@ -111,7 +110,7 @@ Harold: Pupunta ako sa'yo, tara!
 => END
 ~ asktheguidance
 Lisa: Mayroon po ba kayong nalalaman patungkol sa mga mahiwagang nangyayari?
-Harold: Alin, yung mga nawawalang mahalagang bagay na na pag-aari ng Bathalang Eyre?
+Harold: Alin, yung mga nawawalang mahalagang bagay na pag-aari ng Bathalang Eyre?
 - Siguro
 	Lisa: Hindi ko po alam, pero siguro ganu'n na po, Kuya Harold!
 	=> toobusybutgivesguide

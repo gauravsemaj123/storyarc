@@ -60,6 +60,7 @@ func _on_interact():
 				await DialogueManager.dialogue_ended
 				dialog_inprocess = false
 				on_openDialog()
+				inventory.remove(19)
 				Cutscene.just_out()
 		else:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/stacey.dialogue"), "get_going")

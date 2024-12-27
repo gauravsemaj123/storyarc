@@ -2,9 +2,7 @@ extends Node2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../Player"
-@onready var shop: Control = $"../../../UI/Shop"
 @onready var inventory: Control = $"../../../UI/Inventory"
-@onready var gulaycrate: Node2D = $"../../AOEs/interactables/gulaycrate"
 
 const MINIGAME_3 = preload("res://scenes/minigames/minigame_3.tscn")
 
@@ -16,7 +14,7 @@ var closeDialog: bool = false
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
-	shop.closeDialog.connect(closeDialogInit)
+	Shop.closeDialog.connect(closeDialogInit)
 	readydialogInit()
 
 func readydialogInit():
@@ -65,7 +63,7 @@ func closeDialogInit():
 	player.uiactive = false
 	
 func _on_interact():
-	if shop.visible != true || inventory.visible != true:
+	if Shop.visible != true || inventory.visible != true:
 		if Questlines.questline_number == 3:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "asktoharold");
 			player.uiactive = true
@@ -77,28 +75,18 @@ func _on_interact():
 			player.JUMP_VELOCITY = -450
 			player.SPEED = 600
 			dialog_inprocess = false
-		elif Questlines.questline_number == 11 and gulaycrate.is_permitted == false:
+		elif Questlines.questline_number == 11 and GlobalstateQ2.is_gulaycrate_permitted == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "askpermission")
 			player.uiactive = true
 			player.SPEED = 0
 			player.JUMP_VELOCITY = 0
 			dialog_inprocess = true
 			await DialogueManager.dialogue_ended
-			gulaycrate.is_permitted = true
+			GlobalstateQ2.is_gulaycrate_permitted = true
 			player.uiactive = false
 			player.JUMP_VELOCITY = -450
 			player.SPEED = 600
 			dialog_inprocess = false
-		elif Questlines.questline_number == 11 and gulaycrate.is_permitted == true:
-			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "shopstart")
-			player.uiactive = true
-			player.SPEED = 0
-			dialog_inprocess = true
-			await DialogueManager.dialogue_ended
-			shop.open()
-			player.inventoryactive = true
-			shop_inprocess = true
-			InteractionManager.visible = false
 		elif Questlines.questline_number == 20:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/valerie.dialogue"), "beforetest");
 			player.uiactive = true
@@ -119,7 +107,7 @@ func _on_interact():
 			player.SPEED = 0
 			dialog_inprocess = true
 			await DialogueManager.dialogue_ended
-			shop.open()
+			Shop.open()
 			player.inventoryactive = true
 			shop_inprocess = true
 			InteractionManager.visible = false

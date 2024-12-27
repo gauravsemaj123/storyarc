@@ -27,13 +27,7 @@ func toGoodnight():
 	animation_player.play_backwards("fade")
 
 func transferCutscene(level_tag2, destination_tag2):
-	visible = true
-	
 	if destination_tag2 == "" and level_tag2 == "":
 		push_error("MISSING!")
 	else:
-		animation_player.play("fade")
-		await animation_player.animation_finished
 		NavigationManager.go_to_level(level_tag2, destination_tag2)
-		is_in_cutscene = true
-		animation_player.play_backwards("fade")

@@ -5,7 +5,6 @@ extends Node2D
 var dialog_inprocess: bool = false
 @onready var player: Player = $"../Player"
 
-var item_sequence: int = 0
 var itemremove: bool = false
 const MINIGAME_1 = preload("res://scenes/minigames/minigame1.tscn")
 @onready var cutscene_manage: AnimationPlayer = $"../../../Cutscene/CutsceneManage"
@@ -28,7 +27,7 @@ func _process(_delta: float) -> void:
 		miraclelight.texture_scale = 0
 		miraclelight.energy = 0
 	
-	if item_sequence <= 19:
+	if GlobalstateQ2.itemsequence <= 18:
 		interaction_area.action_name = "Ibigay"
 	else:
 		interaction_area.action_name = "Sabihing tapos na ang misyon"
@@ -47,16 +46,15 @@ func _ready():
 
 func _on_interact():
 	if inventory.visible != true:
-		if Questlines.questline_number == 11 and item_sequence <= 18:
+		if Questlines.questline_number == 11 and GlobalstateQ2.itemsequence <= 18:
 			#strings = str(Global.inventory[0]["Name"])
 			#key = Global.inventory.find_key(strings)
-			#
+			
 			#print(strings)
 			#print(key)
-			print(item_sequence)
-			ItemDetection.itemdetect(item_sequence)
+			print(GlobalstateQ2.itemsequence)
+			ItemDetection.itemdetect(GlobalstateQ2.itemsequence)
 			if ItemDetection.is_detected == true:
-				inventory.remove(item_sequence)
 				#itemremove = true
 				await get_tree().create_timer(.1).timeout
 				itemremove = false
@@ -68,9 +66,10 @@ func _on_interact():
 				player.uiactive = false
 				player.dialogactive = false
 				dialog_inprocess = false
-				if item_sequence <= 18:
-					item_sequence += 1
-		elif Questlines.questline_number == 11 and item_sequence >= 19:
+				inventory.remove(GlobalstateQ2.itemsequence)
+				if GlobalstateQ2.itemsequence <= 18:
+					GlobalstateQ2.itemsequence += 1
+		elif Questlines.questline_number == 11 and GlobalstateQ2.itemsequence >= 19:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "beforetest");
 			player.uiactive = true
 			player.dialogactive = true

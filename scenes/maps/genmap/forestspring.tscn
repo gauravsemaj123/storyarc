@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://b11gq5ug8nyvo"]
+[gd_scene load_steps=75 format=4 uid="uid://b11gq5ug8nyvo"]
 
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="1_88idd"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_l0hn2"]
@@ -1635,6 +1635,108 @@ size = Vector2(142, 137)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbs1c"]
 size = Vector2(616, 20)
 
+[sub_resource type="Animation" id="Animation_2hx47"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_msms3"]
+resource_name = "fadein"
+length = 0.4
+step = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dxm3"]
+_data = {
+"RESET": SubResource("Animation_2hx47"),
+"fadein": SubResource("Animation_msms3")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5b06"]
 size = Vector2(267, 135)
 
@@ -2052,9 +2154,15 @@ position = Vector2(4353, 416)
 script = ExtResource("28_ft15l")
 
 [node name="Sprite2D" type="Sprite2D" parent="scene_elements/AOEs/Node2D"]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-183, -23)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("29_qqt65")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="scene_elements/AOEs/Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_0dxm3")
+}
 
 [node name="Area2D" type="Area2D" parent="scene_elements/AOEs/Node2D"]
 

@@ -12,7 +12,11 @@ var listahan_matmat_given: bool = false
 
 var nasabi_na: bool = false
 
+var is_gulaycrate_permitted: bool = false
+
 var is_ending: bool = false
+
+var itemsequence: int = 0
 
 signal showup
 var is_on = false

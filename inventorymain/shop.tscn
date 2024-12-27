@@ -100,14 +100,12 @@ func _process(delta):
 	text = \"PERA: \" + str(Global.gold)
 "
 
-[node name="Shop" type="Control"]
+[node name="Shop" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 0
+layer = 10
 script = ExtResource("1_iuj5f")
 
 [node name="Panel" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = 250.0
 offset_top = 75.0
 offset_right = 495.0
@@ -116,7 +114,6 @@ scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_gg7i8")
 
 [node name="Close" type="Button" parent="."]
-layout_mode = 0
 offset_left = 1062.0
 offset_top = 104.0
 offset_right = 1112.0
@@ -208,7 +205,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Gold" type="Label" parent="."]
-layout_mode = 0
 offset_left = 538.0
 offset_top = 112.0
 offset_right = 582.0

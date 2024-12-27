@@ -6,7 +6,6 @@ extends Node2D
 var dialog_inprocess: bool = false
 
 var is_gulay_got: bool = false
-var is_permitted: bool = false
 
 func _process(delta: float) -> void:
 	if dialog_inprocess == true:
@@ -28,7 +27,7 @@ func _on_interact():
 	if Questlines.questline_number != 11:
 		pass
 	elif Questlines.questline_number == 11:
-		if is_gulay_got == false and is_permitted == false:
+		if is_gulay_got == false and GlobalstateQ2.is_gulaycrate_permitted == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "paalammuna")
 			dialog_inprocess = true
 			player.uiactive = true
@@ -37,7 +36,7 @@ func _on_interact():
 			dialog_inprocess = false
 			player.uiactive = false
 			player.dialogactive = false
-		elif is_gulay_got == false and is_permitted == true:
+		elif is_gulay_got == false and GlobalstateQ2.is_gulaycrate_permitted == true:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "gulaycrateget")
 			dialog_inprocess = true
 			player.uiactive = true
@@ -51,7 +50,7 @@ func _on_interact():
 			player.uiactive = false
 			player.dialogactive = false
 			is_gulay_got = true
-			queue_free()
+			position.y = -500
 		else:
 			pass
 		pass

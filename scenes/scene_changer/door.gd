@@ -5,8 +5,8 @@ class_name Door
 @export var destination_door_tag: String
 @export var spawn_direction = "up"
 @export var interactable: bool = false
+@export var action_name = "Pumasok"
 
-var action_name = "Pumasok"
 @onready var player: Player = $"../../sprites/Player"
 @onready var spawn = $Spawn
 var enterable: bool = false
@@ -18,6 +18,7 @@ func _on_body_entered(body):
 		if interactable == false:
 			print("player")
 			NavigationManager.go_to_level(destination_level_tag, destination_door_tag)
+			Weather.layer = 0
 		if interactable == true:
 			DoorInteractionManager.reg_area(self)
 			
@@ -38,7 +39,7 @@ func _on_body_exited(body):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and enterable == true:
 		if player.is_on_floor():
-			if str(action_name) == "Pumasok":
+			if str(action_name) == "Pumasok" || str(action_name) == "Lumabas":
 				NavigationManager.go_to_level(destination_level_tag, destination_door_tag)
 				await Transition.on_transition_finished
 				changeLayer()

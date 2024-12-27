@@ -89,6 +89,7 @@ func _on_interact():
 				player.dialogactive = false
 				return
 			elif is_offering == true:
+				AUDIO.music("play")
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/harold.dialogue"), "hiwithguide")
 				player.uiactive = true
 				player.dialogactive = true

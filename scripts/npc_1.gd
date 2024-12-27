@@ -48,6 +48,7 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
+			AUDIO.music("stop")
 			TransferrerCutscene.toGoodnight()
 		elif Questlines.questline_number == 18:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lolanita.dialogue"), "itsaprank")

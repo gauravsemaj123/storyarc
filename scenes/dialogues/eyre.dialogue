@@ -3,7 +3,7 @@ Bathalang Eyre: Salamat sa pagbibigay mo sa akin ng bilog ng kaalaman at karunun
 Bathalang Eyre: Nakita ko sa iyong mga mata na hinahanap mo ang kaalaman tungkol sa panulat na hawak ng paruparo.
 Bathalang Eyre: Siya nga ay may pag-aari ng panulat na iyon.
 Bathalang Eyre: Gayunpaman, kinuha ko ito pabalik sapagkat hindi niya ito ginamit upang magtala ng nakikita niya.
-Bathalang Eyre: Ito ang aking sadiya, kung hinahanap niya ito at ikaw ang naparito, nawa'y tanggapin mo muna itong pagsubok.
+Bathalang Eyre: Ito ang aking sadya, kung hinahanap niya ito at ikaw ang naparito, nawa'y tanggapin mo muna itong pagsubok.
 => question
 ~ question
 Bathalang Eyre: Handa ka ba, Lisa?
@@ -53,7 +53,7 @@ Bathalang Eyre: Ito ay ang bugtong. Kapag natapos mo ito, ibabalik ko na ang pan
 Bathalang Eyre: Subalit kung ikaw ay makapuntos nang kahit pitong puntos lamang
 Bathalang Eyre: Maaari ko na'ng ibigay ang panulat.
 Bathalang Eyre: Kung ikaw man ay maitama mo lahat ng bugtong, maaari kitang basbasan sa angking talino mo!
-Bathalang Eyre: Ngayon...
+Bathalang Eyre: Ngayon,
 Bathalang Eyre: Sisimulan na na'tin ito...
 => END
 
@@ -88,12 +88,15 @@ Bathalang Eyre: Nawa'y pasalamatan mo rin ang iyong sarili, sabihin mo na lamang
 => END
 
 ~ magaling
-Bathalang Eyre: Napakagaling.
+%1 Bathalang Eyre: Magaling, Anak.
+%1 Bathalang Eyre: Naidala mo nang maayos, Anak!
+%1 Bathalang Eyre: Napakagaling.
+%1 Bathalang Eyre: Ito ang aking hinahanap na {{Global.items[GlobalstateQ2.itemsequence]["Name"]}}!
 => END
 
 ~ noanswer
  : Bathalang Eyre: Anak, wala ka pang nasasagutang bugtong!
- : Lisa: Ay- Pasens'ya na po, Kaibigang Bathala!
+ : Lisa: Ay- Pasensya na po, Kaibigang Bathala!
 => END
 ~ on_next
  : Bathalang Eyre: Oh sige anak ko. Nawa'y masagutan mo ito!

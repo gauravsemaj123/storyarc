@@ -464,6 +464,13 @@ position = Vector2(616, 353)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("5_3md8k")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 1014.0
+offset_top = 627.0
+offset_right = 1152.0
+offset_bottom = 649.0
+text = "VER 0.1 DEMO"
+
 [node name="blurry" type="ColorRect" parent="."]
 modulate = Color(0, 0, 0, 0.0784314)
 texture_filter = 2
@@ -506,7 +513,7 @@ layout_mode = 2
 offset_left = -400.0
 offset_top = 330.0
 offset_right = -17.0
-offset_bottom = 365.0
+offset_bottom = 372.0
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
@@ -538,7 +545,7 @@ layout_mode = 2
 offset_left = -400.0
 offset_top = 450.0
 offset_right = -17.0
-offset_bottom = 485.0
+offset_bottom = 492.0
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
