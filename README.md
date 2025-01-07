@@ -34,4 +34,4 @@ TEMPORARY BGMs:
 <a href="https://inaudio.org/royalty-free-music/">Infraction</a>
 
 
-# NOTE: This is an academic project game. Any used music are royalty-free or used in "Educational Purposes" in compliance for the Capstone Project. Once planned to release as product, all of those royalty-free musics would be changed into own composed music.
+# NOTE: This is an academic project game. Any used music are royalty-free or used in "Educational Purposes" in compliance for the Capstone Project. Once planned to release as product, all of those royalty-free musics would be replaced into own composed music.
