@@ -27,3 +27,11 @@ SOUND EFFECTS I USED:
 TESTING BGM I USED:
 
 <a href="https://www.youtube.com/watch?v=OMX6lriaHhQ">KONAMI | Yu-Gi-Oh! Master Duel BGM (Ghostrick Battle theme)</a>
+
+TEMPORARY BGMs:
+
+<a href="https://anttimartikainen.com/">Antti Martikainen</a>
+<a href="https://inaudio.org/royalty-free-music/">Infraction</a>
+
+
+# NOTE: This is an academic project game. Any used music are royalty-free or used in "Educational Purposes" in compliance for the Capstone Project. Once planned to release as product, all of those royalty-free musics would be changed into own composed music.
