@@ -2131,7 +2131,6 @@ position = Vector2(240, 352)
 destination_level_tag = "villagespring"
 destination_door_tag = "next"
 spawn_direction = "left"
-interactable = null
 
 [node name="Spawn" parent="scene_elements/Doors/Door_prev" index="1"]
 position = Vector2(122, -2)
@@ -2141,7 +2140,6 @@ position = Vector2(11096, 350)
 destination_level_tag = "river"
 destination_door_tag = "prev"
 spawn_direction = "right"
-interactable = null
 
 [node name="Spawn" parent="scene_elements/Doors/Door_next" index="1"]
 position = Vector2(-150, -2)
@@ -2151,7 +2149,6 @@ position = Vector2(32, 1436)
 destination_level_tag = "cavespring"
 destination_door_tag = "cave_exit"
 spawn_direction = "left"
-interactable = null
 
 [node name="Spawn" parent="scene_elements/Doors/Door_cave_ent" index="1"]
 position = Vector2(129, 0)

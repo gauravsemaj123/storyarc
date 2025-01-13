@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: Player = $"../Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var questguide: Control = $"../../../UI/questguide"
 
 var dialog_inprocess: bool = false
 
@@ -15,6 +16,8 @@ func _process(_delta: float) -> void:
 
 
 func _ready():
+	if Questlines.questline_number == 1:
+		questguide.taskAdd(1)
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func on_openDialog():
@@ -40,6 +43,8 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			dialog_inprocess = false
 			on_openDialog()
+			questguide.taskSuccess(1)
+			questguide.taskAdd(2)
 			animation_player.play()
 		elif Questlines.questline_number < 1:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/stacey.dialogue"), "frustrated")

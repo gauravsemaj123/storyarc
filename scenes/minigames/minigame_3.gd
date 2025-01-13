@@ -116,7 +116,6 @@ func verdict():
 	NavigationManager.go_to_level("villagespring", "ins_vil")
 
 func initialize_question():
-	print(questionsequence)
 	answerpanel.visible = true
 	if questionsequence <= 3:
 		questionpanel.text = MinigameResources.computingMinigame[questionsequence]["question"]

@@ -5,6 +5,7 @@ var backgroundnumbers = 0
 @onready var cavevar = $cave/ParallaxBackground/cavevar
 @onready var plainvar = $plains/ParallaxBackground/plainvar
 @onready var forestvar = $forest/ParallaxBackground/forestvar
+@onready var qsel: Control = $mainui/qsel
 
 func _ready():
 	$AnimationPlayer.play("menu_intro")
@@ -29,7 +30,7 @@ func background_transition():
 func _on_newgame_pressed():
 	NavigationManager.go_to_level("forestspring", "intro")
 func _on_options_pressed():
-	pass # Replace with function body.
+	qsel.playin()
 
 func _on_quit_pressed():
 	get_tree().quit()

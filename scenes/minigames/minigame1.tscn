@@ -1133,6 +1133,7 @@ texture_scale = 30.38
 
 [node name="dialog" type="AudioStreamPlayer2D" parent="MINIGAMEUI"]
 stream = ExtResource("11_4a6tv")
+volume_db = 9.152
 pitch_scale = 0.9
 
 [node name="wew" type="Node" parent="MINIGAMEUI"]

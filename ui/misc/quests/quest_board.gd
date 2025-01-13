@@ -6,7 +6,6 @@ extends Control
 var questTrack = Questlines.questline_number
 
 func _process(_delta: float) -> void:
-	#SOUND EFFECT
 	#GET QUEST NUMBER
 	questTrack = Questlines.questline_number
 	#SHOW QUEST

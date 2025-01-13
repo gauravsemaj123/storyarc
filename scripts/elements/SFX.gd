@@ -4,6 +4,7 @@ extends Node2D
 @onready var musicplayer: AudioStreamPlayer2D = $musicplayer
 @onready var waterplayer: AudioStreamPlayer2D = $waterplayer
 @onready var screaming: AudioStreamPlayer2D = $screaming
+@onready var graduate: AudioStreamPlayer2D = $graduate
 
 #Sound Effects Library
 const idea = preload("res://sounds/SFX/idea.mp3")
@@ -19,6 +20,7 @@ const announce = preload("res://sounds/SFX/announce.mp3")
 const bum = preload("res://sounds/SFX/bum.mp3")
 const solbeam = preload("res://sounds/SFX/solbeam.mp3")
 const clonck = preload("res://sounds/SFX/clonck.mp3")
+const chestopen = preload("res://ui/misc/minigames/chestopen.mp3")
 
 #Music Library
 const cave = preload("res://sounds/OSTs/cave.mp3")
@@ -123,3 +125,7 @@ func startscream():
 
 func stopstream():
 	screaming.stop()
+
+func ending():
+	graduate.stream = graduation
+	graduate.play()

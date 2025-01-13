@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal on_transition_finished
+signal on_transition_started
 
 @onready var animated = $Animated
 @onready var animation_player = $AnimationPlayer
@@ -19,6 +20,7 @@ func _on_animation_finished(anim_name):
 		animated.visible = false
 
 func transition():
+	on_transition_started.emit()
 	transitionlayer.layer = 999
 	animated.visible = true
 	animation_player.play("left_to_right")

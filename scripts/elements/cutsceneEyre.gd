@@ -21,11 +21,11 @@ func _process(delta: float) -> void:
 		pass
 	
 	if Questlines.questline_number == 11:
-		position.y = 566
+		position.y = 666
 
 func _on_body_entered(body: Node2D) -> void:
 	if Questlines.questline_number == 11 and MinigameResources.minigamescore > 6:
-			await get_tree().create_timer(2).timeout
+			Questlines.questline_number = 12
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "welldone")
 			player.uiactive = true
 			player.dialogactive = true
@@ -47,9 +47,32 @@ func _on_body_entered(body: Node2D) -> void:
 			player.JUMP_VELOCITY = -400
 			dialog_inprocess = false
 			inventory.add(19)
+			removeallitem()
 			Notifier.newitemAnnounce("Panulat")
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(2).timeout
 			Questlines.questline_number = 12
 			Notifier.questnext("Stacey")
 			miraclelight.visible = false
 			queue_free()
+
+func removeallitem():
+	inventory.remove(0)
+	inventory.remove(1)
+	inventory.remove(2)
+	inventory.remove(3)
+	inventory.remove(4)
+	inventory.remove(5)
+	inventory.remove(6)
+	inventory.remove(7)
+	inventory.remove(8)
+	inventory.remove(9)
+	inventory.remove(10)
+	inventory.remove(11)
+	inventory.remove(12)
+	inventory.remove(13)
+	inventory.remove(14)
+	inventory.remove(15)
+	inventory.remove(16)
+	inventory.remove(17)
+	inventory.remove(18)
+	

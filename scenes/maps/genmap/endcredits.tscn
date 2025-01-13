@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b78okn3y47ebv"]
+[gd_scene load_steps=10 format=3 uid="uid://b78okn3y47ebv"]
 
 [ext_resource type="Script" path="res://scripts/elements/endcredits.gd" id="1_5lg4b"]
 [ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="1_so0mh"]
 [ext_resource type="FontFile" uid="uid://k2em1020ymr5" path="res://ui/fonts/PIXEARG_.TTF" id="2_dxnfk"]
+[ext_resource type="Texture2D" uid="uid://r1yok4u67e1g" path="res://ui/misc/ase.png" id="4_i737g"]
 [ext_resource type="Texture2D" uid="uid://nh67px64ncwy" path="res://banner.png" id="4_na7k3"]
+[ext_resource type="Texture2D" uid="uid://b67cky0kl0q4a" path="res://ui/misc/godotimagewhite.png" id="5_ko1ap"]
 
 [sub_resource type="Animation" id="Animation_bwkc1"]
 length = 0.001
@@ -78,7 +80,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(334, -0.25, 0, 0.25, 0, 328, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(334, -0.25, 0, 0.25, 0, 334, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 190)
 }
 tracks/1/type = "bezier"
@@ -89,7 +91,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(238, -0.25, 0, 0.25, 0, -2730, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(238, -0.25, 0, 0.25, 0, -3874.01, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 190)
 }
 tracks/2/type = "value"
@@ -210,10 +212,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 334.0
-offset_top = 238.0
-offset_right = 830.0
-offset_bottom = 3428.0
+offset_left = 328.0
+offset_top = 239.0
+offset_right = 824.0
+offset_bottom = 4880.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -235,10 +237,6 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dxnfk")
 text = "
-
-
-
-
 
 
 
@@ -306,8 +304,7 @@ in an entertaining way.
 
 Taos-puso naming ginawa ang larong ito para sa
 mga bata upang matuto sila sa 
-nakatututwang paraan.
-
+nakatutuwang paraan.
 
 
 
@@ -321,6 +318,11 @@ Mr. Japheth Ricamara
 Ma. Redinne Jimeno
 Jichelle Ann Calleja
 Charmaine Mendoza
+Bowen Kyle Malvar
+Tonton Sablada
+
+- TEACHER EVALUATORS - 
+Ms. Gloria Alexa Cruz
 
 -HELPER-
 Jan Clyde Cañeso
@@ -337,6 +339,41 @@ Thank you so much Ma'am Elen for guidance!
 
 
 
+"
+horizontal_alignment = 1
+
+[node name="creditroll2" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("4_i737g")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="creditroll7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxnfk")
+text = "ASEPRITE
+
+
+"
+horizontal_alignment = 1
+
+[node name="creditroll4" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ko1ap")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="creditroll6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxnfk")
+text = "
+
+
+
+
+
+
 
 
 
@@ -347,7 +384,7 @@ Thank you so much Ma'am Elen for guidance!
 "
 horizontal_alignment = 1
 
-[node name="creditroll2" type="TextureRect" parent="VBoxContainer"]
+[node name="creditroll5" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_na7k3")
 expand_mode = 5

@@ -438,6 +438,7 @@ autoplay = "default"
 frame_progress = 0.930399
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_61dji")]
+action_name = "Kausapin"
 
 [node name="titi" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(44, -9.25)

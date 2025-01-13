@@ -6,7 +6,6 @@ var wheelsequence: int = 1
 
 func beginspinning():
 	spinclick.play()
-	print("wheelcount" + str(wheelsequence))
 	if wheelsequence == 1:
 		spin.play("wheel1spin1")
 	if wheelsequence == 2:

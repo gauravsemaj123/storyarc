@@ -37,11 +37,10 @@ func _process(_delta: float) -> void:
 	else:
 		pass
 	
-	if itemremove == true:
-		pass
-
+	if Questlines.questline_number == 12:
+		position.y = -550
+	
 func _ready():
-	print(MinigameResources.storedscore1)
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
@@ -55,9 +54,7 @@ func _on_interact():
 			print(GlobalstateQ2.itemsequence)
 			ItemDetection.itemdetect(GlobalstateQ2.itemsequence)
 			if ItemDetection.is_detected == true:
-				#itemremove = true
 				await get_tree().create_timer(.1).timeout
-				itemremove = false
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/eyre.dialogue"), "magaling");
 				player.uiactive = true
 				player.dialogactive = true

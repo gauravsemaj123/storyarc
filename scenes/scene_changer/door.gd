@@ -14,7 +14,6 @@ var enterable: bool = false
 func _on_body_entered(body):
 	if body is Player:
 		enterable = true
-		print(enterable)
 		if interactable == false:
 			print("player")
 			NavigationManager.go_to_level(destination_level_tag, destination_door_tag)

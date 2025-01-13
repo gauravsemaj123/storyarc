@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://kk6ex7bygvrt"]
+
+[ext_resource type="Script" path="res://scripts/elements/questguide.gd" id="1_p57ic"]
+[ext_resource type="Texture2D" uid="uid://d4d31shkii0k" path="res://inventorymain/inventory/invframeslot.png" id="2_4nh0w"]
+[ext_resource type="Script" path="res://ui/misc/tasklists.gd" id="3_q05m8"]
+
+[node name="questguide" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p57ic")
+
+[node name="kamatis" type="NinePatchRect" parent="."]
+offset_left = 764.0
+offset_right = 1152.0
+offset_bottom = 221.0
+texture = ExtResource("2_4nh0w")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="mgagagawin" type="Label" parent="."]
+offset_left = 769.0
+offset_top = 5.0
+offset_right = 929.0
+offset_bottom = 27.0
+text = "MGA GAGAWIN:"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 652.0
+offset_top = 93.0
+offset_right = 716.0
+offset_bottom = 123.0
+text = "drugs"
+
+[node name="tasklists" type="VBoxContainer" parent="."]
+offset_left = 769.0
+offset_top = 41.0
+offset_right = 1145.0
+offset_bottom = 214.0
+theme_override_constants/separation = 30
+script = ExtResource("3_q05m8")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

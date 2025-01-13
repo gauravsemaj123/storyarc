@@ -263,9 +263,9 @@ process_mode = 3
 texture_filter = 1
 layout_mode = 0
 offset_left = -357.0
-offset_top = 264.0
+offset_top = 282.0
 offset_right = -18.0
-offset_bottom = 317.0
+offset_bottom = 335.0
 theme = ExtResource("2_4eb8b")
 text = "Ituloy"
 
@@ -275,9 +275,9 @@ visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = -357.0
-offset_top = 324.0
+offset_top = 343.0
 offset_right = -18.0
-offset_bottom = 377.0
+offset_bottom = 396.0
 theme = ExtResource("2_4eb8b")
 text = "Isave"
 
@@ -286,9 +286,9 @@ process_mode = 3
 texture_filter = 1
 layout_mode = 0
 offset_left = -357.0
-offset_top = 393.0
+offset_top = 412.0
 offset_right = -19.0
-offset_bottom = 446.0
+offset_bottom = 465.0
 theme = ExtResource("2_4eb8b")
 text = "Pangunahin"
 

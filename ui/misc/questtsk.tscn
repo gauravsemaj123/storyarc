@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8vr0qej3ph0p"]
+
+[ext_resource type="Script" path="res://ui/misc/questtsk.gd" id="1_5c6k6"]
+
+[node name="questtsk" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 112.0
+offset_bottom = 22.0
+script = ExtResource("1_5c6k6")
+
+[node name="taskspecific" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 381.0
+offset_bottom = 22.0
+bbcode_enabled = true
+text = "placeholder"
+fit_content = true

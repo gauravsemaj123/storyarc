@@ -1038,7 +1038,7 @@ position = Vector2(2448, 437)
 position = Vector2(2510, -541)
 
 [node name="npc_7" parent="scene_elements/sprites" instance=ExtResource("12_vo4yk")]
-position = Vector2(2661, -500)
+position = Vector2(2692, -500)
 
 [node name="sphere" type="Sprite2D" parent="scene_elements/sprites"]
 position = Vector2(2912, 473)
@@ -1083,7 +1083,7 @@ spawn_direction = "left"
 position = Vector2(122, -3)
 
 [node name="Door_ruin_front" parent="scene_elements/Doors" instance=ExtResource("9_t72wd")]
-position = Vector2(2324, -392)
+position = Vector2(2475, -392)
 
 [node name="Spawn" parent="scene_elements/Doors/Door_ruin_front" index="1"]
 position = Vector2(78, 769)
@@ -1138,7 +1138,7 @@ position = Vector2(85, -5.5)
 shape = SubResource("RectangleShape2D_n1cih")
 
 [node name="FOR_CUTSCENE2" type="Area2D" parent="scene_elements/AOEs"]
-position = Vector2(2358, -558)
+position = Vector2(2408, -625)
 script = ExtResource("20_ha227")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_elements/AOEs/FOR_CUTSCENE2"]

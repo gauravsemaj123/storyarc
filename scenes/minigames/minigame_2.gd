@@ -24,7 +24,6 @@ func _ready() -> void:
 	spin.play("RESET3")
 
 func _on_button_pressed() -> void:
-	print("nigar")
 	spin.play("RESET")
 	spin.play("RESET2")
 	spin.play("RESET3")
@@ -36,10 +35,9 @@ func opencheck():
 	
 	if signalizer.signal1unlock == true and signalizer_2.signal2unlock == true and signalizer_3.signal3unlock == true:
 		progress = 1
-	print(progress)
 	
 	if progress == 1:
-		chestopen.play()
+		AUDIO.sfx("chestopen")
 		spin.play("fadeout")
 		await spin.animation_finished
 		visible = false

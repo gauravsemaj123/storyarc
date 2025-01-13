@@ -26,8 +26,8 @@ func _on_resume_pressed():
 	is_paused = false
 	resume()
 
-func _on_save_pressed() -> void:
-	print("game saved!")
+#func _on_save_pressed() -> void:
+	#print("game saved!")
 
 func _on_main_menu_pressed():
 	print("main menu pressed!")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4m3pe3gy21iq"]
+[gd_scene load_steps=7 format=3 uid="uid://c4m3pe3gy21iq"]
 
+[ext_resource type="Script" path="res://scripts/how2p.gd" id="1_1y3k3"]
 [ext_resource type="Texture2D" uid="uid://bl8s71nqrm8yg" path="res://ui/misc/uiframe.png" id="1_c55vp"]
 [ext_resource type="Texture2D" uid="uid://cc621cvu16621" path="res://inventorymain/inventory/chevron_reverse.png" id="2_2h85j"]
 [ext_resource type="Texture2D" uid="uid://1gfocirbkfu4" path="res://inventorymain/inventory/chevron.png" id="3_a8eyu"]
 [ext_resource type="Texture2D" uid="uid://dfq6ykjp5j1o" path="res://ui/misc/testing/dazai.png" id="4_ou508"]
+[ext_resource type="FontFile" uid="uid://0asr7ja0k8t8" path="res://ui/fonts/Joyfulfont-Regular.ttf" id="6_e0f55"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1y3k3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -23,7 +26,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.34902)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-self_modulate = Color(0.821789, 0.821789, 0.821789, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,3 +90,26 @@ offset_top = 480.0
 offset_right = 900.0
 offset_bottom = 558.0
 text = "Lorem Ipsum Dolor Sit amet Aliqua nigga 1 nigga 2"
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 25.0
+offset_right = 2396.0
+offset_bottom = 248.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("6_e0f55")
+theme_override_font_sizes/font_size = 250
+text = "PAANO LARUIN"
+
+[node name="number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 548.0
+offset_right = 396.0
+offset_bottom = 771.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_e0f55")
+theme_override_font_sizes/font_size = 250
+text = "I"

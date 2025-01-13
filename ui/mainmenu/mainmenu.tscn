@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5viaboyfl1t8"]
+[gd_scene load_steps=14 format=3 uid="uid://5viaboyfl1t8"]
 
 [ext_resource type="Script" path="res://ui/mainmenu/screenshowcase.gd" id="1_5ud7h"]
 [ext_resource type="Script" path="res://ui/mainmenu/mainmenu.gd" id="1_aqmbn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://dyx6ndl04mr3g" path="res://ui/misc/pause/pausebutton.tres" id="2_ccx7r"]
 [ext_resource type="Texture2D" uid="uid://c82b1tlagdqs0" path="res://ui/mainmenu/res/backgrounds/plains.png" id="4_4u212"]
 [ext_resource type="Texture2D" uid="uid://ckhc5g8tnvsc" path="res://ui/mainmenu/res/backgrounds/cave.png" id="5_3md8k"]
+[ext_resource type="PackedScene" uid="uid://p1e0l0oxxd0k" path="res://ui/qsel.tscn" id="8_n8ogn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_46joa"]
 blend_mode = 1
@@ -529,16 +530,15 @@ layout_mode = 2
 offset_left = -400.0
 offset_top = 391.0
 offset_right = -17.0
-offset_bottom = 426.0
+offset_bottom = 433.0
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 alignment = 1
 
 [node name="options" type="Button" parent="mainui/Control/vertical2"]
-visible = false
 layout_mode = 2
 theme = ExtResource("2_ccx7r")
-text = "Mga Pagpipilian"
+text = "Pumili ng Quest"
 
 [node name="vertical3" type="VBoxContainer" parent="mainui/Control"]
 layout_mode = 2
@@ -553,7 +553,10 @@ alignment = 1
 [node name="quit" type="Button" parent="mainui/Control/vertical3"]
 layout_mode = 2
 theme = ExtResource("2_ccx7r")
-text = "Ilisan"
+text = "Mag-quit"
+
+[node name="qsel" parent="mainui" instance=ExtResource("8_n8ogn")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

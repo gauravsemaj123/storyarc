@@ -4,4 +4,4 @@ extends Node2D
 
 func _ready() -> void:
 	abc.play("new_animation")
-	AUDIO.music("graduation")
+	AUDIO.ending()

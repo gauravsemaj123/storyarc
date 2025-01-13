@@ -24,3 +24,5 @@ playback_type = 1
 [node name="screaming" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_u5y5j")
 max_distance = 1e+11
+
+[node name="graduate" type="AudioStreamPlayer2D" parent="."]

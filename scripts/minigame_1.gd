@@ -22,7 +22,7 @@ func _ready() -> void:
 	riddle.text = "Simulan na na'tin anak!"
 	timerlang.play("riddletype")
 	await timerlang.animation_finished
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(1).timeout
 	line_edit.visible = true
 	ready_question()
 	
