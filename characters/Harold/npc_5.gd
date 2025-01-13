@@ -3,6 +3,7 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
+@onready var questguide: Control = $"../../../UI/questguide"
 
 var dialog_inprocess: bool = false
 var is_offering: bool = false
@@ -50,6 +51,8 @@ func _on_interact():
 			await DialogueManager.dialogue_ended
 			TransferrerCutscene.is_in_cutscene = true
 			NavigationManager.go_to_level("ruinspring", "ruin_front")
+			questguide.taskSuccess(8)
+			questguide.taskAdd(9)
 			return
 		elif Questlines.questline_number == 9:
 			ItemDetection.itemdetect(21)

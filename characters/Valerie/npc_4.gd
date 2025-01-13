@@ -3,6 +3,7 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var player: Player = $"../Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
+@onready var questguide: Control = $"../../../UI/questguide"
 
 const MINIGAME_3 = preload("res://scenes/minigames/minigame_3.tscn")
 
@@ -13,6 +14,8 @@ var closeDialog: bool = false
 @onready var direction: Marker2D = $direction
 
 func _ready():
+	if Questlines.questline_number == 3:
+		questguide.taskAdd(3)
 	interaction_area.interact = Callable(self, "_on_interact")
 	Shop.closeDialog.connect(closeDialogInit)
 	readydialogInit()
@@ -61,6 +64,8 @@ func closeDialogInit():
 	player.inventoryactive = false
 	player.SPEED = 800
 	player.uiactive = false
+	if GlobalstateQ2.is_gulaygot == true and Global.gold == 0:
+		questguide.taskSuccess(11)
 	
 func _on_interact():
 	if Shop.visible != true || inventory.visible != true:

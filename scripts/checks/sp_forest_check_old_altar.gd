@@ -4,6 +4,8 @@ extends Node2D
 @onready var player: Player = $"../../../sprites/Player"
 @onready var state: Sprite2D = $state
 @onready var inventory: Control = $"../../../../UI/Inventory"
+@onready var questguide: Control = $"../../../../UI/questguide"
+
 var dialog_inprocess: bool = false
 
 func _process(_delta: float) -> void:
@@ -53,6 +55,8 @@ func _on_interact():
 				state.frame = 1
 				dialog_inprocess = false
 				on_openDialog()
+				questguide.taskSuccess(7)
+				questguide.taskAdd(8)
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "altar_sphere_already")
 				dialog_inprocess = true

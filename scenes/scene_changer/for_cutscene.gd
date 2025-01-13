@@ -5,6 +5,7 @@ extends Area2D
 @onready var player: Player = $"../../sprites/Player"
 @onready var cutscene_manage: AnimationPlayer = $"../../../Cutscene/CutsceneManage"
 @onready var for_cutscene_2: Area2D = $"../FOR_CUTSCENE2"
+@onready var questguide: Control = $"../../../UI/questguide"
 
 
 var dialog_inprocess: bool = false
@@ -42,6 +43,8 @@ func _on_body_entered(body: Node2D) -> void:
 			player.JUMP_VELOCITY = -400
 			player.dialogactive = false
 			npc_5.position.y = -552
+			questguide.taskSuccess(6)
+			questguide.taskAdd(7)
 			Questlines.updateQuest()
 			Notifier.questnext("")
 			for_cutscene_2.position.y = 566

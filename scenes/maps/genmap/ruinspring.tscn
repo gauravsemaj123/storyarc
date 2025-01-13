@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://d1qfa756aqya1"]
+[gd_scene load_steps=48 format=4 uid="uid://d1qfa756aqya1"]
 
 [ext_resource type="Texture2D" uid="uid://b8rtt8lpy1cuv" path="res://textures/backgrounds/maps/ruins/backr.png" id="1_6vdsl"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_htcl3"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://baegncujkj6ue" path="res://inventorymain/inventory/itemlists/panulat.png" id="14_xfdb4"]
 [ext_resource type="Script" path="res://scenes/scene_changer/for_cutscene.gd" id="18_b43v5"]
 [ext_resource type="Script" path="res://scripts/elements/cutsceneEyre.gd" id="20_ha227"]
+[ext_resource type="PackedScene" uid="uid://kk6ex7bygvrt" path="res://ui/misc/questguide.tscn" id="23_ky2f7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4cum"]
 texture = ExtResource("7_35e3i")
@@ -1225,6 +1226,8 @@ libraries = {
 }
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="questguide" parent="UI" instance=ExtResource("23_ky2f7")]
 
 [node name="PauseScene" parent="UI" instance=ExtResource("8_6b08u")]
 

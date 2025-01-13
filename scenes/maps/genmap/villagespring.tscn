@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://duap6lmm8ti70"]
+[gd_scene load_steps=49 format=4 uid="uid://duap6lmm8ti70"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_71q4v"]
 [ext_resource type="Texture2D" uid="uid://cwpr4gs0porth" path="res://textures/gentextures/ground tilesets FINAL.png" id="1_wv2so"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ra7ee0yjr5x3" path="res://characters/SIDECHARACTERS/Guard/guard.tscn" id="17_2taaw"]
 [ext_resource type="Script" path="res://scripts/elements/gulaycrates.gd" id="19_45ute"]
 [ext_resource type="Script" path="res://scripts/triggercutscenerain.gd" id="20_xtfx8"]
+[ext_resource type="PackedScene" uid="uid://kk6ex7bygvrt" path="res://ui/misc/questguide.tscn" id="23_2s52q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urlog"]
 texture = ExtResource("1_wv2so")
@@ -1807,6 +1808,8 @@ position = Vector2(210, 105)
 shape = SubResource("RectangleShape2D_rbc3f")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="questguide" parent="UI" instance=ExtResource("23_2s52q")]
 
 [node name="PauseScene" parent="UI" instance=ExtResource("6_0yrhd")]
 

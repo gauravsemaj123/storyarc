@@ -7,6 +7,7 @@ extends Node2D
 @onready var inventory: Control = $"../../../../UI/Inventory"
 @onready var npc_7: Node2D = $"../../../sprites/npc_7"
 @onready var miraclelight: PointLight2D = $"../../../lighteff/miraclelight"
+@onready var questguide: Control = $"../../../../UI/questguide"
 
 var dialog_inprocess: bool = false
 var sphere_given: bool = false
@@ -77,6 +78,8 @@ func _on_interact():
 				dialog_inprocess = false
 				Questlines.updateQuest()
 				Notifier.questnext("")
+				questguide.taskSuccess(9)
+				questguide.taskAdd(10)
 				queue_free()
 				npc_7.position.y = 529
 

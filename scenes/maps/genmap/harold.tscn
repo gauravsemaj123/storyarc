@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dwcshkpdbdu24"]
+[gd_scene load_steps=32 format=4 uid="uid://dwcshkpdbdu24"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bsxwc"]
 [ext_resource type="Texture2D" uid="uid://cys3txyp1n0qh" path="res://textures/backgrounds/maps/plains/sky.png" id="2_narqj"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="15_5gsdq"]
 [ext_resource type="PackedScene" uid="uid://bfrpxjouc78yk" path="res://inventorymain/Inventory.tscn" id="16_3ce2s"]
 [ext_resource type="Script" path="res://characters/Harold/sandali.gd" id="16_6htya"]
+[ext_resource type="PackedScene" uid="uid://kk6ex7bygvrt" path="res://ui/misc/questguide.tscn" id="18_f7vrm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jq2qi"]
 texture = ExtResource("10_gmhc7")
@@ -1320,6 +1321,8 @@ position = Vector2(74.5, 250)
 shape = SubResource("RectangleShape2D_gt6v6")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="questguide" parent="UI" instance=ExtResource("18_f7vrm")]
 
 [node name="PauseScene" parent="UI" instance=ExtResource("14_agoqh")]
 

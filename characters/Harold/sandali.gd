@@ -3,6 +3,7 @@ extends Area2D
 @onready var npc_5: Node2D = $"../../sprites/npc_5"
 @onready var player: Player = $"../../sprites/Player"
 @onready var inventory: Control = $"../../../UI/Inventory"
+@onready var questguide: Control = $"../../../UI/questguide"
 
 var dialog_inprocess: bool = false
 
@@ -31,5 +32,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		player.dialogactive = false
 		npc_5.is_offering = true
 		npc_5.is_declining = false
+		questguide.taskSuccess(3)
+		questguide.taskAdd(4)
 	else:
 		pass

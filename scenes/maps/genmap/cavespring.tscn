@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://c5x402ltt4mib"]
+[gd_scene load_steps=50 format=4 uid="uid://c5x402ltt4mib"]
 
 [ext_resource type="PackedScene" uid="uid://3wgl8hmwemys" path="res://characters/Lisa/player.tscn" id="1_4dy85"]
 [ext_resource type="Texture2D" uid="uid://b8rtt8lpy1cuv" path="res://textures/backgrounds/maps/ruins/backr.png" id="1_la2ch"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c6fpeubq8x28g" path="res://characters/Danny/npc_8.tscn" id="14_dfuiw"]
 [ext_resource type="Texture2D" uid="uid://c5yuigh7vxq1y" path="res://textures/misc/physics/drop.png" id="14_iegj8"]
 [ext_resource type="Script" path="res://scripts/elements/updateoncave.gd" id="15_72sn6"]
+[ext_resource type="PackedScene" uid="uid://kk6ex7bygvrt" path="res://ui/misc/questguide.tscn" id="18_urw0q"]
 [ext_resource type="PackedScene" uid="uid://bfrpxjouc78yk" path="res://inventorymain/Inventory.tscn" id="19_mas4e"]
 [ext_resource type="PackedScene" uid="uid://c2h8soms1axwy" path="res://ui/misc/notifier.tscn" id="19_wjq0o"]
 
@@ -2555,6 +2556,8 @@ speed_scale = 4.01
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 4
+
+[node name="questguide" parent="UI" instance=ExtResource("18_urw0q")]
 
 [node name="PauseScene" parent="UI" instance=ExtResource("5_pak82")]
 visible = false

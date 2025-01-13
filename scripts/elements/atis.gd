@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: Player = $"../../../sprites/Player"
 @onready var inventory: Control = $"../../../../UI/Inventory"
 var dialog_inprocess: bool = false
+@onready var questguide: Control = $"../../../../UI/questguide"
 
 var is_atis_got: bool = false
 
@@ -14,7 +15,7 @@ func _process(_delta: float) -> void:
 		player.dialogactive = true
 	else:
 		player.dialogactive = false
-	if is_atis_got == true:
+	if GlobalstateQ2.is_atisgot == true:
 		InteractionManager.unreg_area(self)
 	if Questlines.questline_number != 11:
 		position.y = -276
@@ -42,7 +43,7 @@ func _on_interact():
 	if Questlines.questline_number != 11:
 		pass
 	elif Questlines.questline_number == 11:
-		if is_atis_got == false:
+		if GlobalstateQ2.is_atisgot == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://scenes/dialogues/lisa.dialogue"), "atisget")
 			dialog_inprocess = true
 			on_openDialog()
@@ -50,7 +51,12 @@ func _on_interact():
 			inventory.add(0)
 			dialog_inprocess = false
 			on_openDialog()
-			is_atis_got = true
+			GlobalstateQ2.is_atisgot = true
+			questguide.taskSuccess(10)
+			questguide.taskAdd(11)
+			questguide.taskAdd(12)
+			questguide.taskAdd(13)
+			questguide.taskAdd(14)
 		else:
 			pass
 		pass

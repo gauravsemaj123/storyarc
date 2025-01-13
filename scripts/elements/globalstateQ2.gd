@@ -16,6 +16,10 @@ var is_gulaycrate_permitted: bool = false
 
 var is_ending: bool = false
 
+var is_atisgot: bool = false
+
+var is_gulaygot: bool = false
+
 var itemsequence: int = 0
 
 signal showup

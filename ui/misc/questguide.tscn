@@ -10,6 +10,7 @@ anchors_preset = 0
 script = ExtResource("1_p57ic")
 
 [node name="kamatis" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 764.0
 offset_right = 1152.0
 offset_bottom = 221.0
@@ -20,6 +21,7 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="mgagagawin" type="Label" parent="."]
+layout_mode = 0
 offset_left = 769.0
 offset_top = 5.0
 offset_right = 929.0
@@ -28,6 +30,7 @@ text = "MGA GAGAWIN:"
 
 [node name="Button" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 652.0
 offset_top = 93.0
 offset_right = 716.0
@@ -35,6 +38,7 @@ offset_bottom = 123.0
 text = "drugs"
 
 [node name="tasklists" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 769.0
 offset_top = 41.0
 offset_right = 1145.0

@@ -1,6 +1,7 @@
 extends Control
 var is_open = false
 @onready var button: Button = $Button
+@onready var questguide: Control = $"../questguide"
 
 func _ready():
 	close()
@@ -9,8 +10,10 @@ func _input(event: InputEvent):
 	if (event.is_action_pressed("inventory")):
 		if is_open:
 			close()
+			questguide.openlist()
 		else:
 			open()
+			questguide.closelist()
 
 func _process(delta: float) -> void:
 	get_node("InvContainer").fillInventorySlots()
